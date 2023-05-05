@@ -1,0 +1,45 @@
+@use '../base/theme';
+
+.score-tab {
+  width: 100%;
+  overflow: hidden;
+
+  .tab-buttons-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    overflow-x: auto;
+    background-color: theme.$white;
+
+    .tab-button {
+      z-index: 999;
+      flex: 1 1 100%;
+      padding: 0.5rem 1rem;
+      border-bottom: rem-calc(4) solid theme.$lightgrey;
+      color: theme.$primary;
+      font-size: 1.25rem;
+      text-align: center;
+      transition: border-color linear 0.3s;
+
+      &.active {
+        border-color: theme.$secondary;
+        color: theme.$secondary;
+      }
+    }
+  }
+
+  .tab-content {
+    position: relative;
+    padding: rem-calc(16);
+    .content {
+      display: none;
+      opacity: 0;
+      transition: opacity ease-in-out .5s;
+      &.active {
+        display: block;
+        opacity: 1;
+      }
+    }
+  }
+}

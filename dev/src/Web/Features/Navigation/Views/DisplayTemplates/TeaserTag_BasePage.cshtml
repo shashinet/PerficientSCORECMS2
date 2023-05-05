@@ -1,0 +1,25 @@
+@*@using EPiServer.Cms.Shell
+@using Perficient.Web.Core.Models
+@model BasePage
+
+@{
+    var url = Model.LinkURL;
+    var title = string.IsNullOrWhiteSpace(Model.NavigationTitle) ? Model.Name : Model.NavigationTitle;
+}
+
+ <div class="tile tile-teaser">
+     <div class="image-wrapper">
+        <img alt="Promo feature image for @Model.TileTitle" src="@Model.GetTileImage(TileConstants.VerticalPromo)" />
+     </div>
+     <div class="caption">
+         <p class="eyebrow">@Html.DisplayFor(x => x.PrimaryCategory)</p>    
+         <p class="title">@Html.DisplayFor(x => x.TileTitle)</p>
+         <div class="cta-area">
+            <a class="score-button seed-link @(Model.NavigationHrefTarget == "_blank" ? "external-link" : "")" target="@Model.NavigationHrefTarget" href="@Url.ContentUrl(Model.ContentLink)">
+                @(Model.TileCtaText ?? "Learn More")
+            </a>
+         </div>
+     </div>
+ </div>
+
+*@

@@ -1,0 +1,312 @@
+/*
+    This should compile to it's own CSS file and not be part of the main. The purpose of this file is
+    to provide styles that are only used in edit mode and will not exist in the published page.
+*/
+
+
+/* classes specific to previewing items on a page go in here, prefixed with preview-page
+    this is typically used for page editing
+*/
+.preview-page {
+  background-color: #ffffff;
+}
+
+  .preview-page .header-area {
+    height: auto;
+    min-height: 90px;
+  }
+
+  .preview-page .alert {
+    max-height: 100px;
+    min-height: 56px;
+  }
+
+  .preview-page .no-page-show {
+    display: none !important;
+  }
+
+  .preview-page .header-area .link-edit,
+  .preview-page .header-area .option-edit,
+  .preview-page .header-btm-area .link-edit,
+  .preview-page .header-btm-area .option-edit,
+  .preview-page .footer-area .link-edit,
+  .preview-page .footer-area .option-edit {
+    display: none;
+  }
+
+/* classes specific to previewing items on the general preview layout go in here, prefixed with preview-layout.
+    this is typically used for block editing
+*/
+
+.preview-layout {
+  padding: 5px 10px;
+  height: 100%;
+  min-height: 600px;
+}
+
+  .preview-layout body {
+    height: 100%;
+  }
+
+  .preview-layout .floating-image-edit {
+    position: absolute;
+    top: 0;
+    left: -30px;
+    right: 0;
+    padding: 5px;
+  }
+
+  .preview-layout .float-inside {
+    left: 5px;
+    top: 5px;
+  }
+
+  .preview-layout .preview-display {
+    margin-top: 25px;
+    height: 100%;
+  }
+
+
+  .preview-layout .edit-btn-group {
+    clear: both;
+    margin-bottom: 20px;
+    width: 100%;
+    /*background-color: #6c757d;*/
+  }
+
+    .preview-layout .edit-btn-group .btn {
+      /*margin: 0px 4px;*/
+      background-color: #080736;
+      box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    }
+
+  .preview-layout .main-menu .subnav-items .link-edit {
+    display: none;
+  }
+
+
+  .preview-layout .footer-area .link-edit,
+  .preview-layout .footer-area .option-edit {
+    display: none;
+  }
+
+.preview-layout .preview-display {
+  max-width: 100% !important;
+}
+
+.preview-layout .score-stripe {
+  width: 100% !important;
+}
+
+  .preview-display .link-edit-box {
+    position: relative;
+  }
+
+.preview-display .link-edit {
+  display: inline-block;
+  font-size: 12px;
+  height: 20px;
+  text-align: center;
+  width: auto;
+  z-index: 999;
+}
+
+.preview-display .option-edit {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.preview-display .edit-left {
+  position: absolute;
+  left: 0;
+}
+
+.preview-display .edit-vcenter {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.preview-display .edit-options-bar, .preview-page .edit-options-bar {
+  background: #080736;
+  margin-bottom: 15px;
+  display: flex;
+}
+
+  .preview-display .edit-options-bar .option, .preview-page .edit-options-bar .option {
+    min-height: 35px !important;
+    margin-right: 4px;
+    font-size: 14px;
+    background: #080736;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+    .preview-display .edit-options-bar .option:last-child, .preview-page .edit-options-bar .option:last-child {
+      margin-right: 0;
+    }
+
+    .preview-display .edit-options-bar .option i, .preview-page .edit-options-bar .option i {
+      font-size: 20px;
+      margin-right: 6px;
+    }
+
+.preview-display .displayFlex {
+  display: flex;
+}
+/* general editing or preview classes can be placed here.
+  typically, any of these classes can affect blocks or pages depending on the design class target.
+*/
+.edit-optional-col {
+  display: block;
+  position: absolute;
+  top: 0px;
+  max-width: 16px;
+  min-width: 0 !important;
+  width: 16px;
+  height: 100%;
+}
+
+.edit-left-col {
+  left: 0;
+}
+
+.edit-right-col {
+  right: 10px;
+}
+
+  .edit-right-col .edit-col-icon {
+    position: absolute;
+    /*top: -20px;
+            left: -5px;*/
+    cursor: pointer;
+    height: 16px;
+    width: 16px;
+  }
+
+  .edit-right-col:hover .edit-col-icon i {
+    color: #b4c600;
+  }
+
+/* Override Main CSS Styles */
+main.preview-display {
+  padding-top: 0 !important;
+}
+
+/* Turn off Options Bar when in certain situations */
+.preview-display div[data-contentgroup] .edit-options-bar {
+  display: none !important;
+}
+
+/* Header Editor Styles */
+.main-navigation-desktop-max ul .nav-item:first-of-type {
+  margin-left: 50px;
+}
+
+@media (min-width: 1220px) {
+  .epi-editContainer[data-epi-property-name='FeatureItem'] {
+    min-width: 200px;
+  }
+}
+
+/* Footer Editor Styles */
+@media (min-width: 1220px) {
+  .footer-row-top a.logo {
+    display: flex;
+  }
+}
+
+.footer-contact-social .link-edit, .footer-contact-social .option-edit {
+  display: none;
+}
+
+/* Social Links Preview */
+@media (min-width: 1220px) {
+  .epi-editContainer[data-epi-property-name='SocialLinks'] {
+    padding-bottom: 50px;
+  }
+}
+
+/* Form Hero - Edit Fields */
+.hero-banner .input-text {
+  display: inline-flex;
+}
+
+.hero-banner input:disabled {
+  background-color: white;
+}
+
+.hero-banner .edit-input-text {
+  margin-top: 15px;
+  position: absolute;
+  margin-left: 48px;
+  font-family: Helvetica Now Text Regular;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: .18px;
+  color: #999;
+}
+
+/* Callout Items */
+.callout .mobile-swiper-item {
+  max-width: initial;
+}
+
+/* Testimonial */
+
+.testimonial-block {
+  padding-bottom: 150px;
+}
+
+@media (min-width: 1366px) {
+
+  .testimonial-items-edit > div {
+    margin-bottom: 75px;
+  }
+}
+
+/* Media Collection Callout */
+.media-callout .media-callout-wrapper-media-holder,
+.media-callout .media-callout-wrapper-top-content-media div[data-contentgroup],
+.media-callout div.media-callout-wrapper-top-content-media-image-edit {
+  display: contents;
+}
+
+
+/*See the Country Carousel Block*/
+.city-card .city-card-edit-card{
+    display:contents;
+}
+
+/*Section Content Page*/
+.section-homepage .section-homepage-content-hero-style.solo {
+  margin-top: 0;
+}
+
+
+.section-homepage .section-homepage-content .show-on-page {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  left: 0;
+}
+
+.news-search .no-results {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.news-search .no-results-img {
+  width: 300px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.news-search .no-results-content {
+  width: 60%;
+  text-align: center;
+  margin: auto
+}

@@ -1,0 +1,6 @@
+
+@model Perficient.Web.Features.Navigation.Models.SocialIconBlock
+
+<a href="@Url.ContentUrl(Model.Link)" aria-label="@Model.Title" target="@(Model.OpenInNewWindow ? "_blank" : "_self")" rel="@(Model.OpenInNewWindow ? "noreferrer" : "")">
+    @Html.DisplayFor(x => x.Image, new { Tag = "ContentReferencePartial" })
+</a>

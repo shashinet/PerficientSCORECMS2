@@ -1,0 +1,139 @@
+# ASP.NET Core (.NET Framework)
+# Build and test ASP.NET Core projects targeting the full .NET Framework.
+# Add steps that publish symbols, save build artifacts, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+trigger:
+- develop
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  projects: '**/*.csproj'
+  solution: '**/*.sln'
+  buildPlatform: 'AnyCPU'
+  buildConfiguration: 'Release'
+  coreFramework: 'net6.0'
+  fedFilesDir: 'frontend-web'
+  
+steps:
+- checkout: self
+  persistCredentials: true
+
+- task: PowerShell@2
+  displayName: 'Set the Build Number'
+  inputs:
+     targetType: inline
+     script: 
+       #Set Build Number
+       Write-Host "Setting Build Number"       
+       Write-Host "###vso[task.setvariable variable=buildNumber]$(VersionNumber).$(VersionRevision).$(($(Get-Date).ToUniversalTime()-[datetime]"01/01/2022 00:00").Days.ToString()).$([System.Math]::Floor($(Get-Date).TimeOfDay.TotalMinutes).ToString())"
+
+- task: PowerShell@2
+  displayName: 'Confirm Build Number'
+  inputs:
+    targetType: inline
+    script: Write-Host "Build Number $(buildNumber)"
+    
+- task: PowerShell@2
+  displayName: 'Update Project Version'
+  inputs:
+    targetType: filePath
+    filePath: '_SolutionItems\Powershell Scripts\UpdateProjectVersions.ps1'
+    arguments: '$(Build.SourceBranch) $(Build.SourcesDirectory) $(buildNumber)'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Get NuGet Packages'
+  inputs:
+    command: 'restore'
+    projects: '**/*.csproj'
+    feedsToUse: 'config'
+    nugetConfigPath: 'dev/Nuget.config'
+    
+- task: NuGetToolInstaller@1
+  displayName: 'Install NuGet Packages' 
+
+- task: NuGetCommand@2  
+  displayName: 'Restore NuGet Packages'
+  inputs:
+    restoreSolution: '$(solution)'
+
+
+- task: Npm@1
+  displayName: 'NPM Install'
+  inputs:
+    command: 'ci'
+    workingDir: '$(fedFilesDir)'
+
+
+- task: Npm@1
+  displayName: 'Run Vite Build - Perficient'
+  inputs:
+    command: 'custom'
+    workingDir: '$(fedFilesDir)'
+    customCommand: 'run build:Perficient'
+
+- task: Npm@1
+  displayName: 'Run Vite Build - Storybook'
+  inputs:
+    command: 'custom'
+    workingDir: '$(fedFilesDir)'
+    customCommand: 'run storybookBuild:Perficient'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Build Code'
+  inputs:
+    command: build
+    projects: '$(projects)'
+    arguments: '--configuration $(buildConfiguration) --framework $(coreFramework) -p:Version=$(buildNumber)'
+
+
+- task: DotNetCoreCLI@2
+  displayName: 'Publish Code'
+  inputs:
+    command: publish
+    projects: '$(projects)'
+    publishWebProjects: True
+    arguments: '--configuration $(BuildConfiguration) --framework $(coreFramework) -p:Version=$(buildNumber) --output $(Agent.TempDirectory)\\SitePackageContent\\'
+    zipAfterPublish: false
+    modifyOutputPath: false
+    
+- task: CopyFiles@2
+  displayName: 'Copy Webpack wwwroot'
+  inputs:
+    SourceFolder: '.\dev\src\Web\wwwroot\dist'
+    Contents: '**'
+    TargetFolder: '$(Agent.TempDirectory)\SitePackageContent\wwwroot\dist'
+    OverWrite: true
+
+- task: CopyFiles@2
+  displayName: 'Copy Storybook'
+  inputs:
+    SourceFolder: '.\$(fedFilesDir)\storybook-static'
+    Contents: '**'
+    TargetFolder: '$(Agent.TempDirectory)\SitePackageContent\wwwroot\assets\storybook'
+    CleanTargetFolder: true
+    OverWrite: true
+
+- task: ArchiveFiles@2
+  displayName: 'Pack Files'
+  inputs:
+    rootFolderOrFile: '$(Agent.TempDirectory)\SitePackageContent\'
+    includeRootFolder: false
+    archiveFile: '$(Build.ArtifactStagingDirectory)/Perficient.cms.app.$(Build.BuildId).nupkg'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish the Deployment Package'
+  inputs:
+    PathtoPublish: '$(build.artifactstagingdirectory)'
+    ArtifactName: 'DXP Deployment Package'
+    publishLocation: 'Container'
+  condition: succeededOrFailed()
+  
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish the Deployment Scripts'
+  inputs:
+   PathtoPublish: '.\_SolutionItems\DXP_Deployment_Scripts'
+   ArtifactName: 'Deployment Files'
+   publishLocation: Container

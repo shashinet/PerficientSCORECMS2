@@ -1,0 +1,153 @@
+@use '../../../../global/styles/abstracts/theme';
+
+.sliderBlock {
+  :global {
+    .container {
+      height: 100%;
+      margin-top: 120px;
+      margin-bottom: 150px;
+
+      @media (max-width: 992px) {
+        margin-top: 86px;
+        margin-bottom: 289px;
+      }
+    }
+
+    .swiper-slide {
+      flex-grow: 1;
+      flex-shrink: 0;
+      width: auto;
+    }
+
+    .section-header {
+      display: flex;
+      flex-direction: row;
+      min-height: 48px;
+
+      @media (max-width: 992px) {
+        height: auto;
+        padding-bottom: 1rem;
+      }
+    }
+
+    .cta-area {
+      position: absolute;
+      top: 0;
+      left: 925px;
+
+      @media (max-width: 992px) {
+        position: absolute;
+        top: 126%;
+        left: unset;
+      }
+    }
+
+    .swiper-button-prev {
+      top: 105%;
+      content: url('../../../../../images/slider-left-active.svg');
+
+      &:hover {
+        content: url('../../../../../images/slider-left-hover.svg');
+      }
+
+      //Dark backgrounds
+      [style*='background-color: #3D2252;'] &,
+      [style*='background-color: #252727;'] &,
+      [style*='background-color: #630840;'] &,
+      [style*='background-color: #A03519;'] &,
+      [style*='background-color: #004159;'] &,
+      [style*='background-color: #C7202F;'] &,
+      [style*='background-color: #545859;'] &,
+      [style*='background-color: #7E8282;'] & {
+        content: url('../../../../../images/slider-left-active-overdark.svg');
+
+        &:hover {
+          content: url('../../../../../images/slider-left-hover-overdark.svg');
+        }
+      }
+
+      @media (max-width: 992px) {
+        display: none;
+      }
+    }
+
+    .swiper-button-next {
+      top: 105%;
+      left: 50px;
+      content: url('../../../../../images/slider-right-active.svg');
+
+      &:hover {
+        content: url('../../../../../images/slider-right-hover.svg');
+      }
+
+      //Dark backgrounds
+      [style*='background-color: #3D2252;'] &,
+      [style*='background-color: #252727;'] &,
+      [style*='background-color: #630840;'] &,
+      [style*='background-color: #A03519;'] &,
+      [style*='background-color: #004159;'] &,
+      [style*='background-color: #C7202F;'] &,
+      [style*='background-color: #545859;'] &,
+      [style*='background-color: #7E8282;'] & {
+        content: url('../../../../../images/slider-right-active-overdark.svg');
+
+        &:hover {
+          content: url('../../../../../images/slider-right-hover-overdark.svg');
+        }
+      }
+
+      @media (max-width: 992px) {
+        display: none;
+      }
+    }
+
+    .swiper-pagination {
+      top: 125%;
+      left: 40%;
+      display: inline-flex;
+      align-items: center;
+
+      @media (max-width: 992px) {
+        :nth-child(5) {
+          width: 6px;
+          height: 6px;
+        }
+
+        :nth-child(n + 6) {
+          width: 4px;
+          height: 4px;
+        }
+
+        .swiper-pagination-bullet:first-child {
+          width: 6px;
+          height: 6px;
+        }
+
+        .swiper-pagination-bullet-active:first-child {
+          width: 8px;
+          height: 8px;
+        }
+      }
+    }
+
+    .swiper-pagination-bullet {
+      margin: 0 5px;
+      background: theme.$lightgrey;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: theme.$black;
+
+      [style*='background-color: #3D2252;'] &,
+      [style*='background-color: #252727;'] &,
+      [style*='background-color: #630840;'] &,
+      [style*='background-color: #A03519;'] &,
+      [style*='background-color: #004159;'] &,
+      [style*='background-color: #C7202F;'] &,
+      [style*='background-color: #545859;'] &,
+      [style*='background-color: #7E8282;'] & {
+        background: theme.$white;
+      }
+    }
+  }
+}

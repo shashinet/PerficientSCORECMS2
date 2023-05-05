@@ -1,0 +1,203 @@
+@use './theme';
+
+html {
+  height: 100%;
+  overflow-x: hidden;
+  font-size: 100%;
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  position: relative;
+  height: 100%;
+  overflow-x: hidden;
+  font-size: theme.$bodysm;
+  background-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @include respond-above(large) {
+    font-size: theme.$bodylg;
+  }
+
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding-right: var(--gutters);
+  padding-left: var(--gutters);
+
+  @media(min-width: 52.125rem) {
+    width: calc(100% - 9rem);
+    max-width: 100%;
+    margin-right: 4.5rem;
+    margin-left: 4.5rem;
+  }
+
+  @media(min-width: 90rem) {
+    width: calc(100% - 11rem);
+    max-width: 100%;
+    margin-right: 5.5rem;
+    margin-left: 5.5rem;
+  }
+
+  @media(min-width: 120rem) {
+    width: calc(100% - 14.65rem);
+    max-width: 100%;
+    margin-right: 7.35rem;
+    margin-left: 7.35rem;
+  }
+
+
+  .w-full {
+    @include respond-above(medium) {
+      flex-direction: row;
+      padding: 0 .5rem;
+    }
+  }
+
+  @include respond-above(tablet) {
+    flex-direction: row;
+
+    [class^='w-'] + [class^='w-'] {
+      margin-top: 0;
+    }
+  }
+}
+
+.w-2col,
+.w-3col,
+.w-4col,
+.w-5col,
+.w-6col,
+.w-7col,
+.w-8col,
+.w-9col,
+.w-10col {
+  display: flex;
+  flex-direction: column;
+
+  @include respond-above(tablet) {
+    padding: 0 .5rem;
+  }
+
+  //In mobile make these 100%
+  @include respond-below(tablet) {
+    width: 100%;
+  }
+
+  > div {
+    flex: 1 1 auto;
+  }
+}
+
+// TODO remove these when tailwind config works out
+.mb-sm {
+  margin-bottom: rem-calc(50);
+}
+
+.mb-md {
+  margin-bottom: rem-calc(50);
+  @include respond-above(medium) {
+    margin-bottom: rem-calc(70);
+  }
+}
+
+.mb-lg {
+  margin-bottom: rem-calc(70);
+  @include respond-above(medium) {
+    margin-bottom: rem-calc(90);
+  }
+}
+
+.w-2col {
+  width: 100%;
+
+  @include respond-above(medium) {
+    flex: 0 1 16.66666%;
+    max-width: 16.66666%;
+  }
+}
+
+.w-3col {
+  width: 100%;
+
+  @include respond-above(medium) {
+    flex: 0 1 25%;
+    max-width: 25%;
+  }
+}
+
+.w-4col {
+  width: 100%;
+
+  @include respond-above(medium) {
+    flex: 0 1 33.3333%;
+    max-width: 33.3333%;
+  }
+}
+
+.w-5col {
+  width: 100%;
+
+  @include respond-above(medium) {
+    flex: 0 1 41.6666%;
+    max-width: 41.6666%;
+  }
+}
+
+.w-6col {
+  width: 100%;
+
+  @include respond-above(medium) {
+    flex: 0 1 50%;
+    max-width: 50%;
+  }
+}
+
+.w-7col {
+  width: 100%;
+
+  @include respond-above(medium) {
+    flex: 0 1 58.33333%;
+    max-width: 58.33333%;
+  }
+}
+
+.w-8col {
+  width: 100%;
+
+  @include respond-above(medium) {
+    flex: 0 1 66.66666%;
+    max-width: 66.66666%;
+  }
+}
+
+.w-9col {
+  width: 100%;
+
+  @include respond-above(medium) {
+    flex: 0 1 75%;
+    max-width: 75%;
+  }
+}
+
+.w-10col {
+  width: 100%;
+
+  @include respond-above(medium) {
+    flex: 0 1 83.33333%;
+    max-width: 83.33333%;
+  }
+}
+
+img[data-lazy-src] {
+  will-change: contents;
+}

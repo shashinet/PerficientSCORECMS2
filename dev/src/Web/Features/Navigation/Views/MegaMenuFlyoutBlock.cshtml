@@ -1,0 +1,30 @@
+@using EPiServer.Web.Routing
+@using Perficient.Web.Features.Navigation.Models
+
+@model MegaMenuFlyoutBlock
+
+@{
+
+    var navigationTypeClass = (Model.NavigationPanels != null && Model.NavigationPanels.Count > 1) ? "megamenu-wide" : "megamenu-narrow";
+}
+
+<button data-id="@Model.Id" class="nav-item-dropdown" aria-expanded="false" aria-controls="@Model.Id" aria-label="Open Toggle sub-navigation" type="button">
+    <span class="visually-hidden">toggle menu for @Model.MenuTitle</span>
+    @*@Html.PropertyFor(m => m.SvgIcon)*@
+    @Html.PropertyFor(m => m.MenuTitle)
+    <span class="caret">
+        <svg viewBox="0 0 24 24">
+            <path d="M15.8 12L7.1 3.3c-.5-.5-.5-1.3 0-1.8s1.3-.5 1.8 0L19.3 12 8.9 22.4c-.5.5-1.3.5-1.8 0s-.5-1.3 0-1.8l8.7-8.6z">
+            </path>
+        </svg>
+    </span>
+</button>
+<div id="@Model.Id" class="megamenu-content @navigationTypeClass @Model.GetClassList()" aria-hidden="true" role="navigation" aria-label="@Model.MenuTitle">
+    <div class="subnav-container">
+        @Html.PropertyFor(x => x.NavigationPanels, new { HasContainer = false, HasChildContainers = false })
+        <div class="megamenu-cta">
+            @Html.PropertyFor(x => x.CallToActionContentArea, new { HasChildContainers = false })
+        </div>
+    </div>
+</div>
+

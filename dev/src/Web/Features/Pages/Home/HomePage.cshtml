@@ -1,0 +1,6 @@
+@using Perficient.Web.Features.Pages.Home
+@model ContentViewModel<HomePage>
+
+<div class="start-page home-page">
+    @Html.PropertyFor(x => x.CurrentContent.MainContentArea, new { Tag=TagNames.PageContent, HasContainer = false })
+</div>

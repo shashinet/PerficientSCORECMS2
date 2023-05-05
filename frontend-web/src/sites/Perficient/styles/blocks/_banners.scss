@@ -1,0 +1,89 @@
+@use '../base/theme';
+
+@mixin banners {
+  width: 100%;
+  max-width: 100% !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  text-align: center;
+  .container {
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100%;
+  }
+
+  span {
+    font-size: theme.$h3sm;
+
+    @include respond-above(medium) {
+      font-size: theme.$h3lg;
+    }
+
+    & + .rich-text {
+      margin-top: rem-calc(15);
+    }
+  }
+
+  .rich-text {
+    color: inherit;
+
+    p + a {
+      margin-top: rem-calc(10);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+      transition: all ease 0.3s;
+
+      &:hover {
+        text-decoration: underline;
+        transform: scale(1.01);
+      }
+    }
+  }
+  .close {
+    position: absolute;
+    top: rem-calc(-20);
+    right: rem-calc(-36);
+    color: transparent !important;
+    @include respond-above(tablet) {
+      top: 0;
+      right: 0;
+    }
+
+    &::before {
+      display: inline-block;
+
+      margin-right: rem-calc(15);
+      color: theme.$white;
+      font-weight: lighter;
+      font-size: rem-calc(45);
+      transform: rotate(45deg);
+      transition: transform ease 0.3s;
+      content: '+';
+
+      @include respond-above(tablet) {
+        font-size: rem-calc(60);
+      }
+
+      &:hover {
+        transform: scale(1.04) rotate(45deg);
+      }
+    }
+  }
+  &.dismiss {
+    display: none;
+  }
+}
+
+.banner-non-dismissible,
+.banner-dismissible {
+  @include banners;
+  padding: rem-calc(30 15);
+}
+
+.banner-dismissible.small {
+  @include banners;
+  padding: rem-calc(20 15);
+}

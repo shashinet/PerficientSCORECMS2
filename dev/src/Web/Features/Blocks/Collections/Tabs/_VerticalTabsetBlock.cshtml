@@ -1,0 +1,10 @@
+@using Perficient.Web.Features.Blocks.Collections.Tabs
+@using Newtonsoft.Json
+@using Newtonsoft.Json.Serialization
+
+@model VerticalTabsetViewModel
+
+@Html.RenderJsonEditMode(nameof(VerticalTabsetViewModel),Model)
+
+
+@Html.ReactComponentFor(nameof(VerticalTabsetViewModel), ReactComponents.VerticalTabset, Model)

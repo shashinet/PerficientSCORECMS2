@@ -1,0 +1,13 @@
+@using Perficient.Web.Features.Blocks.Collections.Tabs
+
+@model TabCollectionBlock
+
+@{
+    var guid = Guid.NewGuid().ToString().Split('-');
+    var id = $"accordion{guid[0]}";
+    var classes = Model.GetClassList();
+}
+
+<div class="score-tabs @classes" id="@id">
+    @Html.PropertyFor(x => x.TabPanels)
+</div>

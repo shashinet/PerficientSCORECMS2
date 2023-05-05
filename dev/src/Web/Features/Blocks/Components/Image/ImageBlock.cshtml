@@ -1,0 +1,21 @@
+@using Perficient.Web.Features.Blocks.Components.Image
+@model ImageBlock
+
+@{
+    var classes = Model.GetClassList();
+}
+
+<div class="score-image-wrapper @classes">
+    @if (Html.IsInEditMode() && ViewContext.HttpContext.GetContentLink() == ((IContent)Model).ContentLink)
+    {
+        <div class="score-image score-image-edit score-image-placehold smalldot" @Html.EditAttributes(x => x.Image)>
+            @if (Model.Image == null)
+            {<span>Click to Upload an Image</span>}
+            <img src="@Url.ContentUrl(Model.Image)" alt="" class="score-image score-image-edit">
+        </div>
+    }
+    else
+    {
+        @Html.DisplayFor(x => x.Image, new { style = "img-fluid" })
+    }
+</div>

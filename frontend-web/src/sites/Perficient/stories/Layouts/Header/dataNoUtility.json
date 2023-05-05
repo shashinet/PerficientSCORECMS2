@@ -1,0 +1,101 @@
+{
+  "language": "en",
+  "headerStyle": [
+    "default",
+    "dark"
+  ],
+  "globalStyle": [],
+  "image": {
+    "imageSrc": "https://cdn-assets-us.frontify.com/s3/frontify-enterprise-files-us/eyJwYXRoIjoicGVyZmljaWVudFwvYWNjb3VudHNcL2QwXC80MDAwMTcxXC9wcm9qZWN0c1wvOTZcL2Fzc2V0c1wvYmNcLzEwNzgyXC85ZWNlODFiM2VjZTg1ZDZjZTczMjhkOGNjMjNhMTE5OC0xNTg1NjMxNjEwLnN2ZyJ9:perficient:_FflkR96XtBVtQTg6jyPQlsb_uRe4Ocp8akIGcGfdco?width=636",
+    "contentType": "Image"
+  },
+  "tagline": "\u003cp\u003e\u003cstrong\u003eSpecial Victims Unit\u003c/strong\u003e\u003c/p\u003e",
+  "navigationItems": [
+    {
+      "title": "Home",
+      "url": "/",
+      "openInNewWindow": false,
+      "contentType": "NavigationLink",
+      "id": "block-44",
+      "globalStyle": []
+    },
+    {
+      "url": "/",
+      "title": "Our Orgainization",
+      "openInNewWindow": false,
+      "contentType": "NavigationLink",
+      "id": "block-44",
+      "globalStyle": []
+    },
+    {
+      "title": "MyChart",
+      "navigationPanels": [
+        {
+          "columnContent": [
+            {
+              "sectionUrl": "/",
+              "sectionTitle": "MyChart",
+              "menuListContent": [
+                {
+                  "title": "Priority Issues",
+                  "url": "./",
+                  "openInNewWindow": false
+                },
+                {
+                  "title": "Government",
+                  "url": "./",
+                  "openInNewWindow": false
+                },
+                {
+                  "title": "Consumers",
+                  "url": "./",
+                  "openInNewWindow": false
+                }
+              ],
+              "contentType": "MenuList"
+            }
+          ]
+        }
+      ],
+      "callToActionButtons": [],
+      "contentType": "MegaMenuFlyout",
+      "id": "block-22",
+      "globalStyle": []
+    },
+    {
+      "title": "Application Process",
+      "navigationPanels": [
+        {
+          "columnContent": [
+            {
+              "menuListContent": [
+                {
+                  "title": "Priority Issues Needed",
+                  "url": "./",
+                  "openInNewWindow": false
+                },
+                {
+                  "title": "Government Compliance",
+                  "url": "./",
+                  "openInNewWindow": false
+                },
+                {
+                  "title": "Consumers and Affairs",
+                  "url": "./",
+                  "openInNewWindow": false
+                }
+              ],
+              "contentType": "MenuList"
+            }
+          ]
+        }
+      ],
+      "callToActionButtons": [],
+      "contentType": "MegaMenuFlyout",
+      "id": "block-22",
+      "globalStyle": []
+    }
+  ],
+  "utilityNavigation": [],
+  "skipNavigation": "Skip navigation"
+}

@@ -1,0 +1,31 @@
+@using EPiServer.Framework.Web.Mvc.Html
+@using Perficient.Infrastructure.Settings.Interfaces
+@using Perficient.Infrastructure.Settings.Models.Content
+@{
+    var siteTheme = _settingsService.GetSiteSettings<SiteSettings>()?.SiteTheme;
+}
+<!DOCTYPE html>
+<html lang="@EPiServer.Globalization.ContentLanguage.PreferredCulture.Name" class="preview-layout">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="">
+
+    <title> Preview Template </title>
+
+    <link rel="stylesheet" href="@CacheBusterHelper.Version($"~/dist/sites/{siteTheme}/styles.css")" as="style" />
+    <link rel="stylesheet" href="@CacheBusterHelper.Version("~/ClientResources/styles/previewStyles.css")" />
+    <link rel="stylesheet" href="@CacheBusterHelper.Version("~/ClientResources/styles/scoreEditor.css")" />
+
+    @RenderSection("AdditionalStyles", required: false)
+    @Html.RequiredClientResources("Header")
+</head>
+<body>
+    <main class="preview-display page-wrapper">
+        @RenderBody()
+    </main>
+    <script src="@CacheBusterHelper.Version($"~/dist/sites/{siteTheme}/vendor.js")"></script>
+    <script src="@CacheBusterHelper.Version($"~/dist/sites/{siteTheme}/main.js")"></script>
+</body>
+</html>

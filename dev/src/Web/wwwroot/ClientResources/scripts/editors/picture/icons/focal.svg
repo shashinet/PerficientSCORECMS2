@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <filter id="focal-point-icon-a" width="266.7%" height="266.7%" x="-83.3%" y="-83.3%" filterUnits="objectBoundingBox">
+      <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="4"/>
+      <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.4 0"/>
+      <feMerge>
+        <feMergeNode in="shadowMatrixOuter1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <g fill="none" fill-rule="evenodd" filter="url(#focal-point-icon-a)" transform="translate(8 6)">
+    <circle cx="12" cy="12" r="8" fill="#00AED4" stroke="#FFF" stroke-width="2"/>
+    <rect width="2" height="24" x="11" fill="#FFF"/>
+    <rect width="2" height="24" x="11" fill="#FFF" transform="rotate(90 12 12)"/>
+  </g>
+</svg>

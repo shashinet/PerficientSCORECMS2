@@ -1,0 +1,10 @@
+@using Perficient.Web.Features.Articles.Blocks.ArticlesTopPosts
+@model ArticleTopPostBlock
+
+<section class="container">    
+  <div class="w-4col score-blog-top-posts">
+        @Html.PropertyFor(m => m.TopPosts, new { Tag=TagNames.ArticleTopContent, HasContainer = false })
+    </div>        
+    @Html.PropertyFor(m => m.FeaturedPosts, new { Tag=TagNames.ArticleFeaturedContent, HasContainer = false })
+</section>
+

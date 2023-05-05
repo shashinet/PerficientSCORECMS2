@@ -1,0 +1,156 @@
+@use '../base/theme';
+
+.score-stripe {
+  &[style*='color:'] {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    hr {
+      color: inherit;
+    }
+  }
+
+  .container > .w-full {
+    padding: 0;
+  }
+
+  &.default {
+    margin: 0 auto;
+    padding: rem-calc(40 0);
+    text-align: center;
+
+    @include respond-above(medium) {
+      padding: rem-calc(80 0);
+    }
+
+    .section-header {
+      position: relative;
+      margin: 0 auto;
+
+      h3,
+      h4,
+      h5,
+      p {
+        padding-top: rem-calc(24);
+      }
+
+      &::after {
+        position: absolute;
+        right: 50%;
+        bottom: rem-calc(-40);
+        width: rem-calc(80);
+        height: 4px;
+        border-radius: 4px;
+        background-color: theme.$tertiary;
+        transform: translateX(50%);
+        content: '';
+      }
+
+      @include respond-above(medium) {
+        flex: 0 1 66.66666%;
+        max-width: 66.66666%;
+      }
+    }
+
+    .section-header + .content-area {
+      padding-top: rem-calc(80);
+    }
+
+    .content-area {
+      display: flex;
+      flex-flow: wrap;
+    }
+
+    .content-area + .cta {
+      display: flex;
+      justify-content: center;
+      row-gap: rem-calc(16);
+
+      @include respond-below(medium) {
+        display: flex;
+        flex-flow: wrap;
+      }
+
+      [class^='w-'] {
+        padding: 0;
+      }
+    }
+  }
+
+  &.mobile-stack {
+    .content-area {
+      @include respond-below(tablet) {
+        :is([class*='w-']:first-child, .page-layout:first-child) {
+          order: 2;
+          margin-top: rem-calc(50);
+
+          [class*='w-'] + [class*='w-'] {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.score-picture-stripe {
+  position: relative;
+  padding: rem-calc(64 0);
+
+  @include respond-above(tablet) {
+    padding: rem-calc(64 0);
+  }
+
+  &.default {
+    .section-header + .content-area {
+      margin-top: rem-calc(20);
+    }
+
+    > .w-full {
+      padding: 0;
+    }
+
+    .content-area {
+      display: flex;
+      row-gap: 30px;
+
+      .page-layout {
+        display: flex;
+        flex-direction: column;
+      }
+
+      [class^='w-'] {
+        padding: 0;
+      }
+    }
+
+    .content-area + .cta {
+      margin-top: rem-calc(30);
+      text-align: left;
+    }
+
+    .cta {
+      justify-content: flex-start;
+      padding: 0;
+      text-align: left;
+    }
+
+    picture {
+      position: absolute;
+      inset: 0;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  & + section {
+    margin-top: 0;
+  }
+}

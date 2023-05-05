@@ -1,0 +1,29 @@
+{
+  
+  // "iisSettings": {
+  //   "windowsAuthentication": false,
+  //   "anonymousAuthentication": true,
+  //   "iisExpress": {
+  //     "applicationUrl": "http://localhost:49638/",
+  //     "sslPort": 44338
+  //   }
+  // },
+  "profiles": {
+    // "IIS Express": {
+    //   "commandName": "IISExpress",
+    //   "launchBrowser": true,
+    //   "environmentVariables": {
+    //     "ASPNETCORE_ENVIRONMENT": "Development"
+    //   }
+    // },
+    "Perficient.Web": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "http://perficient.local:5001/Episerver/Cms",
+      "externalUrlConfiguration": true, // allows URL setup to happen with appsettings.json
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

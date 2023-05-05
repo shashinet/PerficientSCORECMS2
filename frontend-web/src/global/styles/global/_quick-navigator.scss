@@ -1,0 +1,18 @@
+#epi-quickNavigator {
+    > li {
+        &::before {
+            display: block;
+            content: "";        
+        }
+        img {
+            display: inline-block;
+        }
+    }
+    .epi-quickNavigator-dropdown {
+        > li {
+            &::before {
+                content: "";     
+            }
+        }
+    }
+}

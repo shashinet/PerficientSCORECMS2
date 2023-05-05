@@ -1,0 +1,75 @@
+.slider {
+  padding: rem-calc(30 0 40);
+
+  @include respond-above(tablet) {
+    padding: rem-calc(35 0 50);
+  }
+
+  .content-area {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(rem-calc(120), 1fr));
+    gap: rem-calc(30);
+    margin-top: rem-calc(50);
+
+    @include respond-above(tablet) {
+      grid-template-columns: repeat(auto-fit, minmax(rem-calc(175), 1fr));
+    }
+
+    [class^='w-'] {
+      flex: 1 0 100%;
+      width: 100%;
+      padding: 0;
+    }
+
+    [class^='w-'] + [class^='w-'] {
+      margin-top: 0;
+    }
+  }
+
+  .section-header {
+    text-align: center;
+  }
+
+  &.left-align {
+    .section-header {
+      text-align: left;
+    }
+  }
+
+  .section-header + .content-area {
+    margin-top: rem-calc(20);
+
+    @include respond-above(tablet) {
+      margin-top: rem-calc(30);
+    }
+  }
+
+  .content-area + .cta {
+    margin-top: rem-calc(25);
+
+    @include respond-above(tablet) {
+      margin-top: rem-calc(40);
+    }
+  }
+
+  .cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    text-align: center;
+
+    .score-button + .score-button {
+      margin-top: rem-calc(20);
+    }
+
+    @include respond-above(tablet) {
+      flex-direction: row;
+
+      .score-button + .score-button {
+        margin: rem-calc(0 0 0 30);
+      }
+    }
+  }
+}

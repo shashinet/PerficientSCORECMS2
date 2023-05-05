@@ -1,0 +1,182 @@
+{
+  "title": "More Than Just a Tab",
+  "titleTag": "H3",
+  "subTitle": "Resource and Support",
+  "subTitleTag": "H4",
+  "panels": [
+    {
+      "buttonText": "Title One",
+      "image": {
+        "imageSrc": "https://picsum.photos/525/350?random=1",
+        "altText": "alt text",
+        "contentType": "Image"
+      },
+      "title": "Lorem ipsum dolor sit amet",
+      "text": "<p>rich text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Convallis convallis tellus id interdum velit. Non consectetur a erat nam. Aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque. Viverra nibh cras pulvinar mattis nunc sed blandit libero.</p>",
+      "callToActionButtons": [
+        {
+          "style": "text-primary",
+          "text": "Learn More CTA",
+          "url": "/generic-page/",
+          "openInNewWindow": true,
+          "contentType": "Button",
+          "id": "block-97",
+          "displayOption": null,
+          "globalStyle": [
+          ]
+        },
+        {
+          "style": "text-primary",
+          "text": "Lorem Ipsum CTA",
+          "url": "https://www.google.com/",
+          "openInNewWindow": false,
+          "contentType": "Button",
+          "id": "block-98",
+          "displayOption": null,
+          "globalStyle": [
+          ]
+        }
+      ],
+      "contentType": "TabPanel",
+      "id": "block-95",
+      "displayOption": null,
+      "globalStyle": [
+      ]
+    },
+    {
+      "buttonText": "Title Two",
+      "image": {
+        "imageSrc": "https://picsum.photos/525/350?random=2",
+        "altText": "alt text",
+        "contentType": "Image"
+      },
+      "title": "Lorem ipsum dolor sit amet",
+      "text": "<p>rich text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Convallis convallis tellus id interdum velit. Non consectetur a erat nam. Aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque. Viverra nibh cras pulvinar mattis nunc sed blandit libero.</p>",
+      "callToActionButtons": [
+        {
+          "style": "text-primary",
+          "text": "Learn More CTA",
+          "url": "/generic-page/",
+          "openInNewWindow": true,
+          "contentType": "Button",
+          "id": "block-97",
+          "displayOption": null,
+          "globalStyle": [
+          ]
+        },
+        {
+          "style": "text-primary",
+          "text": "Lorem Ipsum CTA",
+          "url": "https://www.google.com/",
+          "openInNewWindow": false,
+          "contentType": "Button",
+          "id": "block-98",
+          "displayOption": null,
+          "globalStyle": [
+          ]
+        }
+      ],
+      "contentType": "TabPanel",
+      "id": "block-95",
+      "displayOption": null,
+      "globalStyle": [
+      ]
+    },
+    {
+      "buttonText": "Title Three",
+      "image": {
+        "imageSrc": "https://picsum.photos/525/350?random=3",
+        "altText": "alt text",
+        "contentType": "Image"
+      },
+      "title": "Lorem ipsum dolor sit amet",
+      "text": "<p>rich text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Convallis convallis tellus id interdum velit. Non consectetur a erat nam. Aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque. Viverra nibh cras pulvinar mattis nunc sed blandit libero.</p>",
+      "callToActionButtons": [
+        {
+          "style": "text-primary",
+          "text": "Learn More CTA",
+          "url": "/generic-page/",
+          "openInNewWindow": true,
+          "contentType": "Button",
+          "id": "block-97",
+          "displayOption": null,
+          "globalStyle": [
+          ]
+        },
+        {
+          "style": "text-primary",
+          "text": "Lorem Ipsum CTA",
+          "url": "https://www.google.com/",
+          "openInNewWindow": false,
+          "contentType": "Button",
+          "id": "block-98",
+          "displayOption": null,
+          "globalStyle": [
+          ]
+        }
+      ],
+      "contentType": "TabPanel",
+      "id": "block-95",
+      "displayOption": null,
+      "globalStyle": [
+      ]
+    },
+    {
+      "buttonText": "Title Four",
+      "image": {
+        "imageSrc": "https://picsum.photos/525/350?random=4",
+        "altText": "alt text",
+        "contentType": "Image"
+      },
+      "title": "Lorem ipsum dolor sit amet",
+      "text": "<p>rich text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Convallis convallis tellus id interdum velit. Non consectetur a erat nam. Aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque. Viverra nibh cras pulvinar mattis nunc sed blandit libero.</p>",
+      "callToActionButtons": [
+        {
+          "style": "text-primary",
+          "text": "Learn More CTA",
+          "url": "/generic-page/",
+          "openInNewWindow": true,
+          "contentType": "Button",
+          "id": "block-97",
+          "displayOption": null,
+          "globalStyle": [
+          ]
+        },
+        {
+          "style": "text-primary",
+          "text": "Lorem Ipsum CTA",
+          "url": "https://www.google.com/",
+          "openInNewWindow": false,
+          "contentType": "Button",
+          "id": "block-98",
+          "displayOption": null,
+          "globalStyle": [
+          ]
+        }
+      ],
+      "contentType": "TabPanel",
+      "id": "block-95",
+      "displayOption": null,
+      "globalStyle": [
+      ]
+    }
+  ],
+  "callToActionButtons": [
+    {
+      "style": "primary",
+      "text": "All Services CTA",
+      "url": "/EPiServer/CMS/Content/generic-page,,66/?epieditmode=true",
+      "openInNewWindow": true,
+      "contentType": "Button",
+      "id": "block-106",
+      "displayOption": null,
+      "globalStyle": [
+      ]
+    }
+  ],
+  "contentType": "VerticalTabset",
+  "id": "block-89",
+  "displayOption": null,
+  "globalStyle": [
+  ]
+}

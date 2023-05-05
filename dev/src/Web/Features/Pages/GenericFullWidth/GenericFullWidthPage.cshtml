@@ -1,0 +1,7 @@
+@using Perficient.Web.Features.Pages.GenericFullWidth
+
+@model ContentViewModel<GenericFullWidthPage>
+
+<div class="content-page">
+    @Html.PropertyFor(m => m.CurrentContent.MainContentArea, new { Tag=TagNames.PageContent, HasContainer = false })
+</div>

@@ -1,0 +1,7 @@
+@model Perficient.Web.Features.Navigation.Models.UtilitySearchBlock
+
+<div class="search-bar">
+    <label class="sr-only" for="headerSearch">Search input</label>
+    <input type="text" name="headerSearch" placeholder="@Model.SearchPlaceholderText" value="">
+    <a href="@Url.ContentUrl(Model.SearchPage)" class="search-action">Go</a>
+</div>

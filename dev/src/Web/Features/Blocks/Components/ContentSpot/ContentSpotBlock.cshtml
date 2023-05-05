@@ -1,0 +1,12 @@
+@using Perficient.Web.Features.Blocks.Components.ContentSpot
+@model ContentSpotBlock
+
+@{
+    var classes = Model.GetClassList();
+    var renderColor = ViewBag.RenderColor == null || !ViewBag.RenderColor;
+    var backgroundColor = !string.IsNullOrEmpty(Model.BackgroundColor) && renderColor ? $"background-color: {Model.BackgroundColor};" : null;
+}
+
+<div class="score-content-spot rich-text @classes" style="@backgroundColor">
+    @Html.PropertyFor(x => x.MainBody)
+</div>

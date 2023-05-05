@@ -1,0 +1,13 @@
+@using Perficient.Web.Features.Articles
+
+@model ContentViewModel<ArticleHomePage>
+<div>
+    @Html.PropertyFor(m => m.CurrentContent.ArticleContentArea,new { Tag=TagNames.PageContent, HasContainer = false })
+</div>
+<div>
+    @Html.PropertyFor(m => m.CurrentContent.ArticleCategories,new { HasContainer = false })
+</div>
+
+<div>
+    @Html.PropertyFor(m => m.CurrentContent.MainContentArea,new { Tag=TagNames.PageContent, HasContainer = false })
+</div>

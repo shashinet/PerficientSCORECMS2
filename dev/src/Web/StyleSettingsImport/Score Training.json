@@ -1,0 +1,173 @@
+{
+  "Colors": [
+    {
+      "Name": "Black",
+      "ColorCode": "#010101"
+    },
+    {
+      "Name": "White",
+      "ColorCode": "#ffffff"
+    },
+    {
+      "Name": "Red",
+      "ColorCode": "#cc1f20"
+    },
+    {
+      "Name": "Gold",
+      "ColorCode": "#b79967"
+    },
+    {
+      "Name": "Dark Gray",
+      "ColorCode": "#58595B"
+    },
+    {
+      "Name": "Medium Gray",
+      "ColorCode": "#9E9E9E"
+    },
+    {
+      "Name": "Light Gray",
+      "ColorCode": "#E8E8E8"
+    },
+    {
+      "Name": "Extra Light Gray",
+      "ColorCode": "#F8F8F8"
+    },
+    {
+      "Name": "Dark Blue",
+      "ColorCode": "#3D5D6F"
+    },
+    {
+      "Name": "Light Blue",
+      "ColorCode": "#81A7BB"
+    }
+  ],
+  "FontColors": [
+    {
+      "Name": "Black",
+      "ColorCode": "#010101"
+    },
+    {
+      "Name": "White",
+      "ColorCode": "#ffffff"
+    },
+    {
+      "Name": "Red",
+      "ColorCode": "#cc1f20"
+    },
+    {
+      "Name": "Gold",
+      "ColorCode": "#b79967"
+    },
+    {
+      "Name": "Dark Gray",
+      "ColorCode": "#58595B"
+    },
+    {
+      "Name": "Medium Gray",
+      "ColorCode": "#9E9E9E"
+    }
+  ],
+  "ButtonStyles": [
+    {
+      "Name": "Primary",
+      "ButtonStyleClass": "primary"
+    },
+    {
+      "Name": "Secondary",
+      "ButtonStyleClass": "secondary"
+    },
+    {
+      "Name": "Text Button",
+      "ButtonStyleClass": "text-primary"
+    },
+    {
+      "Name": "Primary Over Dark",
+      "ButtonStyleClass": "primary over-dark"
+    },
+    {
+      "Name": "Secondary Over Dark",
+      "ButtonStyleClass": "secondary over-dark"
+    },
+    {
+      "Name": "Text Button Over Dark",
+      "ButtonStyleClass": "text-primary over-dark"
+    }
+  ],
+  "ButtonSizes": [
+    {
+      "Name": "XL",
+      "ButtonSizeClass": "xl-size-class"
+    },
+    {
+      "Name": "Large",
+      "ButtonSizeClass": "large-size-class"
+    },
+    {
+      "Name": "Medium",
+      "ButtonSizeClass": "medium-size-class"
+    }
+  ],
+  "ImageClasses": [
+    {
+      "Name": "Image style",
+      "ScoreClassName": "image-test-class"
+    },
+    {
+      "Name": "ImageTestClass",
+      "ScoreClassName": "image-test-class-2"
+    }
+  ],
+  "HeaderClasses": [
+    {
+      "Name": "Default",
+      "ScoreClassName": "default"
+    }
+  ],
+  "FooterClasses": [
+    {
+      "Name": "Default",
+      "ScoreClassName": "default"
+    }
+  ],
+  "StyleClasses": null,
+  "SideNavClasses": null,
+  "StripeClasses": null,
+  "SectionHeroClasses": null,
+  "HorizontalRuleClasses": null,
+  "StyleBoxClasses": null,
+  "TileClasses": null,
+  "CardClasses": [
+    {
+      "Name": "Default",
+      "ScoreClassName": "default"
+    },
+    {
+      "Name": "Over Dark",
+      "ScoreClassName": "over-dark"
+    }
+  ],
+  "PricingCardClasses": [
+    {
+      "Name": "Default",
+      "ScoreClassName": "default"
+    },
+    {
+      "Name": "Prominent",
+      "ScoreClassName": "prominent"
+    }
+  ],
+  "PageLayoutClasses": null,
+  "DocumentHeaderClasses": [
+    {
+      "Name": "Default",
+      "ScoreClassName": "default"
+    },
+    {
+      "Name": "Dark",
+      "ScoreClassName": "dark"
+    }
+  ],
+  "CarouselPaneClasses": null,
+  "CarouselClasses": null,
+  "CalloutClasses": null
+}

@@ -1,0 +1,23 @@
+@using Perficient.Web.Features.Blocks.Components.Hero
+@model HeroBlock
+
+@{
+    var backgroundColor = !string.IsNullOrEmpty(Model.BackgroundColor) ? $"background-color: {Model.BackgroundColor};" : null;    
+    var textColor = !string.IsNullOrEmpty(Model.TextColor) ? $"color: {Model.TextColor};" : null;
+    var classes = Model.GetClassList();
+}
+
+<section class="score-hero default"  style="@backgroundColor @textColor">
+  <div class="score-hero-image">
+    <img src="@Url.ContentUrl(Model.Media)" alt="" class="score-image img-fluid" alt="" />
+  </div>
+  <div class="caption">
+    @Html.PropertyFor(m => m.HeaderTitle)
+    <div class="score-hero-body">
+     @Html.PropertyFor(m => m.Body)
+    </div>
+    <div class="score-call-to-action">
+     @Html.PropertyFor(m => m.CallToActionContentArea,  new { Tag = "ContentReferencePartial", CssClass = "GTMHERO" })     
+    </div>
+  </div>
+</section>

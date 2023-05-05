@@ -1,0 +1,68 @@
+@use './theme';
+
+.rich-text {
+  @mixin rich-text-links {
+    position: relative;
+    color: theme.$secondaryDark;
+    font-size: rem-calc(14);
+    text-decoration: underline;
+    transition: all ease 0.3s;
+
+    &:hover {
+      color: theme.$secondaryDark;
+    }
+
+    &.disabled {
+      color: theme.$midgrey2;
+    }
+
+    [style*='background-color: #3D2252;'] &,
+    [style*='background-color: #252727;'] &,
+    [style*='background-color: #630840;'] &,
+    [style*='background-color: #A03519;'] &,
+    [style*='background-color: #004159;'] &,
+    [style*='background-color: #C7202F;'] &,
+    [style*='background-color: #545859;'] &,
+    [style*='background-color: #7E8282;'] & {
+      color: theme.$white;
+
+      &:hover {
+        color: theme.$lightgrey;
+      }
+    }
+  }
+
+  p, li, a {
+    font-size: theme.$bodysm;
+
+    @include respond-above(large) {
+      font-size: theme.$bodylg;
+    }
+  }
+
+  h2 + h3 {
+    margin-top: rem-calc(20);
+  }
+
+  * + * {
+    margin-top: rem-calc(10);
+  }
+
+  li + li {
+    margin-top: rem-calc(15);
+  }
+
+  * + a {
+    margin-top: rem-calc(20);
+  }
+
+  p {
+    a:not(.score-button, .icon-button) {
+      @include rich-text-links;
+    }
+  }
+
+  a:not(.score-button, .icon-button) {
+    @include rich-text-links;
+  }
+}

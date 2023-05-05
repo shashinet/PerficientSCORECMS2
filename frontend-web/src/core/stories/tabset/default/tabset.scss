@@ -1,0 +1,63 @@
+.score-tab {
+  .tab-buttons-wrapper {
+    .tab-button {
+      margin: 0 .125rem;
+      padding: 1rem 1rem .75rem 1rem;
+      border-bottom: 4px solid #000000;
+      border-radius: .5rem;
+      color: #ffffff;
+      font-size: 1.125rem;
+      line-height: 120%;
+      background-color: #000000;
+      transform: scale(.90);
+      transition: all 0.2s ease-in-out;
+
+      &.active {
+        box-shadow: 0 0 0 4px #ffffff;
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .tab-content {
+    .content {
+      display: none;
+      margin-top: -.125rem;
+      padding: 2rem;
+      border: 1px solid #000000;
+      border-radius: .5rem;
+      transform-origin: right;
+      opacity: 0;
+      animation: fadeout .2s ease-in-out forwards;
+
+      &.active {
+        display: block;
+        animation: fadein .2s ease-in-out forwards;
+      }
+    }
+  }
+}
+
+@keyframes fadein {
+  0% {
+    transform: scale(0, 1);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0, 1);
+    opacity: 0;
+  }
+}
+
+

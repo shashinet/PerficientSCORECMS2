@@ -1,0 +1,64 @@
+<div class="dijitInline video-editor youtube-video-editor">
+
+    <div class="container control" data-dojo-attach-point="videoContainer">
+        <img class="image-header" src="/ClientResources/Images/youtubeLogoD.png">
+        <div id="SelectedValue" class="video-results">
+
+        </div>
+        <div class="well" style="vertical-align: top">
+            <input id="SearchQuery" type="text" class="form-control" placeholder="Search">
+            <button id="SearchButton" class="btn btn-default">Search</button>
+        </div>
+        <ul class="pager _one">
+            <li class="previous disabled">
+              <a href="#" class="previous">← Less</a>
+            </li>
+            <li class="next disabled">
+              <a href="#" class="next">More →</a>
+            </li>
+        </ul>
+        <div id="Results" class="video-results">
+            <p> The results of your search will appear here. </p>
+            <p> You will be able to preview and select the video you like. </p>
+        </div>
+        <ul class="pager _two">
+            <li class="previous disabled">
+              <a href="#" class="previous">← Less</a>
+            </li>
+            <li class="next disabled">
+              <a href="#" class="next">More →</a>
+            </li>
+        </ul>
+    </div>
+    <script id="VideoResultsTemplate" type="text/template">
+        <% results.forEach(function(result) { %>
+        <div class="video-result <%= result.videoId %>" data-id="<%= result.videoId %>" data-name="<%= result.snippet.title %>">
+            <div class="video-thumbnail">
+                <a class="video-autoplay" title="<%= result.snippet.title %>" href="//www.youtube.com/v/<%= result.videoId %>?fs=1&amp;autoplay=1">
+                    <img src="<%= result.snippet.thumbnails.default.url %>" />
+                </a>
+            </div>
+            <div class="video-description">
+                <a class="video-autoplay" title="<%= result.snippet.title %>" href="//www.youtube.com/v/<%= result.videoId %>?fs=1&amp;autoplay=1"><strong><%= result.snippet.title %></strong></a>
+                <br />
+                <ul class="video-meta">
+                    <li>
+                        <small>
+                            by <a class="channel-link" href="//www.youtube.com/channel/<%= result.snippet.channelId %>" target="_blank"><strong><%= result.snippet.channelTitle %></strong></a>
+                        </small>
+                    </li>
+                    <li><small><%= result.snippet.publishedAt %></small></li>
+                </ul>
+                <p>
+                    <small><%= result.snippet.description %></small>
+                </p>
+            </div>
+            <div class="video-selection">
+              <span class="text-selected">✔ Selected</span>
+                <span class="select-prompt">Click To Select</span>
+            </div>
+        </div>
+        <% }); %>
+    </script>
+
+</div>

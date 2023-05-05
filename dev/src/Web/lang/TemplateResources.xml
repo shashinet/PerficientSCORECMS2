@@ -1,0 +1,19 @@
+<language name="English" id="en">
+  <contenttypes>
+    <itemplateblock>
+      <name>Template</name>
+      <create>New Template</create>
+      <move>Move Template</move>
+    </itemplateblock>
+    <templatesfolder>
+      <name>Templates Folder</name>
+      <create>New Templates Folder</create>
+      <move>Move Templates Folder</move>
+    </templatesfolder>
+    <blocktemplatesfolder>
+      <name>Block Templates Folder</name>
+      <create>New Block Templates Folder</create>
+      <move>Move Block Templates Folder</move>
+    </blocktemplatesfolder>    
+  </contenttypes>
+</language>

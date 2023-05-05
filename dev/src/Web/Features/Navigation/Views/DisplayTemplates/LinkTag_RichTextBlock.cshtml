@@ -1,0 +1,9 @@
+@using EPiServer.Cms.Shell
+@using EPiServer.Web.Mvc.Html
+@using Perficient.Web.Features.Blocks.Components.RichText
+
+@model RichTextBlock
+
+<li class="menu-list-item rich-text">
+    @Html.PropertyFor(x => x.MainBody)
+</li>

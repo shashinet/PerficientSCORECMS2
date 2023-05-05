@@ -1,0 +1,20 @@
+@using Perficient.Web.Features.Blocks.Fields.Heading
+
+@model HeadingBlock
+
+@{
+    var hTag = Model.HeadingStyle;
+    if (string.IsNullOrWhiteSpace(hTag))
+    {
+        hTag = "h2";
+    }
+
+    var cssClass = ViewData["CustomCssClass"] ?? "";
+}
+
+@if (Html.IsInEditMode() || !string.IsNullOrWhiteSpace(Model.Text))
+{
+    @:<@hTag class="@cssClass">
+        @Model.Text
+    @:</@hTag>
+}

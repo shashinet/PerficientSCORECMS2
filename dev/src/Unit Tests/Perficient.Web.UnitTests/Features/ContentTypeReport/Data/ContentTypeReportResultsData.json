@@ -1,0 +1,368 @@
+{
+  "GetContentTypeOptions": [
+    {
+      "result": [ "Block", "Image", "Media", "Page", "Folder" ]
+    }
+  ],
+  "EmptyGetContentTypeOptions": [
+    {
+      "result": []
+    }
+  ],
+  "GetContentTypes": [
+    {
+      "data": "Page",
+      "result": [
+        {
+          "id": 77,
+          "name": "Folder Page",
+          "description": "A page which allows you to structure pages.",
+          "group": "Information",
+          "count": 0,
+          "references": null
+        },
+        {
+          "id": 74,
+          "name": "Generic Full Width Page",
+          "description": "Generic page template - standard page",
+          "group": "Content",
+          "count": 4,
+          "references": null
+        },
+        {
+          "id": 93,
+          "name": "Generic Interior Page",
+          "description": "Generic interior page. This page is is part of a site section that is defined by a generic landing page",
+          "group": "Content",
+          "count": 0,
+          "references": null
+        },
+        {
+          "id": 92,
+          "name": "Generic Landing Page",
+          "description": "Generic landing page used as the top level page of a site section",
+          "group": "Content",
+          "count": 0,
+          "references": null
+        },
+        {
+          "id": 73,
+          "name": "Home Page",
+          "description": "Used for home page of all sites",
+          "group": "Content",
+          "count": 1,
+          "references": null
+        },
+        {
+          "id": 75,
+          "name": "HTTP Status Page",
+          "description": "Instance of this page is rendered on any HTTP Errors",
+          "group": "Default",
+          "count": 0,
+          "references": null
+        }
+      ]
+    }
+  ],
+  "EmptyGetContentTypes": [
+    {
+      "data": "Page",
+      "result": []
+    }
+  ],
+  "GetProperties": [
+    {
+      "data": 74,
+      "result": {
+        "contentID": 74,
+        "guid": "7186f988-e0e0-4ca3-82f2-65c87edae59d",
+        "name": "GenericFullWidthPage",
+        "displayName": "Generic Full Width Page",
+        "description": "Generic page template - standard page",
+        "groupName": "Content",
+        "availableInEditMode": "True",
+        "iconPath": "<img src='/icons/score/epi_score128_page_1col.png' />",
+        "includeContentTypes": "N/A",
+        "excludeContentTypes": "N/A",
+        "editMode": false,
+        "errorMessage": null,
+        "usageDetails": {
+          "id": 4,
+          "contentID": 74,
+          "useWhen": "sample2",
+          "donotUseWhen": "sample3"
+        },
+        "usageImages": [
+          {
+            "id": 2,
+            "contentID": 74,
+            "usageImage": "sample1.jpg"
+          }
+        ],
+        "properties": [
+          {
+            "displayName": "Title",
+            "name": "Title",
+            "description": "Page Title",
+            "group": "Information",
+            "type": "LongString",
+            "order": 10,
+            "attributes": "CultureSpecific, Searchable, Required, Display"
+          },
+          {
+            "displayName": "VisibleInMenu",
+            "name": "VisibleInMenu",
+            "description": null,
+            "group": "Information",
+            "type": "Boolean",
+            "order": 0,
+            "attributes": "JsonIgnore, ScaffoldColumn, Display"
+          },
+          {
+            "displayName": "Main content area",
+            "name": "MainContentArea",
+            "description": null,
+            "group": "Information",
+            "type": "ContentArea",
+            "order": 100,
+            "attributes": "CultureSpecific, Searchable, Display, AllowedTypes, DisplayOptions"
+          },
+          {
+            "displayName": "Title",
+            "name": "MetaTitle",
+            "description": null,
+            "group": "Metadata",
+            "type": "LongString",
+            "order": 100,
+            "attributes": "CultureSpecific, Display"
+          },
+          {
+            "displayName": "Navigation Title",
+            "name": "NavigationTitle",
+            "description": "Overrides the title in the Navigation Blocks",
+            "group": "Metadata",
+            "type": "LongString",
+            "order": 2,
+            "attributes": "Display, CultureSpecific, Searchable"
+          },
+          {
+            "displayName": "Canonical URL",
+            "name": "CanonicalUrlOverride",
+            "description": null,
+            "group": "Metadata",
+            "type": "LongString",
+            "order": 5,
+            "attributes": "Display"
+          },
+          {
+            "displayName": "Keywords",
+            "name": "Keywords",
+            "description": null,
+            "group": "Metadata",
+            "type": "LongString",
+            "order": 200,
+            "attributes": "CultureSpecific, UIHint, Display"
+          },
+          {
+            "displayName": "Page description",
+            "name": "PageDescription",
+            "description": null,
+            "group": "Metadata",
+            "type": "LongString",
+            "order": 300,
+            "attributes": "CultureSpecific, UIHint, Display"
+          },
+          {
+            "displayName": "Content type",
+            "name": "MetaContentType",
+            "description": null,
+            "group": "Metadata",
+            "type": "LongString",
+            "order": 310,
+            "attributes": "CultureSpecific, Display"
+          },
+          {
+            "displayName": "Author",
+            "name": "AuthorMetaData",
+            "description": null,
+            "group": "Metadata",
+            "type": "LongString",
+            "order": 320,
+            "attributes": "CultureSpecific, Display"
+          },
+          {
+            "displayName": "Disable indexing",
+            "name": "DisableIndexing",
+            "description": null,
+            "group": "Metadata",
+            "type": "Boolean",
+            "order": 400,
+            "attributes": "CultureSpecific, Display"
+          },
+          {
+            "displayName": "Exclude from results",
+            "name": "ExcludeFromSearch",
+            "description": "This will determine whether or not to show on search",
+            "group": "Advanced",
+            "type": "Boolean",
+            "order": 100,
+            "attributes": "CultureSpecific, Display"
+          },
+          {
+            "displayName": "Hide site header",
+            "name": "HideSiteHeader",
+            "description": null,
+            "group": "Advanced",
+            "type": "Boolean",
+            "order": 200,
+            "attributes": "CultureSpecific, Display"
+          },
+          {
+            "displayName": "Hide site footer",
+            "name": "HideSiteFooter",
+            "description": null,
+            "group": "Advanced",
+            "type": "Boolean",
+            "order": 300,
+            "attributes": "CultureSpecific, Display"
+          },
+          {
+            "displayName": "Sitemap Settings",
+            "name": "SEOSitemaps",
+            "description": "This will exclude the content from Sitemap",
+            "group": "Advanced",
+            "type": "SEOSitemaps",
+            "order": 400,
+            "attributes": "CultureSpecific, Display, UIHint, BackingType"
+          },
+          {
+            "displayName": "SelectedTemplate",
+            "name": "SelectedTemplate",
+            "description": null,
+            "group": "Information",
+            "type": "ContentReference",
+            "order": 0,
+            "attributes": "AllowedTypes, ScaffoldColumn"
+          },
+          {
+            "displayName": "OldTemplate",
+            "name": "OldTemplate",
+            "description": null,
+            "group": "Information",
+            "type": "ContentReference",
+            "order": 0,
+            "attributes": "AllowedTypes, ScaffoldColumn"
+          },
+          {
+            "displayName": "CSS files",
+            "name": "CssFiles",
+            "description": null,
+            "group": "Css",
+            "type": "LinkCollection",
+            "order": 100,
+            "attributes": "Display"
+          },
+          {
+            "displayName": "CSS",
+            "name": "Css",
+            "description": null,
+            "group": "Css",
+            "type": "LongString",
+            "order": 200,
+            "attributes": "Display, UIHint"
+          },
+          {
+            "displayName": "Script files",
+            "name": "ScriptFiles",
+            "description": null,
+            "group": "Scripts",
+            "type": "LinkCollection",
+            "order": 100,
+            "attributes": "Display"
+          },
+          {
+            "displayName": "Scripts",
+            "name": "Scripts",
+            "description": null,
+            "group": "Scripts",
+            "type": "LongString",
+            "order": 200,
+            "attributes": "UIHint, Display"
+          }
+        ]
+      }
+    }
+  ],
+  "EmptyGetProperties": [
+    {
+      "data": 74,
+      "result": 
+        {
+          "contentID": 0,
+          "guid": "00000000-0000-0000-0000-000000000000",
+          "name": null,
+          "displayName": null,
+          "description": null,
+          "groupName": null,
+          "availableInEditMode": null,
+          "iconPath": null,
+          "includeContentTypes": null,
+          "excludeContentTypes": null,
+          "editMode": false,
+          "errorMessage": null,
+          "usageDetails": null,
+          "usageImages": null,
+          "properties": null
+        }      
+    }
+  ],
+  "GetInstancesOfContent": [
+    {
+      "data": 74,
+      "result": [
+        {
+          "id": 20,
+          "name": "gen page",
+          "editUrl": "/EPiServer/CMS/#context=epi.cms.contentdata:///20",
+          "pageUrl": "http://localhost:49638/gen-page/",
+          "createdDate": "7/18/2022 1:10:37 PM",
+          "updatedDate": "7/25/2022 10:13:06 AM",
+          "author": "admin2",
+          "count": 0,
+          "pageReferences": null,
+          "instantReferences": ""
+        },
+        {
+          "id": 23,
+          "name": "gen page(2)",
+          "editUrl": "/EPiServer/CMS/#context=epi.cms.contentdata:///23",
+          "pageUrl": "http://localhost:49638/gen-page2/",
+          "createdDate": "7/18/2022 3:39:39 PM",
+          "updatedDate": "7/18/2022 3:39:39 PM",
+          "author": "admin2",
+          "count": 1,
+          "pageReferences": null,
+          "instantReferences": ""
+        },
+        {
+          "id": 37,
+          "name": "Google maps page",
+          "editUrl": "/EPiServer/CMS/#context=epi.cms.contentdata:///37",
+          "pageUrl": "http://localhost:49638/google-maps-page/",
+          "createdDate": "8/3/2022 7:57:23 AM",
+          "updatedDate": "8/3/2022 7:57:23 AM",
+          "author": "admin2",
+          "count": 0,
+          "pageReferences": null,
+          "instantReferences": ""
+        }
+      ]
+    }
+  ],
+  "EmptyGetInstancesOfContent": [
+    {
+      "data": 74,
+      "result": []
+    }
+  ]
+}

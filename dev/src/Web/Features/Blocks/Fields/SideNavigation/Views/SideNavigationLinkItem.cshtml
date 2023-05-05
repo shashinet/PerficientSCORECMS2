@@ -1,0 +1,21 @@
+@using Perficient.Web.Features.Blocks.Fields.SideNavigation.Models
+
+@model SideNavigationLinkViewModel
+
+<li>
+    <a
+    href="@Model.Link"
+    aria-label="@Model.AriaLabel"
+    target="@(@Model.OpenInNewWindow ? "_blank" : "_self")"> @Model.Title </a>
+    @if (Model.HasChildLinks)
+    {
+        <ul>
+            @foreach (var link in @Model.ChildLinks)
+            {
+                @await Html.PartialAsync("SideNavigationLinkItem.cshtml", link)
+            }
+        </ul>
+    }
+</li>
+
+

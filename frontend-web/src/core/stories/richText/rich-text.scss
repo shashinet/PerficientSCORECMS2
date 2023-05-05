@@ -1,0 +1,40 @@
+.score-content-spot {
+  .rich-text {
+    * {
+      margin-top: 1rem;
+      font-size: 1.125rem;
+      line-height: 120%;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      line-height: 120%;
+    }
+
+    h3 {
+      font-size: 2rem;
+      line-height: 120%;
+    }
+
+    h4 {
+      font-size: 1.5rem;
+      line-height: 120%;
+    }
+
+    h5 {
+      font-size: 1.25rem;
+      line-height: 120%;
+    }
+
+    a:not(.score-button) {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  }
+
+  &.accent {
+    h1, h2, h3, h4, h5, h6 {
+      color: #999;
+    }
+  }
+}

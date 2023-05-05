@@ -1,0 +1,19 @@
+@using Perficient.Web.Features.Pages.BaseContentPage
+
+@model BaseContentPage
+
+<div class="blog-hero w-full container">
+  <div class="w-5col image-wrapper">
+   <img src=@UrlResolver.Current.GetUrl(Model.ContentImage.GetCroppingForDevice(ContentImageNames.Card)) class="img-fluid" />
+  </div>
+  <div class="w-7col caption">    
+    <h2>@Model.Title</h2>    
+    <div class="rich-text">
+    @Model.ContentSummary
+    </div>
+    <a href="@Url.ContentUrl(Model.ContentLink)" @(Model.NavigationHrefTarget == "_blank" ? "external-link" : "")" target="@Model.NavigationHrefTarget" class="score-button primary" aria-label="Read More">
+        @*TODO: Localize this*@
+        Read More
+    </a>
+  </div>
+</div>

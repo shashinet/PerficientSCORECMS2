@@ -1,0 +1,60 @@
+@use '../base/theme';
+
+.score-document-header {
+    position: relative;
+    height: 400px;
+    max-height: 400px;
+
+    .score-header-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    h1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        margin: 20px 20px;
+        padding: 20px 60px;
+        padding-top: 30px;
+        background: rgba(0,0,0, .2);
+    }
+    h2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        margin: 150px 20px;
+        padding: 20px 60px;
+        padding-top: 30px;
+        background: rgba(0,0,0, .2);
+    }  
+
+    &.default {        
+        height: 350px;
+        max-height: 350px;
+    }
+
+    &.dark {
+        height: 350px;
+        max-height: 350px;
+
+        .score-header-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        h1 {
+            color: theme.$white;           
+            background: rgba(158,158,158, .2);
+            
+        }
+        h2 {
+            color: theme.$tertiary;
+            background: rgba(158,158,158, .2);
+        }   
+    }
+}

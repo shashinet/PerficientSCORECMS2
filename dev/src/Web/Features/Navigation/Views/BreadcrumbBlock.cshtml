@@ -1,0 +1,35 @@
+@using EPiServer.Web.Routing
+@model Perficient.Web.Features.Navigation.Models.BreadcrumbBlock
+
+@{
+    var hasIcon = Model.HomeIcon != null && Model.HomeIcon != ContentReference.EmptyReference;
+    var iconClass = (hasIcon) ? "has-icon" : "";
+    var itemPosition = 0;
+}
+<section class="breadcrumb-wrapper @iconClass">
+    <div class="container">
+        <div class="w-full">
+            <ol class="breadcrumb" itemScope itemType="http://schema.org/BreadcrumbList">
+                @foreach (var item in Model.Links)
+                {
+                    itemPosition++;
+                    <li class="breadcrumb-item" itemProp="itemListElement" itemScope itemType="http://schema.org/BreadcrumbList">
+                        <a href="/" itemProp="item">
+                            @if (item.IsHome && hasIcon)
+                            {
+                            @Html.DisplayFor(x => x.HomeIcon)
+                            <span class="visually-hidden" itemProp="name">@item.LinkTitle</span>
+                            }
+                            else
+                            {
+                            <span itemProp="name">@item.LinkTitle</span>
+                            }
+
+                        </a>
+                        <meta itemProp="position" content="@itemPosition" />
+                    </li>
+                }
+            </ol>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,52 @@
+.score-video {
+  position: relative;
+  flex: 0 0 auto !important;
+  border-radius: rem-calc(8);
+  background-color: #000000;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  cursor: pointer;
+  aspect-ratio: 16 / 9;
+
+  &.loaded {
+    background-size: 0;
+
+    &::after {
+      display: none;
+    }
+
+    iframe {
+      pointer-events: all;
+    }
+  }
+
+  iframe {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: rem-calc(8);
+    pointer-events: none;
+    aspect-ratio: 16 / 9;
+  }
+
+  button {
+    &[aria-label="video play button"] {
+      position: relative;
+      top: calc(50% - 2.375rem);
+      left: calc(50% - 2.375rem);
+    }
+  }
+}
+
+@supports not (aspect-ratio: 16 / 9) {
+  .score-video {
+    height: 0;
+    padding-bottom: 56.25%;
+
+    iframe {
+      position: absolute;
+      inset: 0;
+    }
+  }
+}

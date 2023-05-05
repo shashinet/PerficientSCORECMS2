@@ -1,0 +1,23 @@
+# .NET5.0
+# Build and test .NET5.0 projects.
+
+trigger: none
+pr:
+  branches:
+    include: 
+      - feature/*
+name: $(Version.Major).$(Version.Minor).$(Version.Patch).$(Build.BuildId)
+resources:
+  repositories:
+  - repository: self
+    type: git
+    ref: develop
+variables:
+ - group: CMS12-Perficient.Accelerator.Web.Version
+# - group: CMS12-Perficient.Accelerator.Web.DxpApi 
+stages:
+- stage: PR_Validation
+  jobs:
+   - template: ci-pr-template.yml
+     parameters:
+       CONFIGURATION: Release

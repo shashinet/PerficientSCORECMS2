@@ -1,0 +1,114 @@
+@model Perficient.Web.Features.ContentTypeReport.ViewModels.InventoryReportViewModel
+@using EPiServer.Shell
+@using EPiServer.Shell.Navigation
+@using Perficient.Web.Features.ContentTypeReport.Models;
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Content Type Report</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+
+
+	<!-- Shell -->
+	@ClientResources.RenderResources("ShellCore")
+	@ClientResources.RenderResources("epi-cms-react.configuration.common", new[] { ClientResourceType.Style})
+	@ClientResources.RenderResources("admin", new[]{ ClientResourceType.Style})
+
+	<!-- Light Theme -->
+	@ClientResources.RenderResources("ShellCoreLightTheme")
+
+	<link href="~/App_Themes/Default/Styles/system.css" type="text/css" rel="stylesheet">
+	<link href="~/App_Themes/Default/Styles/ToolButton.css" type="text/css" rel="stylesheet">
+	<style>
+		a.ex1:link, a.ex1:visited {
+			color: cornflowerblue;
+			text-decoration: none;
+			display: inline-block;
+		}
+
+		a.ex1:hover, a.ex1:active {
+			color: blue;
+		}
+
+		th, td {
+			padding: 15px;
+		}
+	</style>
+</head>
+<body>
+	@Html.CreatePlatformNavigationMenu()
+	<div @Html.ApplyPlatformNavigation()>
+
+		<div class="content-area-container">
+			<div class="epi-uif-layout-container">
+				<div class="epi-uif-workspace-container">
+					<div class="epi-uif-workspace">
+						<div class="epi-uif-grid mdc-layout-grid">
+							<h1>Content Type Report</h1>
+							@using (Html.BeginForm("contentTypeChosen", "LegacyContentTypeReport", FormMethod.Post))
+							{
+
+								<fieldset>
+									Filter By:
+									@Html.DropDownList("ContentType", Model.ContentTypeItems as List<SelectListItem>)
+									<input type="submit" value="Search" />
+									<input type="text" id="txtKeyword" name="txtKeyword" placeholder="Filter By Keyword" />
+								</fieldset>
+							}
+							<br />
+							<br />
+							<div id="contentDetails">
+								<table id='tblId' width='80%' style='border: 1px solid black; border-collapse: collapse;'>
+									<thead style='background-color:#040A47;color:white'>
+										<tr>
+											<th>Id</th>
+											<th>Content Type Name</th>
+											<th>Display Name</th>
+											<th>Description</th>
+											<th>Group</th>
+											<th>Count</th>
+											<th>References</th>
+										</tr>
+									</thead>
+									<tbody>
+										@foreach (var ct in Model.ContentTypes)
+										{
+											<tr>
+												<td>@ct.Id</td>
+												<td>
+													<a class="ex1" href="@($"{Url.RouteUrl("lcd_Root")}?Id={ct.Id}")">
+														@ct.Name
+													</a>
+												</td>
+												<td>
+													<a class="ex1" href="@($"{Url.RouteUrl("lcd_Root")}?Id={ct.Id}")">
+														@ct.DisplayName
+													</a>
+												</td>
+												<td>@ct.Description</td>
+												<td>@ct.Group</td>
+												<td>@ct.Count</td>
+												<td>
+													<a class="ex1" href="@($"{Url.RouteUrl("lcf_Root")}?Id={ct.Id}&ContentName={ct.Name}")">
+														References
+													</a>
+												</td>
+											</tr>
+										}
+									</tbody>
+								</table>
+								@*@Html.Raw(Model.ContentDetailsHTMLString)*@
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

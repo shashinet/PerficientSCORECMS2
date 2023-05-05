@@ -1,0 +1,36 @@
+@using Perficient.Web.Features.Articles.Pages.ArticleCategoryLanding
+@using Perficient.Web.Features.Articles.Pages.BlogDetails
+@using Perficient.Web.Features.Articles.Extensions
+@using Perficient.Web.Features.Articles.Models
+
+@model ContentViewModel<ArticleCategoryLandingPage>
+
+@{
+    var category = @Model.CurrentContent.ArticleCategory.GetArticleCategory();
+    var categoryListing = new CategoryListingModel()
+            {
+                CurrentPage = Model.CurrentContent.ContentLink,
+                SelectedCategory = Model.CurrentContent.ArticleCategory
+            };
+}
+
+ <div class="score-blog-header">
+   <section class="score-stripe score-picture-stripe">
+        @Html.PropertyFor(m=> m.CurrentContent.ContentImage)
+       <div class="section-header">
+            <h1>@Html.PropertyFor(m => m.CurrentContent.Title)</h1>
+            <h2>@Html.PropertyFor(m => m.CurrentContent.SubTitle)</h2>
+       </div>
+  </section>
+</div>
+
+<section class="container">
+    <div class="w-8col blog-post-single">
+        @Html.PropertyFor(m => m.CurrentContent.MainContentArea)
+    </div>
+    <div class="w-4col blog-sidebar">
+        <h4>Categories</h4>
+        @await Html.PartialAsync("~/Features/Articles/Views/_CategoryList.cshtml", categoryListing)
+        <hr />
+    </div>
+</section>

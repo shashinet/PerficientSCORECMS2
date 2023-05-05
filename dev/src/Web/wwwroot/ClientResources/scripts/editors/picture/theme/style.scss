@@ -1,0 +1,766 @@
+$bg-black: #181818;
+$bg-gray-dark: #2E2F30;
+$txt-almost-white: #d3d3d3;
+
+:root {
+    --max-pic-width: 75vw;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,700&display=swap');
+
+.device-name {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.js-hidden {
+    display: none !important;
+}
+
+.btn-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    background: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    font-family: inherit;
+    font-size: inherit;
+    margin: 6px;
+    padding: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
+    color: #fff;
+    width: 100%;
+}
+
+.btn-choose {
+    background: #00ADD0;
+}
+
+.btn-finish {
+    background: #69BE28;
+}
+
+.btn-cancel {
+    background: #A6a6A6;
+}
+
+.btn-clear {
+    background: #EC0000;
+}
+
+/* drop zone */
+.js-dropzone-wrapper {
+    padding: 6px;
+    background-color: #DFDFDF;
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    color: #393A3E;
+    font-size: 16px;
+}
+
+.js-dropzone-wrapper.hover {
+    background-color: white;
+}
+
+.js-dropzone.hover {
+    background-color: white;
+    background-image: url("../icons/dropReplace.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 2px dashed #00ADD0;
+}
+
+.js-dropzone.hover span {
+    display: none;
+}
+
+.js-dropzone {
+    background-image: url("../icons/drop.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    border: 2px dashed #909090;
+    flex: 1 1 auto;
+    position: relative;
+    text-align: center;
+}
+
+.js-dropzone span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-bottom: 10px;
+}
+
+.responsive-image-editor {
+    max-width: var(--max-pic-width);
+}
+
+#focal-preview {
+    margin: auto;
+    max-width: var(--max-pic-width);
+    text-align: center;
+
+    .focal-image-wrapper {
+        position: relative;
+        display: inline-block;
+
+        .focal-dropzone-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0, .5);
+            z-index: 1;
+
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 8px;
+                left: 8px;
+                right: 8px;
+                bottom: 8px;
+                border: 2px dashed #00ADD0;
+                background: transparent url("../icons/dropReplace.svg") no-repeat center center;
+                background-size: 80px;
+            }
+
+            .focal-dropzone {
+                span {
+                    position: absolute;
+                    left: 50%;
+                    top: calc(50% + 50px);
+                    transform: translateX(-50%);
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+#focal-preview img {
+    max-width: var(--max-pic-width);
+    max-height: 44vh;
+}
+
+.crop-view {
+    margin: auto;
+    max-width: var(--max-pic-width);
+    text-align: center;
+    margin-top: 10px;
+}
+
+.crop-view-image {
+    max-width: var(--max-pic-width);
+    max-height: 44vh;
+}
+
+.fa-disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 265px;
+}
+
+.btn-control {
+    padding: 5px;
+}
+
+.swiper-scrollbar {
+    height: 12px;
+    margin-top: 8px;
+}
+
+.swiper-slide .cropper-disabled .cropper-face {
+    cursor: grab;
+}
+
+.container {
+    min-width: 500px;
+    min-height: 300px;
+}
+
+// hide crop full size image
+.fullCropper-container.fullCropper {
+    background-color: #fff;
+
+    & > div > img {
+        opacity: 0;
+    }
+
+    .btn-row {
+        background-color: #fff;
+    }
+
+    .theme-dark & {
+        background-color: #000;
+
+        .btn-row {
+            background-color: #000;
+        }
+    }
+}
+/* not sure why but need to push this down to keep swiping working in slider */
+.cropper-container {
+    z-index: 1;
+}
+
+.thumbnailCropper-wrapper {
+    position: relative;
+
+    .thumb-dropzone-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0, .5);
+        z-index: 1;
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            right: 8px;
+            bottom: 8px;
+            border: 2px dashed #00ADD0;
+            background: transparent url("../icons/dropReplace.svg") no-repeat center center;
+            background-size: 60px;
+        }
+
+        .thumb-dropzone {
+            span {
+                position: absolute;
+                left: 50%;
+                top: calc(50% + 40px);
+                transform: translateX(-50%);
+                color: #fff;
+                text-align: center;
+            }
+        }
+
+        &.small {
+            .thumb-dropzone {
+                span {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.swiper-panel .cropper-drag-box, .croppie-header .cropper-canvas {
+    display: none;
+}
+
+.focal-point {
+    width: 50px !important;
+    height: 50px !important;
+    background-image: url('../icons/focal.svg');
+    background-size: cover;
+    transform: translate(-50%, -50%);
+}
+
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 10px;
+    border-radius: 0.5rem;
+    width: 90%;
+    height: 90%;
+}
+
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+
+    &:hover {
+        background-color: darkgray;
+    }
+}
+
+/* buttons */
+.btn-control.left {
+    float: left;
+}
+
+.btn-control.right {
+    float: right;
+}
+
+.btn-control {
+    &.disable {
+        cursor: not-allowed;
+        opacity: 0.3;
+    }
+
+    i {
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        background-size: 20px;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        &.info-icon {
+            background-image: url('../icons/buttonImageInfo.svg');
+
+            .theme-dark & {
+                background-image: url('../icons/buttonImageInfoDark.svg');
+            }
+        }
+
+        &.lock-open-icon {
+            background-image: url('../icons/buttonLockOpen.svg');
+            background-size: 16px 20px;
+
+            .theme-dark & {
+                background-image: url('../icons/buttonLockOpenDark.svg');
+            }
+        }
+
+        &.lock-close-icon {
+            background-image: url('../icons/buttonLockClosed.svg');
+            background-size: 16px 20px;
+
+            .theme-dark & {
+                background-image: url('../icons/buttonLockClosed.svg');
+            }
+        }
+
+        &.zoom-in-icon {
+            background-image: url('../icons/buttonZoomIn.svg');
+
+            .theme-dark & {
+                background-image: url('../icons/buttonZoomInDark.svg');
+            }
+        }
+
+        &.zoom-out-icon {
+            background-image: url('../icons/buttonZoomOut.svg');
+
+            .theme-dark & {
+                background-image: url('../icons/buttonZoomOutDark.svg');
+            }
+        }
+
+        &.crop-icon {
+            background-image: url('../icons/buttonCrop.svg');
+
+            .theme-dark & {
+                background-image: url('../icons/buttonCropDark.svg');
+            }
+        }
+    }
+}
+
+.cropper-controls {
+    padding: 8px 12px 8px 12px;
+}
+
+/* tooltips */
+.html5tooltip-box {
+    background-color: black;
+    border-radius: 4px;
+    box-shadow: 0 0 0 1px rgba(255,255,255,.15), 0 0 10px rgba(255,255,255,.15);
+    cursor: default;
+
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        height: 12px;
+        width: 12px;
+        transform: translate3d(-6px, -6px, 0) rotate3d(0, 0, 1, 45deg);
+        background-color: inherit;
+        box-shadow: inherit;
+    }
+}
+
+.html5tooltip-text {
+    background-color: transparent;
+    border-radius: inherit;
+    color: white;
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 7px 9px;
+    position: relative;
+
+    a {
+        color: inherit;
+    }
+}
+
+.html5tooltip-more {
+    background-color: inherit;
+    border-radius: inherit;
+    position: relative;
+
+    .html5tooltip-text {
+        margin-top: -7px;
+    }
+}
+
+.html5tooltip-bottom .html5tooltip-box:before {
+    left: 50%;
+    top: 0px;
+}
+
+.html5tooltip-left .html5tooltip-box:before {
+    left: 100%;
+    top: 50%;
+}
+
+.html5tooltip-right .html5tooltip-box:before {
+    left: 0;
+    top: 50%;
+}
+
+.html5tooltip-top .html5tooltip-box:before {
+    left: 50%;
+    top: 100%;
+}
+
+/* loader ... */
+.loader {
+    display: none;
+
+    &.loading {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        background-color: white;
+        opacity: .9;
+        top: 0;
+        bottom: 0;
+        margin: 0;
+        padding: 0;
+        left: 0px;
+        right: 0px;
+        z-index: 10;
+    }
+
+    .loader-lottie {
+        width: 33%;
+        position: relative;
+    }
+
+    .loader-message {
+        font-size: 16px;
+        color: #000000;
+        letter-spacing: 0.4px;
+        text-align: center;
+        font-family: Montserrat;
+        position: absolute;
+        bottom: 33%;
+        left: 0;
+        right: 0;
+    }
+}
+
+/*
+ * layout buttons
+*/
+.theme-groups {
+    position: absolute;
+    top: 25px;
+    left: 30px;
+    width: 100px;
+    font-family: Montserrat, sans-serif;
+    z-index: 1;
+    color: black;
+    background-color: rgba(255,255,255, .5);
+    padding: 8px;
+
+    h5 {
+        font-size: 14px;
+        color: inherit;
+        margin: 10px 0;
+    }
+
+    .layout-group {
+        button {
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            margin-right: 15px;
+            opacity: .5;
+            box-shadow: none;
+            border-width: 0;
+
+            &.active {
+                opacity: 1;
+            }
+
+            &.btn-vertical {
+                background: transparent url('../icons/verticalLayoutLight.svg') no-repeat 0 1px;
+                background-size: 25px;
+            }
+
+            &.btn-horizontal {
+                background: transparent url('../icons/horizontalLayoutLight.svg') no-repeat 0 1px;
+                background-size: 25px;
+            }
+        }
+    }
+
+    .appearance-group {
+        button {
+            display: block;
+            font-family: inherit;
+            font-size: 14px;
+            color: black;
+            margin: 0 0 15px 0;
+            padding-left: 23px;
+            background: transparent url('../icons/radioUncheckedLight.svg') no-repeat 0 1px;
+            background-size: 15px;
+            box-shadow: none;
+            border-width: 0;
+
+            &.active {
+                background: transparent url('../icons/radioCheckedLight.svg') no-repeat 0 1px;
+                background-size: 15px;
+            }
+        }
+    }
+
+    .theme-dark & {
+        color: white;
+        background-color: rgba(0,0,0, .5);
+
+        .layout-group {
+            button {
+                &.btn-vertical {
+                    background: transparent url('../icons/verticalLayoutDark.svg') no-repeat 0 1px;
+                    background-size: 25px;
+                }
+
+                &.btn-horizontal {
+                    background: transparent url('../icons/horizontalLayoutDark.svg') no-repeat 0 1px;
+                    background-size: 25px;
+                }
+            }
+        }
+
+        .appearance-group {
+            button {
+                color: white;
+                background: transparent url('../icons/radioUncheckedDark.svg') no-repeat 0 1px;
+                background-size: 15px;
+
+                &.active {
+                    background: transparent url('../icons/radioCheckedDark.svg') no-repeat 0 1px;
+                    background-size: 15px;
+                }
+            }
+        }
+    }
+}
+
+/*
+ * theme things
+*/
+.Sleek {
+    // main popup border and radius
+    .epi-lfw-dialog.dijitDialog {
+        border-radius: 8px;
+        padding: 2px;
+    }
+
+    .dijitDialogPaneContent {
+        font-family: Montserrat, sans-serif !important;
+        padding: 0 !important;
+        margin: 0;
+        border-width: 0;
+    }
+
+    .dijitDialogPaneContentArea {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .epi-lfw-dialog--dark .dijitDialogTitleBar {
+        background-color: #555;
+        padding: 10px 16px;
+        border-width: 0;
+
+        .dijitDialogTitle {
+            font-family: Montserrat, sans-serif;
+            font-size: 14px;
+            color: white;
+            letter-spacing: .5px;
+        }
+    }
+}
+
+.focal-wrapper {
+    background-color: white;
+    padding: 10px 20px;
+}
+
+.swiper-component {
+    color: black;
+    background-color: #f2f2f2;
+    padding: 4px 20px;
+
+    .thumbnailCropper-device-name {
+        padding: 6px 0;
+    }
+
+    .swiper-scrollbar {
+        background-color: #d8d8d8;
+    }
+
+    .swiper-scrollbar-drag {
+        background-color: #808080;
+    }
+}
+
+.btn-row.btn-row-main {
+    background-color: #f2f2f2;
+}
+
+.theme-dark {
+    .focal-wrapper {
+        background-color: black;
+    }
+
+    .swiper-component {
+        color: white;
+        background-color: #2e2f30;
+        padding: 4px 20px;
+
+        .swiper-scrollbar {
+            background-color: #d8d8d8;
+        }
+
+        .swiper-scrollbar-drag {
+            background-color: #6c686a;
+        }
+    }
+
+    .btn-row.btn-row-main {
+        background-color: #2e2f30;
+    }
+}
+
+// prop view styling
+.device-property-view {
+    padding: 8px;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+
+    .device-property-view-header {
+        line-height: 28px;
+        padding-bottom: 30px;
+    }
+
+    .device-property-view-title {
+        font-size: 18px;
+        margin: 0px;
+        font-weight: bold;
+        float: left;
+        margin-bottom: 10px;
+    }
+
+    .device-property-view-button {
+        float: right;
+    }
+
+    .property-preview-wrapper {
+        padding: 8px;
+        border: 1px solid #d1d1d1;
+        margin: 16px;
+        border-radius: 4px;
+
+        p {
+            font-size: 18px;
+            line-height: 1em;
+            margin: 0px;
+            padding: 4px;
+            margin-bottom: 8px;
+        }
+
+        a {
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+            color: #BA135F;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #d8357f;
+        }
+
+        a:active {
+            color: #d8357f;
+            outline: none !important;
+        }
+
+        a:focus {
+            color: #d8357f;
+            outline: none !important;
+            box-shadow: 0 0 0 4px #0D04FF;
+        }
+    }
+}
+
+
+
+// EOF

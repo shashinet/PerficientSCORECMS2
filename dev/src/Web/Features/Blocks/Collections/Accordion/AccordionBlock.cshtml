@@ -1,0 +1,13 @@
+@using Perficient.Web.Features.Blocks.Collections.Accordion
+
+@model AccordionBlock
+
+@{
+    var guid = Guid.NewGuid().ToString().Split('-');
+    var id = $"accordion{guid[0]}";
+    var classes = Model.GetClassList();
+}
+
+<div class="score-accordion @classes" id="@id">
+    @Html.PropertyFor(x => x.AccordionPanels)
+</div>

@@ -1,0 +1,44 @@
+@using Perficient.Web.Features.Blocks.Fields.YouTube
+
+@model YouTubeBaseBlock
+
+@{
+    var altTitle = (string)ViewData["title"];
+
+    var videoDefaultImage = "";
+
+    var currentVideoId = !string.IsNullOrEmpty((string)ViewData["IdOverride"]) ? (string)ViewData["IdOverride"] : Model.VideoId;
+
+    if (!string.IsNullOrEmpty(currentVideoId))
+    {
+        videoDefaultImage = $"http://img.youtube.com/vi/{currentVideoId}/hqdefault.jpg";
+    }
+}
+
+<div class="youtube score-video score-youtube-video" tabindex="0" style='background-image: url(@videoDefaultImage);'>
+    @if (!string.IsNullOrEmpty(Model.VideoName))
+    {
+        <span class="youtube-video-title">@Model.VideoName</span>
+    }
+    @if (string.IsNullOrEmpty(currentVideoId))
+    {
+        <img src="/ClientResources/Images/youtubeTransparentBackground.jpg" class="editor-youtube-placeholder" width="560" height="315" alt=""/>
+    }
+    else
+    {
+        var videoUrl = $"https://www.youtube.com/embed/{currentVideoId}";
+
+        var width = Html.IsInEditMode() ? "width=560" : string.Empty;
+        var height = Html.IsInEditMode() ? "height=315" : string.Empty;
+
+        <iframe data-src="@videoUrl"
+                data-thumbnailurl="@videoDefaultImage"
+                title="@altTitle"
+                aria-label="@altTitle"
+                @width
+                @height
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+    }
+</div>

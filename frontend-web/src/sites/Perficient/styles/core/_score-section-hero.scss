@@ -1,0 +1,29 @@
+.score-section-hero {
+  h2,
+  h3,
+  h4 {
+    & + * {
+      margin-top: rem-calc(16);
+    }
+  }
+
+  .image-wrapper {
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    & + * {
+      margin-top: rem-calc(16);
+    }
+  }
+  .score-hero-body {
+    .rich-text {
+      color: inherit;
+    }
+
+    & + .score-call-to-action {
+      margin-top: rem-calc(24);
+    }
+  }
+}

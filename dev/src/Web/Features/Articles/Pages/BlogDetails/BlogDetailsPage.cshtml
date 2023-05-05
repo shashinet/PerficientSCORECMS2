@@ -1,0 +1,55 @@
+@using Perficient.Web.Features.Articles.Pages.BlogDetails
+@using Perficient.Web.Features.Articles.Extensions
+@using Perficient.Web.Features.Articles.Models
+
+@model ContentViewModel<BlogDetailsPage>
+
+@{
+    var category = @Model.CurrentContent.ArticleCategory.GetArticleCategory();
+    var categoryListing = new CategoryListingModel()
+            {
+                CurrentPage = Model.CurrentContent.ContentLink,
+                SelectedCategory = Model.CurrentContent.ArticleCategory
+            };
+}
+
+<section class="score-stripe score-picture-stripe default">
+    <div class="score-image img-fluid" ">
+    @Html.PropertyFor(m=> m.CurrentContent.ContentImage)
+    </div>
+    <div class="container justify-center centered">
+        <h1 data-epi-type="title">
+    @Html.PropertyFor(m => m.CurrentContent.Title)
+        </h1>
+    @if (category != null)
+    {
+            <h2 style="background-color: @category.Color">
+            @category.Name
+            </h2>
+    }
+    </div>
+</section>
+<section class="container">
+    <div class="w-8col blog-post-single">
+        <p class="date">
+            Posted on
+            <em>@Html.DisplayFor(m => m.CurrentContent.PublishedDate)</em>  to
+            <em>@category.Name</em>  by
+            <em>@Html.DisplayFor(m => m.CurrentContent.Author)</em>
+        </p>
+        <p class="blog-read-time-container">
+            <span class="blog-read-time">Read Time </span>
+            <sapn class="blog-readtime-minutes">@Html.DisplayFor(m => m.CurrentContent.ReadTime) </span>
+            <span class="blog-read-time">Minutes</span>
+        </p>
+        <div class="rich-text" data-epi-type="content">
+            @Html.PropertyFor(m => m.CurrentContent.MainContent)
+        </div>
+    @Html.PropertyFor(m => m.CurrentContent.MainContentArea)
+    </div>
+    <div class="w-4col blog-sidebar">
+        <h4>Categories</h4>
+        @await Html.PartialAsync("~/Features/Articles/Views/_CategoryList.cshtml", categoryListing)
+        <hr />
+    </div>
+</section>

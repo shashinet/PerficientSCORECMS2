@@ -1,0 +1,128 @@
+@use '../base/theme';
+
+%buttonBase {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  min-width: rem-calc(140);
+  min-height: rem-calc(40);
+  padding: rem-calc(10 24);
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: theme.$fontPrimary;
+  line-height: 100%;
+  letter-spacing: normal;
+  text-align: center;
+  text-decoration: none;
+  transition: all ease 0.3s;
+
+  &:hover {
+    text-decoration: none;
+    box-shadow: 0 rem-calc(10) rem-calc(20) rgba(theme.$black, 0.2);
+    transform: translateY(rem-calc(-3));
+  }
+
+  &:focus {
+    outline: rem-calc(2) groove theme.$black;
+  }
+
+  &.sm {
+    min-height: rem-calc(30);
+    font-size: rem-calc(12);
+  }
+
+  &.lg {
+    min-height: rem-calc(50);
+    font-size: rem-calc(18);
+  }
+}
+
+.score-button {
+  &.primary {
+    @extend %buttonBase;
+    height: fit-content;
+    color: $white;
+    background-color: theme.$secondary;
+
+    &:hover {
+      color: white;
+      background-color: theme.$secondaryDark;
+      box-shadow: 0 rem-calc(10) rem-calc(20) rgba(theme.$black, 0.2);
+      transform: translateY(rem-calc(-3));
+    }
+
+    &.over-dark {
+      background-color: theme.$secondaryDark;
+
+      &:hover {
+        background-color: theme.$secondary;
+      }
+    }
+  }
+
+  &.secondary {
+    @extend %buttonBase;
+    height: fit-content;
+    border: rem-calc(2) solid theme.$secondary;
+    color: theme.$secondary;
+    background-color: transparent;
+
+    &:hover {
+      color: theme.$white;
+      background-color: theme.$secondary;
+    }
+
+    &.over-dark {
+      border-color: theme.$secondaryDark;
+      color: theme.$secondaryDark;
+
+      &:hover {
+        border-color: theme.$secondary;
+        color: theme.$white;
+      }
+    }
+  }
+}
+
+.clickable-area {
+  position: absolute !important;
+  width: 100%;
+  height: 100%;
+  font-size: 0;
+  background-color: transparent;
+  inset: 0;
+}
+
+.text-primary {
+  display: inline-block;
+  color: theme.$secondary;
+  font-weight: 500;
+  transition: all ease 0.3s;
+
+  &::after {
+    position: relative;
+    top: rem-calc(1);
+    display: inline-block;
+    padding-left: rem-calc(8);
+    font-size: rem-calc(40);
+    line-height: rem-calc(8);
+    content: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDggMTUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xIDEzLjVMNyA3LjVMMSAxLjUiIHN0cm9rZT0iI0M4MUU4MiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg==');
+  }
+
+  &:hover {
+    color: theme.$secondary;
+    text-decoration: none;
+    box-shadow: none;
+    transform: none;
+    transition: all ease-in 0.3s;
+
+    &:after {
+      transform: translate(0.5rem);
+    }
+  }
+
+  &.over-dark {
+    color: theme.$secondaryDark;
+  }
+}

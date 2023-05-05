@@ -1,0 +1,70 @@
+.colorPickerList {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    width: 578px;
+    border: 1px solid #b5bcc7;
+    padding: 15px;
+    overflow: hidden;
+    border-radius: 4px;
+    background-color: #f2f2f2;
+}
+
+    .colorPickerList li {
+        float: left;
+        border: 3px solid transparent;
+    }
+
+        .colorPickerList li:hover {
+            border: 3px solid #b5bcc7;
+        }
+
+        .colorPickerList li:last-child {
+            margin-left: 10px;
+            border: 1px solid transparent;
+        }
+
+            .colorPickerList li:last-child:hover {
+                border: 1px solid #b5bcc7;
+            }
+
+.color-clear {
+    background: #EC0000;
+    color: #fff !important;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-size: 2.1em;
+    font-weight: bold;
+    text-align: center;
+    width: 38px;
+    height: 38px;
+    line-height: initial;
+    border-radius: 5px;
+}
+
+
+
+.colorPickerList li.selectedColor {
+    border: 3px solid #7cb5ec;
+}
+
+.colorPickerList li a {
+    width: 38px;
+    height: 38px;
+    border: 4px solid #f2f2f2;
+    display: block;
+    box-shadow: 0 0 2px 0 rgba(0,0,0,.3);
+}
+
+    .colorPickerList li a.color-clear {
+        width: 19px;
+        height: 19px;
+        font-size: 18px;
+        border: 0;
+    }
+
+
+
+    .colorPickerList li a span {
+        position: absolute;
+        margin: -100000px;
+    }

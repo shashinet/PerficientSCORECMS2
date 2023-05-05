@@ -1,0 +1,7 @@
+@model  Perficient.Web.Features.Navigation.Models.NavigationPanelBlock
+
+<div class="footer-panel column">
+    <div class="content-area">
+        @Html.PropertyFor(x => x.MainContentArea, new { HasContainer = false, HasChildContainers = false })
+    </div>
+</div>

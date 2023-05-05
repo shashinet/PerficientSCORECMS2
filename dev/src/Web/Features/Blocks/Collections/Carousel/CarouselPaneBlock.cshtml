@@ -1,0 +1,20 @@
+@using Perficient.Web.Features.Blocks.Collections.Carousel
+
+@model CarouselPaneBlock
+
+@{
+    var backgroundColor = Model.BackgroundColor != null
+    ? $"background-color: {Model.BackgroundColor};"
+    : null;
+    var textColor = Model.TextColor != null
+    ? $"color: {Model.TextColor};"
+    : null;
+    var backgroundImage = Model.BackgroundImage != null
+    ? $"background-image:url('{Url.ContentUrl(Model.BackgroundImage)}');"
+    : null;
+    var classes = Model.GetClassList();
+}
+
+<div class="carousel-item @classes" style="@backgroundColor @textColor @backgroundImage">
+    @Html.PropertyFor(x => x.ContentArea, new { Tag = "inner-structure" })
+</div>

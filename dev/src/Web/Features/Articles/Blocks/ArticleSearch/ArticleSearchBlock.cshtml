@@ -1,0 +1,10 @@
+@using Perficient.Web.Features.Articles.Blocks.ArticleSearch
+@using Perficient.Web.Features.Articles.ViewModels
+@model ArticleSearchViewModel
+
+@{
+    if (Model != null)
+    {
+       @Html.ReactComponentFor("ArticleListingSearchBlock","ArticleListingSearchBlock",Model);
+    }
+}

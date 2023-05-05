@@ -1,0 +1,83 @@
+<div class="dijitInline yext-typeahead-editor">
+
+    <div class="container control" data-dojo-attach-point="yextContainer">
+        <img class="image-header" src="/ClientResources/Images/yextLogo.jpg">
+        <div id="SelectedValue" class="yext-results">
+
+        </div>
+        <div class="well" style="vertical-align: top">
+            <input id="SearchQuery" type="text" class="form-control" placeholder="Search">
+            <button id="SearchButton" class="btn btn-default">Search</button>
+        </div>
+        <ul class="pager _one">
+            <li class="previous disabled pager-button">
+                <a href="#" class="previous">? Less</a>
+            </li>
+            <li class="text-center">
+                <span>Total Results: <span class="total-results">0</span></span>
+            </li>
+            <li class="next disabled pager-button">
+                <a href="#" class="next">More ?</a>
+            </li>
+        </ul>
+        <div id="Results" class="yext-results">
+            <p> The results of your search will appear here. </p>
+            <p> You will be able to preview and select the item you like. </p>
+        </div>
+        <ul class="pager _two">
+            <li class="previous disabled pager-button">
+                <a href="#" class="previous">? Less</a>
+            </li>
+            <li class="text-center">
+                <span>Total Results: <span class="total-results">0</span></span>
+            </li>
+            <li class="next disabled pager-button">
+                <a href="#" class="next">More ?</a>
+            </li>
+        </ul>
+    </div>
+    <script id="YextLocationResultsTemplate" type="text/template">
+        <% results.forEach(function(result) { %>
+        <div class="yext-result <%= result.data.id %>" data-id="<%= result.data.id %>">
+            <div class="yext-locations-thumbnail">
+                <img src="<%=result.data?.c_locationPhoto?.url %>" />
+            </div>
+            <div class="yext-description">
+                <h3><%= result.data?.name %></h3>
+                <p>
+                    <span><%= result.data?.address?.line1 %> <%= result.data?.address?.line2 %></span>
+                    <br />
+                    <%= result.data?.address?.city %>, <%= result.data?.address?.region %>  <%= result.data?.address?.postalCode %>
+                </p>
+            </div>
+            <div class="yext-selection">
+                <span class="text-selected">? Selected</span>
+                <span class="select-prompt">Click To Select</span>
+            </div>
+        </div>
+        <% }); %>
+    </script>
+
+    <script id="YextProviderResultsTemplate" type="text/template">
+        <% results.forEach(function(result) { %>
+        <div class="yext-result <%= result.data.id %>" data-id="<%= result.data.id %>">
+            <div class="yext-provider-thumbnail">
+                <img src="<%= result.data?.headshot?.url %>" />
+            </div>
+            <div class="yext-description">
+                <h3><%= result.data?.name %></h3>
+                <p>
+                    <span><%= result.data?.address?.line1 %> <%= result.data?.address?.line2 %></span>
+                    <br />
+                    <%= result.data?.address?.city %>, <%= result.data?.address?.region %>  <%= result.data?.address?.postalCode %>
+                </p>
+            </div>
+            <div class="yext-selection">
+                <span class="text-selected">? Selected</span>
+                <span class="select-prompt">Click To Select</span>
+            </div>
+        </div>
+        <% }); %>
+    </script>
+
+</div>

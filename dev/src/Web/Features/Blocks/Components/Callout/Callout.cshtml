@@ -1,0 +1,11 @@
+@using Perficient.Web.Features.Blocks.Components.Callout
+@model  Callout
+
+@{
+    var classes = Model.GetClassList();
+    var editClass = ViewContext.HttpContext.GetContentLink() == ((IContent) Model).ContentLink ? "score-callout-edit" : string.Empty;
+}
+
+<p class="score-callout rich-text @editClass @classes" @Html.EditAttributes(x => x.MainBody)>
+    @Html.DisplayFor(x => x.MainBody)
+</p>

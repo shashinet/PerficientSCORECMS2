@@ -1,0 +1,28 @@
+parameters:
+- name: ENV
+  type: string
+jobs:
+  - deployment: Deploy_${{ upper(parameters.ENV) }}
+    environment: 
+      name: Optimizely-CMS-${{ upper(parameters.ENV) }}
+    workspace:
+      clean: all
+    pool: 
+      vmImage: 'windows-latest'
+    variables:
+     - group: CMS12-Perficient.Accelerator.Web.Version
+#     - group: CMS12-Perficient.Accelerator.Web.DxpApi
+    strategy:
+      runOnce:
+        deploy:
+          steps: 
+          - task: DownloadPipelineArtifact@2
+            inputs:
+              buildType: 'current'
+              targetPath: '$(Pipeline.Workspace)'
+          - task: PowerShell@2
+            displayName: 'Deploy'
+            inputs:
+              targetType: filePath
+              filePath: '$(Pipeline.Workspace)/Deployment Files/_Deploy.ps1'
+              arguments: '-ClientKey $(dxp.clientkey) -ClientSecret $(dxp.secretkey) -ProjectID $(dxp.projectid) -ArtifactPath "$(Pipeline.Workspace)/DXP Deployment Package" -TargetEnvironment ${{ parameters.ENV }}'

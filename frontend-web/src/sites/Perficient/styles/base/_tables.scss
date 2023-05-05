@@ -1,0 +1,72 @@
+@use './theme';
+
+table {
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid inherit;
+
+  th,
+  td {
+    padding: rem-calc(5 20);
+    font-size: theme.$bodysm;
+    text-align: left;
+
+    @include respond-above(large) {
+      font-size: theme.$bodylg;
+    }
+  }
+
+  th {
+    border-right: 1px solid white;
+    color: theme.$white;
+    font-weight: bold;
+    background-color: theme.$secondaryDark;
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  td {
+    border-right: 1px solid inherit;
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  tr {
+    &:nth-child(odd) {
+      background-color: theme.$lightgrey;
+    }
+  }
+
+  &.event-feed {
+    tr {
+      th {
+        text-align: center;
+
+        &:first-child {
+          min-width: rem-calc(200);
+          text-align: left;
+        }
+      }
+      td {
+        scroll-snap-align: start;
+        text-align: center;
+
+        &:first-child {
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+.events-feed-wrapper {
+  @include respond-below(tablet) {
+    max-width: rem-calc(760);
+    scroll-snap-type: x mandatory;
+    scroll-snap-destination: 0 0;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+}

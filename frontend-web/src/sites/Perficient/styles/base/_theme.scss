@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary: #010101;
+  --secondary: #cc1f20;
+  --secondaryLight: #e61717;
+  --secondaryDark: #8d0e11;
+  --tertiary: #b79967;
+  --tertiaryLight: #c9b38d;
+  --tertiaryDark: #8c734b;
+  --white: #ffffff;
+  --black: #000000;
+  --orange: #ea7600;
+  --green: #919130;
+  --yellow: #f0b323;
+  --blue: #3d5d6f;
+  --lightblue: #81a7bb;
+  --darkgrey: #222222;
+  --midgrey1: #444444;
+  --midgrey2: #58595b;
+  --midgrey3: #9e9e9e;
+  --lightgrey: #e8e8e8;
+  --title: #8d0e11;
+  --body: #222222;
+  --links: #8d0e11;
+
+  /* Component colors */
+
+  --textColor: rgba(34, 34, 34, 1);
+  --lightGrey: rgba(245, 245, 247, 1);
+  --inverseTextColor: rgba(255, 255, 255, 1);
+  --footerBackground: linear-gradient(244.46deg, #010101 14.31%, #222222 46.17%);
+  --lowerFooterBackground: linear-gradient(15.29deg, #010101 7.07%, #333333 98.17%);
+  --primaryGradient: linear-gradient(244.46deg, #cc1f20 14.31%, #8d0e11 46.17%);
+  --headerUtilityNavGradientReverse: linear-gradient(15.29deg, #8c734c 7.07%, #c9b38d 98.17%);
+  --headerUtilityNavGradient: linear-gradient(15.29deg, #8c734c 7.07%, #c9b38d 98.17%);
+  --headerMainNavGradient: linear-gradient(15.29deg, #010101 7.07%, #333333 98.17%);
+
+  /* Font Family */
+  --fontPrimary: 'Lato', sans-serif;
+
+  /* Font Sizes */
+  --h1sm: 2.25rem;
+  --h1lg: 3rem;
+  --h2sm: 2rem;
+  --h2lg: 2.5rem;
+  --h3sm: 1.75rem;
+  --h3lg: 2rem;
+  --h4sm: 1.375rem;
+  --h4lg: 1.5rem;
+  --h5sm: 1.125rem;
+  --h5lg: 1.25rem;
+  --bodylg: 1.125rem;
+  --bodysm: 1rem;
+  --smallbody: 0.875rem;
+
+  --mobile: calc(100% - 1.875rem);
+  --desktop: 1366px;
+  --col1: 8.333333%;
+  --col2: 16.66666%;
+  --col3: 25%;
+  --col4: 33.333%;
+  --col5: 41.6666%;
+  --col6: 50%;
+  --col7: 58.33333%;
+  --col8: 66.66666%;
+  --col9: 75%;
+  --col10: 83.33333%;
+  /* Utilities */
+  --boxshadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  --boxshadow2: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+
+/* Colors */
+$primary: #010101;
+$secondary: #cc1f20;
+$secondaryLight: #e61717;
+$secondaryDark: #8d0e11;
+$tertiary: #b79967;
+$tertiaryLight: #c9b38d;
+$tertiaryDark: #8c734b;
+$white: #ffffff;
+$black: #000000;
+$orange: #ea7600;
+$green: #919130;
+$yellow: #f0b323;
+$blue: #3d5d6f;
+$lightblue: #81a7bb;
+$darkgrey: #222222;
+$midgrey1: #444444;
+$midgrey2: #58595b;
+$midgrey3: #9e9e9e;
+$lightgrey: #e8e8e8;
+$title: #8d0e11;
+$body: #222222;
+$links: #8d0e11;
+
+/* Font Family */
+$fontPrimary: 'Lato', sans-serif;
+
+/* Font Sizes */
+$h1sm: 2.25rem;
+$h1lg: 3rem;
+$h2sm: 2rem;
+$h2lg: 2.5rem;
+$h3sm: 1.75rem;
+$h3lg: 2rem;
+$h4sm: 1.375rem;
+$h4lg: 1.5rem;
+$h5sm: 1.125rem;
+$h5lg: 1.25rem;
+$bodylg: 1.125rem;
+$bodysm: 1rem;
+$smallbody: 0.875rem;
+
+/* Max Widths */
+
+$mobile: calc(100% - 1.875rem);
+$desktop: 1366px;
+$col1: 8.333333%;
+$col2: 16.66666%;
+$col3: 25%;
+$col4: 33.333%;
+$col5: 41.6666%;
+$col6: 50%;
+$col7: 58.33333%;
+$col8: 66.66666%;
+$col9: 75%;
+$col10: 83.33333%;
+
+/* Screens */
+$screens: (
+  sm: 100%,
+  tablet: 100%,
+  md: 62rem,
+  lg: 75rem,
+  xl: 91.875rem,
+);
+
+/* Utilities */
+$boxshadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+$boxshadow2: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+

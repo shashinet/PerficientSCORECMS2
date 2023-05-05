@@ -1,0 +1,35 @@
+@using Perficient.Web.Features.Blocks.Layouts.Stripe
+@model StripeBlock
+
+@{
+    var backgroundColor = !string.IsNullOrEmpty(Model.BackgroundColor) ? $"background-color: {Model.BackgroundColor};" : null;
+    var textColor = !string.IsNullOrEmpty(Model.TextColor) ? $"color: {Model.TextColor};" : null;
+    var backgroundImage = Model.BackgroundImage != null ? $"background-image:url('{Url.ContentUrl(Model.BackgroundImage)}');" : null;
+    var classes = Model.GetClassList();
+}
+
+<section class="score-stripe @classes" style="@backgroundColor @textColor @backgroundImage" data-epi-type="content">
+    <div class="container">
+        <div class="w-full">
+            @if (!string.IsNullOrEmpty(Model.Title.Text))
+            {
+            <div class="section-header @Model.HeaderContentAlignment">
+                @Html.PropertyFor(m => Model.Title)                
+            </div>
+            }
+
+            @if (Html.IsInEditMode())
+            {
+                @Html.PropertyFor(x => x.MainContentArea, new { Tag=TagNames.NestedContent, HasContainer = false, HasChildContainers = true, CssClass = "content-area" })
+            }
+            else
+            {
+                <div class="content-area @Model.MainContentAreaAlignment">
+                    @Html.PropertyFor(x => x.MainContentArea, new { Tag=TagNames.NestedContent, HasContainer = false, HasChildContainers = true })
+                </div>
+            }
+
+            @Html.PropertyFor(x => x.CtaContentArea, new { Tag = TagNames.CtaButtonContent, HasContainer = true, CssClass = "w-full cta " + Model.CtaContentAlignment})
+        </div>
+    </div>
+</section>

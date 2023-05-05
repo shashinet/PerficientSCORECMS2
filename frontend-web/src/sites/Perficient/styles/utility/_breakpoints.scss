@@ -1,0 +1,36 @@
+// Phones
+$screen-sm-min: 475px;
+$screen-sm-max: 599px;
+
+// Tablets
+$screen-tablet-min: 600px;
+$screen-tablet-max: 991px;
+
+// Tablet - Desktop crossover
+$screen-md-min: 992px;
+$screen-md-max: 1199px;
+
+// Desktop
+$screen-lg-min: 1200px;
+$screen-lg-max: 1469px;
+
+// Large Desktops
+$screen-xl-min: 1470px;
+
+//XLarge Desktops
+$screen-xxl-min: 1800px;
+
+// breakpoints for mobile first, e.g. scales up
+$breakpoints: (small: $screen-sm-min,
+  // 475px
+  tablet: $screen-tablet-min,
+  // 768px
+  medium: $screen-md-min,
+  // 992px
+  large: $screen-lg-min,
+  // 1200px
+  xlarge: $screen-xl-min,
+  // 1370px
+  xxlarge: $screen-xxl-min,
+  // 1800px
+);

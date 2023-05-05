@@ -1,0 +1,71 @@
+.sitemap-selector {
+    border: 1px solid #d0d0d0;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    .oui-dropdown-group {
+        margin-right: 2rem;
+        button {
+            min-width: 18.75rem;
+            text-align: left;
+        }
+    }
+    button,
+    input {
+        height: 3rem;
+        min-width: 6.25rem;
+        font-size: 1rem;
+    }
+    input {
+        max-width: 18.75rem;
+    }
+    fieldset {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .column-right {
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+    .grid-align-right {
+        justify-self: end;
+    }
+    .flex-start {
+        align-items: center;
+        display: flex;
+        justify-content: flex-start;
+    }
+    .add-edit-button {
+        min-width: 3rem;
+    }
+    .sitemap-name-input {
+        margin-left: 1rem;
+    }
+    /* || Sitemap Selector Nodes Table styles */
+    .sitemap-node-table {
+        border-bottom: 1px solid #000;
+        border-top: 1px solid #000;
+        width: 100%;
+    }
+    .sitemap-node-table--header {
+        font-weight: bold;
+    }
+    .sitemap-node-table--header--cell {
+        border-bottom: 1px solid #000;
+        color: #000;
+        font-size: 1rem;
+        font-weight: 700;
+        padding: 10px;
+        text-align: justify;
+    }
+    .sitemap-node-table--body--row:nth-child(odd) {
+        background-color: #d3d3d3;
+    }
+    .sitemap-node-table--body--cell {
+        font-size: 1rem;
+        padding: 4px 10px;
+        vertical-align: middle;
+    }
+    .edit-cell {
+        padding-left: 0;
+    }
+}

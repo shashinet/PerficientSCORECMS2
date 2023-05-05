@@ -1,0 +1,25 @@
+/* Colors */
+$primary: rgba(1, 1, 1, 1);
+$secondary: rgba(204, 31, 32, 1);
+$tertiary: #8c734b;
+$white: rgba(255, 255, 255, 1);
+$black: rgba(1, 1, 1, 1);
+$textColor: rgba(34, 34, 34, 1);
+$lightGrey: rgba(245, 245, 247, 1);
+$inverseTextColor: rgba(255, 255, 255, 1);
+$footerBackground: linear-gradient(244.46deg, #010101 14.31%, #222222 46.17%);
+$lowerFooterBackground: linear-gradient(15.29deg, #010101 7.07%, #333333 98.17%);
+$primaryGradient: linear-gradient(244.46deg, #cc1f20 14.31%, #8d0e11 46.17%);
+$headerUtilityNavGradient: linear-gradient(244.46deg, #010101 14.31%, #222222 46.17%);
+$headerUtilityNavGradientReverse: linear-gradient(15.29deg, #8c734c 7.07%, #c9b38d 98.17%);
+$headerUtilityNavGradient: linear-gradient(15.29deg, #8c734c 7.07%, #c9b38d 98.17%);
+$headerMainNavGradient: linear-gradient(15.29deg, #010101 7.07%, #333333 98.17%);
+
+/* Typeography */
+$font: 'Work sans', sans-serif;
+$bodylg: 1rem;
+$bodyxl: 1.125rem;
+$bodylgLineHeight: 120%;
+
+/* Spacing */
+$gutters: 1rem;

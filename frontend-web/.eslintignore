@@ -1,0 +1,12 @@
+dist/
+ClientResources/
+node_modules/
+vendor/
+obj/
+
+**/*.test.js
+**/*.stories.jsx
+generated-stories-entry.js
+storybook-init-framework-entry.js
+webpack.config.js
+_preflight.scss

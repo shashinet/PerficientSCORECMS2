@@ -1,0 +1,249 @@
+{
+      "title":"Updates Brand Headline",
+      "titleTag":"H2",
+      "cards":[
+        {
+          "cardStyle":[
+            "wide-carousel-card"
+          ],
+          "title":"Latest Updates From the Cancer Institute",
+          "titleTag":"H2",
+          "image":{
+            "contentType":"Image",
+            "imageSrc":"https://i.picsum.photos/id/534/300/300.jpg?hmac=PGUWTUeM8cg-ZwT7RBRcjzeUk2sLPc5bpmY22mIn32s",
+            "altText":"alt text"
+          },
+          "bodyDescription":null,
+          "body":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+          "callToAction":[
+            {
+              "style":"primary",
+              "text":"Learn More",
+              "url":"/EPiServer/CMS/Content/generic-page,,66/?epieditmode=true",
+              "openInNewWindow":false,
+              "contentType":"Button",
+              "id":"block-152",
+              "displayOption":null,
+              "globalStyle":[
+              ]
+            }
+          ],
+          "contentType":"Card",
+          "id":"block-150",
+          "displayOption":null,
+          "globalStyle":[
+          ]
+        },
+        {
+          "cardStyle":[
+            "wide-carousel-card"
+          ],
+          "title":"Lorem ipsum dolor 2",
+          "titleTag":"H2",
+          "image":{
+            "contentType":"Image",
+            "imageSrc":"https://i.picsum.photos/id/534/300/300.jpg?hmac=PGUWTUeM8cg-ZwT7RBRcjzeUk2sLPc5bpmY22mIn32s",
+            "altText":"alt text"
+          },
+          "bodyDescription":null,
+          "body":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "callToAction":[
+            {
+              "style":"primary",
+              "text":"Learn More",
+              "url":"/EPiServer/CMS/Content/generic-page,,66/?epieditmode=true",
+              "openInNewWindow":false,
+              "contentType":"Button",
+              "id":"block-152",
+              "displayOption":null,
+              "globalStyle":[
+              ]
+            }
+          ],
+          "contentType":"Card",
+          "id":"block-150",
+          "displayOption":null,
+          "globalStyle":[
+          ]
+        },
+        {
+          "cardStyle":[
+            "wide-carousel-card"
+          ],
+          "title":"Lorem ipsum dolor 2",
+          "titleTag":"H2",
+          "image":{
+            "contentType":"Image",
+            "imageSrc":"https://i.picsum.photos/id/534/300/300.jpg?hmac=PGUWTUeM8cg-ZwT7RBRcjzeUk2sLPc5bpmY22mIn32s",
+            "altText":"alt text"
+          },
+          "bodyDescription":null,
+          "body":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "callToAction":[
+            {
+              "style":"primary",
+              "text":"Learn More",
+              "url":"/EPiServer/CMS/Content/generic-page,,66/?epieditmode=true",
+              "openInNewWindow":false,
+              "contentType":"Button",
+              "id":"block-152",
+              "displayOption":null,
+              "globalStyle":[
+              ]
+            }
+          ],
+          "contentType":"Card",
+          "id":"block-150",
+          "displayOption":null,
+          "globalStyle":[
+          ]
+        },
+        {
+          "cardStyle":[
+            "wide-carousel-card"
+          ],
+          "title":"Lorem ipsum dolor 2",
+          "titleTag":"H2",
+          "image":{
+            "contentType":"Image",
+            "imageSrc":"https://i.picsum.photos/id/534/300/300.jpg?hmac=PGUWTUeM8cg-ZwT7RBRcjzeUk2sLPc5bpmY22mIn32s",
+            "altText":"alt text"
+          },
+          "bodyDescription":null,
+          "body":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "callToAction":[
+            {
+              "style":"primary",
+              "text":"Learn More",
+              "url":"/EPiServer/CMS/Content/generic-page,,66/?epieditmode=true",
+              "openInNewWindow":false,
+              "contentType":"Button",
+              "id":"block-152",
+              "displayOption":null,
+              "globalStyle":[
+              ]
+            }
+          ],
+          "contentType":"Card",
+          "id":"block-150",
+          "displayOption":null,
+          "globalStyle":[
+          ]
+        },
+        {
+          "cardStyle":[
+            "wide-carousel-card"
+          ],
+          "title":"Lorem ipsum dolor 2",
+          "titleTag":"H2",
+          "image":{
+            "contentType":"Image",
+            "imageSrc":"https://i.picsum.photos/id/534/300/300.jpg?hmac=PGUWTUeM8cg-ZwT7RBRcjzeUk2sLPc5bpmY22mIn32s",
+            "altText":"alt text"
+          },
+          "bodyDescription":null,
+          "body":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "callToAction":[
+            {
+              "style":"primary",
+              "text":"Learn More",
+              "url":"/EPiServer/CMS/Content/generic-page,,66/?epieditmode=true",
+              "openInNewWindow":false,
+              "contentType":"Button",
+              "id":"block-152",
+              "displayOption":null,
+              "globalStyle":[
+              ]
+            }
+          ],
+          "contentType":"Card",
+          "id":"block-150",
+          "displayOption":null,
+          "globalStyle":[
+          ]
+        },
+        {
+          "cardStyle":[
+            "wide-carousel-card"
+          ],
+          "title":"Lorem ipsum dolor 2",
+          "titleTag":"H2",
+          "image":{
+            "contentType":"Image",
+            "imageSrc":"https://i.picsum.photos/id/534/300/300.jpg?hmac=PGUWTUeM8cg-ZwT7RBRcjzeUk2sLPc5bpmY22mIn32s",
+            "altText":"alt text"
+          },
+          "bodyDescription":null,
+          "body":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "callToAction":[
+            {
+              "style":"primary",
+              "text":"Learn More",
+              "url":"/EPiServer/CMS/Content/generic-page,,66/?epieditmode=true",
+              "openInNewWindow":false,
+              "contentType":"Button",
+              "id":"block-152",
+              "displayOption":null,
+              "globalStyle":[
+              ]
+            }
+          ],
+          "contentType":"Card",
+          "id":"block-150",
+          "displayOption":null,
+          "globalStyle":[
+          ]
+        },
+        {
+          "cardStyle":[
+            "wide-carousel-card"
+          ],
+          "title":"Lorem ipsum dolor 3",
+          "titleTag":"H2",
+          "image":{
+            "contentType":"Image",
+            "imageSrc":"https://i.picsum.photos/id/534/300/300.jpg?hmac=PGUWTUeM8cg-ZwT7RBRcjzeUk2sLPc5bpmY22mIn32s",
+            "altText":"alt text"
+          },
+          "bodyDescription":null,
+          "body":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+          "callToAction":[
+            {
+              "style":"primary",
+              "text":"Learn More",
+              "url":"/EPiServer/CMS/Content/generic-page,,66/?epieditmode=true",
+              "openInNewWindow":false,
+              "contentType":"Button",
+              "id":"block-152",
+              "displayOption":null,
+              "globalStyle":[
+              ]
+            }
+          ],
+          "contentType":"Card",
+          "id":"block-150",
+          "displayOption":null,
+          "globalStyle":[
+          ]
+        }
+      ],
+  "callToActionButtons":[
+    {
+      "style":"text-primary ",
+      "text":"View All",
+      "url":"/EPiServer/CMS/Content/generic-page,,66/?epieditmode=true",
+      "openInNewWindow":false,
+      "contentType":"Button",
+      "id":"block-152",
+      "displayOption":null,
+      "globalStyle":[
+      ]
+    }
+  ],
+  "showPagination":false,
+  "contentType":"Slider",
+  "id":"block-141",
+  "displayOption":null,
+  "globalStyle":[
+  ]
+}

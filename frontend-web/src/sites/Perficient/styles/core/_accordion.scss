@@ -1,0 +1,65 @@
+@use '../base/theme';
+
+.score-accordion {
+  .page-layout + .page-layout {
+    margin-top: rem-calc(15);
+  }
+
+  &-panel {
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  }
+
+  &-panel + &-panel {
+    margin-top: 1rem;
+  }
+
+  .accordion-button {
+    width: 100%;
+    padding: 1rem;
+    border-left: rem-calc(6) solid $secondary;
+    font-weight: 600;
+    text-align: left;
+    transition: border-color ease-in 0.3s;
+
+    &::after {
+      position: absolute;
+      right: 2rem;
+      width: 1.5em;
+      height: 1.5em;
+      text-align: center;
+      transition: all 0.35s;
+      content: '\276F';
+    }
+
+    &[aria-expanded='true'] {
+      border-color: $blue;
+      color: $blue;
+
+      &::after {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  .panel-collapse {
+    max-height: 0;
+    padding: 0 1rem;
+    border-left: rem-calc(6) solid $secondary;
+    transition: border-color ease-in 0.3s;
+
+    &.show {
+      max-height: 100vh;
+      padding: 1rem;
+      border-color: $blue;
+    }
+
+    .panel-body {
+      h3,
+      h4 {
+        color: $primary;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

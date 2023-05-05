@@ -1,0 +1,6 @@
+@using Perficient.Web.Features.Blocks.Fields.SideNavigation.Models
+
+@model SideNavigationReactViewModel
+
+
+@Html.ReactComponentFor(nameof(SideNavigationReactViewModel), ReactComponents.SideNavigationReactComponent, Model, "secondaryNavigation")

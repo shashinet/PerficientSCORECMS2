@@ -1,0 +1,35 @@
+@using Perficient.Web.Features.Articles.Pages.NewsDetails
+@using Perficient.Web.Features.Articles.Extensions
+
+@model ContentViewModel<NewsDetailsPage>
+
+
+@{
+    var category = @Model.CurrentContent.ArticleCategory.GetArticleCategory();
+}
+
+<section class="score-stripe score-picture-stripe default">
+    <div class="container justify-center centered">
+        <h1 data-epi-type="title">
+            @Html.PropertyFor(m => m.CurrentContent.Title)
+        </h1>
+        @if (category != null)
+        {
+            <h2 style="background-color: @category.Color">
+                @category.Name
+            </h2>
+        }
+    </div>
+</section>
+<section class="news-article content-page">    
+    <div class="container date">
+        Posted on
+        <em>@Html.DisplayFor(m => m.CurrentContent.PublishedDate)</em>  to
+        <em>@category.Name</em>  by
+        <em>@Html.DisplayFor(m => m.CurrentContent.Author)</em>
+    </div>
+    <div class="rich-text" data-epi-type="content">        
+        @Html.PropertyFor(m => m.CurrentContent.MainContent)
+    </div>
+    @Html.PropertyFor(m => m.CurrentContent.MainContentArea)
+</section>

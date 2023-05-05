@@ -1,0 +1,27 @@
+parameters:
+- name: SOURCE
+  type: string
+- name: TARGET
+  type: string
+jobs:
+  - deployment: Promote_Content_From_${{ upper(parameters.SOURCE) }}_to_${{ upper(parameters.TARGET) }}
+    environment: 
+      name: Optimizely-CMS-${{ upper(parameters.TARGET) }}
+    workspace:
+      clean: all
+    pool: 
+      vmImage: 'windows-latest'
+    variables:
+     - group: CMS12-Perficient.Accelerator.Web.Version
+     - group: CMS12-Perficient.Accelerator.Web.DxpApi
+    strategy:
+      runOnce:
+        deploy:
+          steps: 
+          - checkout: self
+          - task: PowerShell@2
+            displayName: 'Promote'
+            inputs:
+              targetType: filePath
+              filePath: '_SolutionItems\dxp\PromoteToEnvironment.ps1'
+              arguments: '-ClientKey $(dxp.clientkey) -ClientSecret $(dxp.secretkey) -ProjectID $(dxp.projectid) -SourceEnvironment "${{ parameters.SOURCE }}" -TargetEnvironment "${{ parameters.TARGET }}" -UseMaintenancePage 0 -IncludeCode 0 -IncludeBlobs 1 -IncludeDb 1 -SourceApp "cms"'

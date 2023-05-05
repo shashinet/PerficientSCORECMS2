@@ -1,0 +1,5 @@
+/* suppress focus ring on form controls for mouse users */
+[data-whatintent='mouse'] *:focus,
+[data-whatintent='touch'] *:focus {
+  outline: none;
+}

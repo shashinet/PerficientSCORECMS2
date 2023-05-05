@@ -1,0 +1,7 @@
+@using Perficient.Web.Features.Media;
+@model ImageMediaData
+
+@if (Model != null)
+{
+    <img src="@Url.ContentUrl(Model.ContentLink)" class="@ViewData["CssClass"]" alt="@Model.AltText" title="@Model.AltText"/>
+}

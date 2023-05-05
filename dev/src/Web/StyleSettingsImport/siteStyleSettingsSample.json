@@ -1,0 +1,82 @@
+{
+  "StylesScore Training": {
+    "Colors": [
+      {
+        "Name": "Black",
+        "ColorCode": "#252727"
+      },
+      {
+        "Name": "Primary",
+        "ColorCode": "#3D2252"
+      },
+      {
+        "Name": "Dark Gray",
+        "ColorCode": "#5A5A5A"
+      },
+      {
+        "Name": "Fuscia",
+        "ColorCode": "#FF00FF"
+      }
+    ],
+    "FontColors": [
+      {
+        "Name": "Black",
+        "ColorCode": "#252727"
+      },
+      {
+        "Name": "Primary",
+        "ColorCode": "#3D2252"
+      },
+      {
+        "Name": "Dark Gray",
+        "ColorCode": "#5A5A5A"
+      }
+    ],
+    "ButtonStyles": [
+      {
+        "Name": "Default Alert Text Button",
+        "ButtonStyleClass": "text-primary text-alert-default"
+      }
+    ],
+    "ButtonSizes": [
+      {
+        "Name": "XL",
+        "ButtonSizeClass": "xl-size-class"
+      }
+    ],
+    "ImageClasses": [
+      {
+        "Name": "Image style",
+        "ScoreClassName": "image-test-class"
+      },
+      {
+        "Name": "ImageTestClass",
+        "ScoreClassName": "image-test-class-2"
+      }
+    ],
+    "HeaderClasses": null,
+    "FooterClasses": null,
+    "StyleClasses": null,
+    "SideNavClasses": null,
+    "StripeClasses": null,
+    "SectionHeroClasses": null,
+    "HorizontalRuleClasses": null,
+    "StyleBoxClasses": null,
+    "TileClasses": null,
+    "CardClasses": null,
+    "PageLayoutClasses": null,
+    "DocumentHeaderClasses": null,
+    "CarouselPaneClasses": null,
+    "CarouselClasses": null,
+    "CalloutClasses": [
+      {
+        "Name": "Callout style",
+        "ScoreClassName": "image-test-class"
+      },
+      {
+        "Name": "CalloutTestClass",
+        "ScoreClassName": "image-test-class-2"
+      }
+    ]
+  }
+}

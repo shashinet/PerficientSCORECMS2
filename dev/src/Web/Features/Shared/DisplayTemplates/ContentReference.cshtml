@@ -1,0 +1,8 @@
+@using EPiServer.Core
+@model ContentReference
+
+@if (!ContentReference.IsNullOrEmpty(Model))
+{
+    var templateTag = (ViewData["TemplateTag"] ?? "").ToString();
+    Html.RenderContent(Model, templateTag);
+}

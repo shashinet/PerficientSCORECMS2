@@ -1,0 +1,145 @@
+@use './theme';
+
+@mixin bodyBase {
+  color: theme.$body;
+  font-size: theme.$bodysm;
+  font-family: theme.$fontPrimary;
+  letter-spacing: normal;
+  @include respond-above(large) {
+    font-size: theme.$bodylg;
+  }
+}
+
+body {
+  @include bodyBase;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 600;
+}
+
+// Headings
+.heading-one,
+h1 {
+  color: theme.$primary;
+  font-size: theme.$h1sm;
+
+  p {
+    color: theme.$primary;
+    font-size: theme.$h1sm;
+  }
+
+  @include respond-above(medium) {
+    font-size: theme.$h1lg;
+
+    p {
+      font-size: theme.$h1lg;
+    }
+  }
+}
+
+.heading-two,
+h2 {
+  color: theme.$primary;
+  font-size: theme.$h2sm;
+
+  p {
+    color: theme.$primary;
+    font-size: theme.$h2sm;
+  }
+
+  @include respond-above(medium) {
+    font-size: theme.$h2lg;
+
+    p {
+      font-size: theme.$h2lg;
+    }
+  }
+}
+
+.heading-three,
+h3 {
+  color: theme.$tertiary;
+  font-size: theme.$h3sm;
+
+  p {
+    color: theme.$tertiary;
+    font-size: theme.$h3sm;
+  }
+
+  @include respond-above(medium) {
+    font-size: theme.$h3lg;
+
+    p {
+      font-size: theme.$h3lg;
+    }
+  }
+}
+
+.heading-four,
+h4 {
+  color: theme.$tertiary;
+  font-size: theme.$h4sm;
+
+  p {
+    color: theme.$tertiary;
+    font-size: theme.$h4sm;
+  }
+
+  @include respond-above(medium) {
+    font-size: theme.$h4lg;
+
+    p {
+      font-size: theme.$h4lg;
+    }
+  }
+}
+
+.heading-five,
+h5 {
+  color: theme.$primary;
+  font-size: theme.$h5sm;
+
+  p {
+    color: theme.$primary;
+    font-size: theme.$h5sm;
+  }
+
+  @include respond-above(medium) {
+    font-size: theme.$h5lg;
+
+    p {
+      font-size: theme.$h5lg;
+    }
+  }
+}
+
+ul {
+  margin: rem-calc(0 -20 15 0);
+  padding-right: rem-calc(20);
+  padding-left: rem-calc(23);
+  list-style: none;
+
+  li {
+    position: relative;
+    color: theme.$body;
+    text-align: left;
+  }
+
+  li::before {
+    display: inline-block;
+    width: rem-calc(14);
+    margin-right: rem-calc(3);
+    color: #cccccc;
+    font-weight: bold;
+    content: '\25CF';
+  }
+
+  ul {
+    margin: 0;
+  }
+}

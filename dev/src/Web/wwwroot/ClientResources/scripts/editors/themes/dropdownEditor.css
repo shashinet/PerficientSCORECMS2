@@ -1,0 +1,21 @@
+.dropdownList {
+    margin: 0;
+    padding: 2px;
+    width: 195px;
+    height: 125px;
+    border: 1px solid #929ba4;
+    border-radius: 4px;
+    overflow: auto;
+}
+.dropdownList li {
+    padding: 3px;
+}
+.dropdownList li:hover {
+    background-color: lightgrey;
+}
+.dropdownList li.selectedItem {
+    background-color: #58595b;
+}
+.dropdownList li.selectedItem a {
+    color: #fff;
+}

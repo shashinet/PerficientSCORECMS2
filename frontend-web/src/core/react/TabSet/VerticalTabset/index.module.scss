@@ -1,0 +1,63 @@
+@use '../../../../global/styles/abstracts/variables';
+
+
+.verticalTabset {
+  overflow-anchor: none;
+  padding-block: 2.5rem;
+
+  @media (min-width: 992px) {
+    padding-block: 5rem;
+  }
+
+  @keyframes:global(fade_in) {
+    0% {
+      transform: scale(.99) translate3d(0, 0, 0);
+    }
+    100% {
+      transform: scale(1) translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes:global(fade_out) {
+    0% {
+      transform: scale(1) translate3d(0, 0, 0);
+    }
+
+    100% {
+      transform: scale(.99) translate3d(0, 0, 0);
+    }
+  }
+
+  :global {
+    * {
+      font-family: variables.$font;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+
+      .w-full {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    .section-header {
+      width: 100%;
+      max-width: 100%;
+      margin-block-end: 2rem;
+      text-align: center;
+
+      * {
+        color: variables.$primary;
+      }
+    }
+
+    .body {
+      * + * {
+        margin-block-start: 1rem;
+      }
+    }
+  }
+}

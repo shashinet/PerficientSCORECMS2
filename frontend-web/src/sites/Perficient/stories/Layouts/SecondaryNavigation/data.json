@@ -1,0 +1,399 @@
+{
+  "secondaryNavStyle": "default",
+  "id": "block-1888",
+  "contentType": "Secondary Navigation",
+  "title": "Landing Page Title",
+  "navigationItems": [
+    {
+      "title": "Parent Page",
+      "url": "/",
+      "openInNewWindow": false,
+      "contentType": "NavigationLink",
+      "id": "block-44",
+      "globalStyle": [],
+      "isActive": false,
+      "childPages": []
+    },
+    {
+      "title": "Parent Page",
+      "url": "/",
+      "openInNewWindow": false,
+      "contentType": "NavigationItem",
+      "isActive": false,
+      "childPages": [
+        {
+          "title": "Child Page",
+          "openInNewWindow": false,
+          "contentType": "navigationLink",
+          "id": "block-56",
+          "url": "./",
+          "globalStyle": "",
+          "isActive": false
+        },
+        {
+          "title": "Child Page",
+          "openInNewWindow": false,
+          "contentType": "navigationLink",
+          "id": "block-56",
+          "url": "./",
+          "globalStyle": "",
+          "isActive": false
+        },
+        {
+          "title": "Child Page",
+          "openInNewWindow": false,
+          "contentType": "navigationLink",
+          "id": "block-56",
+          "url": "./",
+          "globalStyle": "",
+          "isActive": false
+        },
+        {
+          "title": "Child Page",
+          "openInNewWindow": false,
+          "contentType": "navigationLink",
+          "id": "block-56",
+          "url": "./",
+          "globalStyle": "",
+          "isActive": false
+        },
+        {
+          "title": "Child Page",
+          "openInNewWindow": false,
+          "contentType": "navigationLink",
+          "id": "block-56",
+          "url": "./",
+          "globalStyle": "",
+          "isActive": false
+        },
+        {
+          "title": "Child Page",
+          "openInNewWindow": false,
+          "contentType": "navigationLink",
+          "id": "block-56",
+          "url": "./",
+          "globalStyle": [],
+          "isActive": false
+        }
+      ]
+    },
+    {
+      "title": "Parent Page",
+      "url": "/",
+      "contentType": "NavigationItem",
+      "openInNewWindow": false,
+      "isActive": false,
+      "childPages": [
+        {
+          "title": "Child Page",
+          "openInNewWindow": false,
+          "contentType": "navigationLink",
+          "id": "block-56",
+          "url": "./",
+          "globalStyle": "",
+          "isActive": false
+        },
+        {
+          "title": "Child Page",
+          "openInNewWindow": false,
+          "contentType": "navigationLink",
+          "id": "block-56",
+          "url": "./",
+          "globalStyle": "",
+          "isActive": false
+        },
+        {
+          "title": "Child Page",
+          "openInNewWindow": false,
+          "contentType": "navigationLink",
+          "id": "block-56",
+          "url": "./",
+          "globalStyle": "",
+          "isActive": false
+        },
+        {
+          "title": "Child Page - Lorem ipsum dolor sit amet consectetur adipiscing elit",
+          "openInNewWindow": false,
+          "contentType": "navigationLink",
+          "id": "block-56",
+          "url": "./",
+          "globalStyle": "",
+          "isActive": false
+        },
+        {
+          "title": "Child Page",
+          "openInNewWindow": false,
+          "contentType": "navigationLink",
+          "id": "block-56",
+          "url": "./",
+          "globalStyle": "",
+          "isActive": false
+        },
+        {
+          "title": "Child Page",
+          "openInNewWindow": false,
+          "contentType": "navigationLink",
+          "id": "block-56",
+          "url": "./",
+          "globalStyle": "",
+          "isActive": false
+        }
+      ]
+    },
+    {
+      "title": "Parent Page",
+      "url": "/",
+      "openInNewWindow": false,
+      "contentType": "navigationItem",
+      "isActive": false,
+      "childPages": [
+        {
+          "title": "Child Page",
+          "openInNewWindow": false,
+          "contentType": "navigationLink",
+          "id": "block-56",
+          "url": "./",
+          "globalStyle": "",
+          "isActive": false
+        },
+        {
+          "title": "Child Page",
+          "openInNewWindow": false,
+          "contentType": "navigationLink",
+          "id": "block-56",
+          "url": "./",
+          "globalStyle": "",
+          "isActive": false
+        },
+        {
+          "title": "Child Page",
+          "openInNewWindow": false,
+          "contentType": "navigationLink",
+          "id": "block-56",
+          "url": "./",
+          "globalStyle":"",
+          "isActive": false
+        },
+        {
+          "title": "Child Page - Lorem ipsum dolor sit amet consectetur adipiscing elit",
+          "openInNewWindow": false,
+          "contentType": "navigationLink",
+          "id": "block-56",
+          "url": "./",
+          "globalStyle": "",
+          "isActive": false
+        },
+        {
+          "title": "Child Page",
+          "openInNewWindow": false,
+          "contentType": "navigationLink",
+          "id": "block-56",
+          "url": "./",
+          "globalStyle": "",
+          "isActive": false
+        },
+        {
+          "title": "Child Page",
+          "openInNewWindow": false,
+          "contentType": "navigationLink",
+          "id": "block-56",
+          "url": "./",
+          "globalStyle": "",
+          "isActive": false
+        }
+      ]
+    },
+    {
+      "title": "Parent Page",
+      "url": "/",
+      "openInNewWindow": false,
+      "contentType": "navigationItem",
+      "isActive": false,
+      "childPages": [
+        {
+          "title": "Child Page",
+          "openInNewWindow": false,
+          "contentType": "navigationLink",
+          "id": "block-56",
+          "url": "./",
+          "globalStyle": "",
+          "isActive": false
+        },
+        {
+          "title": "Child Page",
+          "openInNewWindow": false,
+          "contentType": "navigationLink",
+          "id": "block-56",
+          "url": "./",
+          "globalStyle": "",
+          "isActive": false
+        },
+        {
+          "title": "Child Page",
+          "openInNewWindow": false,
+          "contentType": "navigationLink",
+          "id": "block-56",
+          "url": "./",
+          "globalStyle": "",
+          "isActive": false
+        },
+        {
+          "title": "Child Page - Lorem ipsum dolor sit amet consectetur adipiscing elit",
+          "openInNewWindow": false,
+          "contentType": "navigationLink",
+          "id": "block-56",
+          "url": "./",
+          "globalStyle": "",
+          "isActive": false
+        },
+        {
+          "title": "Child Page",
+          "openInNewWindow": false,
+          "contentType": "navigationLink",
+          "id": "block-56",
+          "url": "./",
+          "globalStyle":"",
+          "isActive": false
+        },
+        {
+          "title": "Child Page",
+          "openInNewWindow": false,
+          "contentType": "navigationLink",
+          "id": "block-56",
+          "url": "./",
+          "globalStyle": "",
+          "isActive": false
+        }
+      ]
+    },
+    {
+      "title": "Parent Page",
+      "url": "/",
+      "openInNewWindow": false,
+      "contentType": "navigationItem",
+      "isActive": false,
+      "childPages": [
+        {
+          "title": "Child Page",
+          "openInNewWindow": false,
+          "contentType": "navigationLink",
+          "id": "block-56",
+          "url": "./",
+          "globalStyle":"",
+          "isActive": false
+        },
+        {
+          "title": "Child Page",
+          "openInNewWindow": false,
+          "contentType": "navigationLink",
+          "id": "block-56",
+          "url": "./",
+          "globalStyle": "",
+          "isActive": false
+        },
+        {
+          "title": "Child Page",
+          "openInNewWindow": false,
+          "contentType": "navigationLink",
+          "id": "block-56",
+          "url": "./",
+          "globalStyle": "",
+          "isActive": false
+        },
+        {
+          "title": "Child Page - Lorem ipsum dolor sit amet consectetur adipiscing elit",
+          "openInNewWindow": false,
+          "contentType": "navigationLink",
+          "id": "block-56",
+          "url": "./",
+          "globalStyle": "",
+          "isActive": false
+        },
+        {
+          "title": "Child Page",
+          "openInNewWindow": false,
+          "contentType": "navigationLink",
+          "id": "block-56",
+          "url": "./",
+          "globalStyle": "",
+          "isActive": false
+        },
+        {
+          "title": "Child Page",
+          "openInNewWindow": false,
+          "contentType": "navigationLink",
+          "id": "block-56",
+          "url": "./",
+          "globalStyle": "",
+          "isActive": false
+        }
+      ]
+    },
+    {
+      "title": "Parent Page",
+      "url": "/",
+      "openInNewWindow": false,
+      "contentType": "navigationItem",
+      "isActive": false,
+      "childPages": [
+        {
+          "title": "Child Page",
+          "openInNewWindow": false,
+          "contentType": "navigationLink",
+          "id": "block-56",
+          "url": "./",
+          "globalStyle": "",
+          "isActive": false
+        },
+        {
+          "title": "Child Page",
+          "openInNewWindow": false,
+          "contentType": "navigationLink",
+          "id": "block-56",
+          "url": "./",
+          "globalStyle": "",
+          "isActive": false
+        },
+        {
+          "title": "Child Page",
+          "openInNewWindow": false,
+          "contentType": "navigationLink",
+          "id": "block-56",
+          "url": "./",
+          "globalStyle": "",
+          "isActive": false
+        },
+        {
+          "title": "Child Page - Lorem ipsum dolor sit amet consectetur adipiscing elit",
+          "openInNewWindow": false,
+          "contentType": "navigationLink",
+          "id": "block-56",
+          "url": "./",
+          "globalStyle": "",
+          "isActive": false
+        },
+        {
+          "title": "Child Page",
+          "openInNewWindow": false,
+          "contentType": "navigationLink",
+          "id": "block-56",
+          "url": "./",
+          "globalStyle": "",
+          "isActive": false
+        },
+        {
+          "title": "Child Page",
+          "openInNewWindow": false,
+          "contentType": "navigationLink",
+          "id": "block-56",
+          "url": "./",
+          "globalStyle": "",
+          "isActive": false
+        }
+      ]
+    }
+  ],  
+  "globalStyle": "p-0 mb-14",
+  "buttonText": "Back To Top",
+  "buttonStyle": "back-to-top"
+}

@@ -1,0 +1,84 @@
+{
+  "tabSetStyle": [
+
+  ],
+  "globalStyle": [
+
+  ],
+  "contentType": "Tabs",
+  "tabs": [
+    {
+      "label": "Button",
+      "innerContent": [
+        {
+          "contentType": "Button",
+          "buttonStyles": ["primary"],
+          "size": "md",
+          "title": "Button Example",
+          "preText": "",
+          "postText": ""
+        }
+      ]
+    },
+    {
+      "label": "Cards",
+      "innerContent": [
+        {
+          "contentType": "Card",
+          "cardStyles": [],
+          "subHeading": "Card Example",
+          "image": {
+            "contentType": "Image",
+            "imageSrc": "https://place-hold.it/300",
+            "imageAlt": "Place holder"
+          },
+          "body": "Body Text here",
+          "cta": "CTA"
+        }
+      ]
+    },
+    {
+      "label": "Section Header",
+      "innerContent": [
+        {
+          "contentType": "SectionHeader",
+          "sectionHeaderStyles": [],
+          "h2": "Section Header Example",
+          "imageSrc": "https://place-hold.it/300",
+          "imageAlt": "Place holder"
+        }
+      ]
+    },
+    {
+      "label": "Section Hero",
+      "innerContent": [
+        {
+          "contentType": "SectionHero",
+          "sectionHeroStyles": [],
+          "h2": "Section Hero Example",
+          "imageSrc": "https://place-hold.it/300",
+          "ImageAlt": "Place holder",
+          "videoSrc": "VideoSrc",
+          "videoThumb": "VideoThumb",
+          "videoTitle": "VideoTitle",
+          "videoType": "VideoType",
+          "cta": "CTA",
+          "body": "Body Text here"
+        }
+      ]
+    },
+    {
+      "label": "Video",
+      "innerContent": [
+        {
+          "contentType": "Video",
+          "videoStyles": [],
+          "videoSrc": "https://youtu.be/b7Tsl_aQLd0",
+          "videoThumb": "https://yt3.ggpht.com/C8dQq6g0h2TktLB2M2uHCFpJ_1ADRUhka--5Y1WUVAz_YwNg39UB999CRxfJnFAoiOf0ZWZD=s176-c-k-c0x00ffffff-no-rj-mo",
+          "videoTitle": "Perficient",
+          "videoType": "VideoType"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+@use '../../../../global/styles/abstracts/variables';
+
+
+.largeButtonTabset {
+  overflow-anchor: none;
+  padding-block: 2.5rem;
+
+  @media (min-width: 992px) {
+    padding-block: 5rem;
+  }
+
+  @keyframes:global(fade_in) {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes:global(fade_out) {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  :global {
+    * {
+      font-family: variables.$font;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+
+      .w-full {
+        display: flex;
+        flex-direction: column;
+
+        > .cta-area {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-top: 2.5rem;
+        }
+      }
+    }
+
+    .section-header {
+      width: 100%;
+      max-width: 100%;
+      text-align: center;
+      margin-block-end: 2rem;
+
+      .subtitle {
+        text-align: left;
+        margin-block-start: 1rem;
+
+        @media(min-width: 992px) {
+          margin-block-start: 0;
+          text-align: center;
+        }
+      }
+
+      * {
+        color: variables.$primary;
+      }
+    }
+
+    .title + .body {
+      margin-block-start: 1rem;
+    }
+
+    .body {
+      * + * {
+        margin-block-start: 1rem;
+      }
+    }
+  }
+}

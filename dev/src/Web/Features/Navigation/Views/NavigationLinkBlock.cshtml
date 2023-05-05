@@ -1,0 +1,6 @@
+
+@model Perficient.Web.Features.Navigation.Models.NavigationLinkBlock
+
+<a href="@Url.ContentUrl(Model.Link)" aria-label="@Model.Title" target="@(Model.OpenInNewWindow ? "_blank" : "_self")" rel="@(Model.OpenInNewWindow ? "noreferrer" : "")" class="nav-item-link" tabindex="0" >
+    @Html.PropertyFor(x => x.Title)
+</a>

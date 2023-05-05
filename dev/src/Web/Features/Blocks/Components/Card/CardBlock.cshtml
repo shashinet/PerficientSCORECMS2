@@ -1,0 +1,72 @@
+@using Perficient.Web.Features.Blocks.Components.Card
+@model CardBlock
+
+@{
+    var classes = Model.GetClassList();
+    var editClass = Html.IsInEditMode() ? "highlight-edit-all" : string.Empty;
+}
+
+@if (Html.IsInEditMode() && ViewContext.HttpContext.GetContentLink() == ((IContent)Model).ContentLink)
+{
+    <div class="score-card edit-highlight @classes">
+        <div class="image-wrapper" @Html.EditAttributes(x => x.Image)>
+            <img src="@Url.ContentUrl(Model.Image)" class="img-fluid" alt="">
+        </div>
+
+        <div class="caption">
+            @Html.PropertyFor(x => x.CaptionHeading)
+            <div class="sub-heading">
+                @Html.PropertyFor(x => x.SubHeading)
+            </div>
+            <div class="score-card-body rich-text" @Html.EditAttributes(x => x.CaptionBody)>
+                @Html.PropertyFor(x => x.BodyDescription)
+                @Html.PropertyFor(x => x.CaptionBody)
+            </div>
+            <div class="score-call-to-action">
+                @Html.PropertyFor(x => x.CallToActionContentArea, new { HasChildContainers = false })
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="score-card @classes @editClass">
+        @if (Model.Image != null)
+        {
+            <div class="image-wrapper">
+                @Html.DisplayFor(x => x.Image, new { style = "img-fluid" })
+            </div>
+        }
+        <div class="caption">
+            @if (!string.IsNullOrEmpty(Model.CaptionHeading?.Text))
+            {
+                @Html.DisplayFor(x => x.CaptionHeading)
+            }
+
+            @if (!string.IsNullOrEmpty(Model.SubHeading?.Text))
+            {
+                <div class="sub-heading">
+                    @Html.DisplayFor(x => x.SubHeading)
+                </div>
+            }
+
+            @if (Model.CaptionBody != null)
+            {
+                <div class="score-card-body rich-text">
+                    <div class="body-description">
+                        @Html.PropertyFor(x => x.BodyDescription)
+                    </div>
+
+                    @Html.DisplayFor(x => x.CaptionBody)
+                </div>
+            }
+
+            @if (Model.CallToActionContentArea != null)
+            {
+                <div class="score-call-to-action">
+                    @Html.PropertyFor(x => x.CallToActionContentArea, new { HasChildContainers = false })
+                </div>
+            }
+        </div>
+    </div>
+}

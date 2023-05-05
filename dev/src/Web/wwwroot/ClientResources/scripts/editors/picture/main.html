@@ -1,0 +1,44 @@
+<div class="dijitInline responsive-image-editor" data-dojo-attach-point="mainWindow">
+    <div data-dojo-attach-point="mainEventHandler" style="display: none;"></div>
+    <div class="layout-horizontal">
+        <div class="theme-groups" style="display: none" data-dojo-attach-point="themeGroups">
+            <div class="theme-group group-appearance">
+                <h5>
+                    Appearance
+                </h5>
+                <div class="appearance-group">
+                    <button class="btn-light active">Light</button>
+                    <button class="btn-dark">Dark</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container js-dropzone-wrapper" data-dojo-attach-point="dropzone">
+            <div class="js-dropzone">
+                <span>Drop image here or click to upload</span>
+            </div>
+        </div>
+        <div class="container empty-property-view" style="display: none" data-dojo-attach-point="emptyDropzone">
+            <h3>Please use on page edit view to insert image.</h3>
+            <img src="/icons/score/icon-responsive-image.png" />
+        </div>
+        <div class="container device-property-view" style="display: none" data-dojo-attach-point="devicePropertyView">
+            <div class="device-property-view-header">
+                <h3 class="device-property-view-title">Please use on page edit view to insert, change or adjust images.</h3>
+                <span class="epi-visibleLink device-property-view-button device-property-view-show" data-dojo-attach-point="viewVariationsView">View variations</span>
+                <span class="epi-visibleLink device-property-view-button device-property-view-hide"data-dojo-attach-point="hideVariationsView" style="display: none;">Hide variations</span>
+            </div>
+            <div class="original-preview" data-dojo-attach-point="originalPropertyView"></div>
+            <div class="property-view-device-list" data-dojo-attach-point="devicePropertyViewList" style="display: none"></div>
+        </div>
+        <div class="fullcrop-wrapper" style="display: none" data-dojo-attach-point="fullcropWrapper"></div>
+        <div class="focal-wrapper" data-dojo-attach-point="focalWrapper"></div>
+        <div class="swiper-component" data-dojo-attach-point="swiperWrapper"></div>
+        <div class="btn-row btn-row-main" data-dojo-attach-point="primaryControls">
+            <button class="btn btn-cancel" data-dojo-attach-point="cancelButton"><span>Cancel</span></button>
+            <button class="btn btn-choose" data-dojo-attach-point="chooseButton"><span>Choose Image</span></button>
+            <button class="btn btn-finish" data-dojo-attach-point="finishButton"><span>Crop & Finish</span></button>
+            <button class="btn btn-clear" data-dojo-attach-point="clearButton"><span>Clear Image</span></button>
+        </div>
+    </div>
+</div>

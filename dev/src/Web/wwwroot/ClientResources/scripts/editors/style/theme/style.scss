@@ -1,0 +1,82 @@
+$blue: #6AD5EC;
+$dark-gray: #181818;
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,700&display=swap');
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+}
+
+.style-editor {
+    width: 600px;
+}
+
+.style-control {
+    display: block;
+    width: 100%;
+    background-color: #f9f9f9;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 2.5px;
+    font-size: 14px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin-bottom: 24px;
+}
+
+
+
+.choices[data-type*='select-multiple'] .choices__inner {
+    padding: 5px !important;
+    background-color: $dark-gray;
+    border-radius: 4px;
+    border: 0px;
+    min-height: 10px;
+
+    .choices__input {
+        background-color: $dark-gray !important;
+        border: 0 !important;
+        margin-left: 10px;
+        margin-top: 5px;
+        font-family: Montserrat;
+        font-size: 13px;
+        color: #FFFFFF;
+        letter-spacing: 0.4px;
+        line-height: 13px;
+    }
+}
+
+.choices__list {
+    padding: 5px;
+
+    .choices__item {
+        border-radius: 4px;
+        background-color: $blue;
+        color: $dark-gray;
+        border: 0;
+        font-size: 13px;
+        padding: 10px;
+        margin-right: 6px;
+        letter-spacing: 0.4px;
+        line-height: 13px;
+        font-family: Montserrat;
+    }
+}
+
+.choices__list--dropdown {
+    .choices__item {
+        background-color: white;
+        font-size: 16px;
+
+        &.is-highlighted {
+            background-color: $blue;
+            color: white;
+        }
+    }
+}
+
+.choices[data-type*='select-multiple'] .choices__button {
+    border-left: 0px;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEiIGhlaWdodD0iMjEiIHZpZXdCb3g9IjAgMCAyMSAyMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9IiMwMDAiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTTIuNTkyLjA0NGwxOC4zNjQgMTguMzY0LTIuNTQ4IDIuNTQ4TC4wNDQgMi41OTJ6IiAvPgogICAgICAgIDxwYXRoIGQ9Ik0wIDE4LjM2NEwxOC4zNjQgMGwyLjU0OCAyLjU0OEwyLjU0OCAyMC45MTJ6IiAvPgogICAgPC9nPgo8L3N2Zz4=);
+}

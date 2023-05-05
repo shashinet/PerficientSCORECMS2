@@ -1,0 +1,48 @@
+@using Perficient.Infrastructure.Interfaces.Content
+@using Perficient.Infrastructure.Settings.Models.Content
+
+@inject IContextModeResolver contextModeResolver
+
+@model IContentViewModel<IContent>
+
+@{
+
+    var culture = EPiServer.Globalization.ContentLanguage.PreferredCulture.Name;
+    var siteTheme = _settingsService.GetSiteSettings<Perficient.Infrastructure.Settings.Models.Content.SiteSettings>()?.SiteTheme;
+    var editClass = @Html.IsInEditMode() ? "preview-page" : "";
+    var basePageContent = Model.CurrentContent as BasePage;
+}
+
+<!DOCTYPE html>
+<html lang="@culture" class="@editClass">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    @Html.CustomCanonicalLink()
+    @Html.RenderMetaData(Model.CurrentContent)
+    <title> @(!string.IsNullOrEmpty(basePageContent?.MetaTitle) ? basePageContent.MetaTitle : Model.CurrentContent.Name)</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet preload" href="@CacheBusterHelper.Version($"~/dist/sites/{siteTheme}/style.css")" as="style" />
+    @Html.RenderOpenGraphMetaData(Model)
+    @RenderSection("AdditionalStyles", required: false)
+    @Html.RequiredClientResources("Header")
+    @Html.RenderExtendedCss(Model.CurrentContent)
+    @Html.RenderHeaderScripts(Model.CurrentContent)
+
+    @if (Html.IsInEditMode())
+    {
+        <link href="@CacheBusterHelper.Version("/ClientResources/styles/previewStyles.css")" rel="stylesheet" />
+        <link href="@CacheBusterHelper.Version("/ClientResources/styles/scoreEditor.css")" rel="stylesheet" />
+
+    }
+
+    <!--AppInsights-->
+    @Html.Raw(AppInsightsSnippet.FullScript)
+    @Html.RenderGoogleTagManagerHead()
+</head>
+<body>
+    @Html.RenderGoogleTagManagerNoScript()
+    @RenderBody()
+</body>
+</html>

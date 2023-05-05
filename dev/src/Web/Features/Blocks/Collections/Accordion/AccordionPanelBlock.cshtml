@@ -1,0 +1,41 @@
+@using Perficient.Web.Features.Blocks.Collections.Accordion
+@model AccordionPanelBlock
+
+@{
+    var guid = Guid.NewGuid().ToString().Split('-');
+    var id = $"{guid[0]}";
+}
+
+@if (Html.IsInEditMode())
+{
+    @:<div class="score-accordion">
+    }
+<div class="score-accordion-panel">
+    <div class="panel-heading">
+        <h3 id="@(id)-title" class="panel-title">
+            <button type="button"
+                    class="accordion-button GTMBUTTON"
+                    data-target="#@(id)-panel"
+                    aria-expanded="@(Html.IsInEditMode() || Model.OpenOnLoad ? "true" : "false")"
+                    aria-controls="@(id)-panel">
+                @Html.PropertyFor(x => x.Title)
+            </button>
+        </h3>
+    </div>
+    <div id="@(id)-panel"
+         class="panel-collapse collapse @(Html.IsInEditMode()  || Model.OpenOnLoad ? "show" : "")">
+        <div class="panel-body">
+            <div class="rich-text">
+                <h4>
+                    @Html.PropertyFor(x => x.ContentHeading)
+                </h4>
+                @Html.PropertyFor(x => x.RichContent)
+            </div>
+            @Html.PropertyFor(x => x.ContentArea)
+        </div>
+    </div>
+</div>
+@if (Html.IsInEditMode())
+{
+@:</div>
+}

@@ -1,0 +1,43 @@
+@using EPiServer.Editor
+@using Perficient.Web.Features.Blocks.Fields.Vimeo
+@model VimeoBaseBlock
+
+@{
+    var altTitle = (string)ViewData["title"];
+
+    var videoDefaultImage = "";
+
+    if (!string.IsNullOrEmpty(Model.VideoThumbnailId))
+    {
+        videoDefaultImage = $"https://i.vimeocdn.com/video/{Model.VideoThumbnailId}";
+    }
+}
+
+
+<div class="vimeo score-video score-vimeo-video" tabindex="0" style='background-image: url(@videoDefaultImage);'>
+    @if (!string.IsNullOrEmpty(Model.VideoName))
+    {
+        <span class="vimeo-video-title">@Model.VideoName</span>
+    }
+    @if (string.IsNullOrEmpty(Model.VideoId))
+    {
+        <img src="/ClientResources/images/vimeoTransparentBackground.png" class="editor-vimeo-placeholder" width="560" height="315" alt=""/>
+    }
+    else
+    {
+        var videoUrl = $"https://player.vimeo.com/video/{Model.VideoId}";
+
+        var width = Html.IsInEditMode() ? "width=560" : string.Empty;
+        var height = Html.IsInEditMode() ? "height=315" : string.Empty;
+
+        <iframe data-src="@videoUrl"
+                data-thumbnailurl="@videoDefaultImage"
+                title="@altTitle"
+                aria-label="@altTitle"
+                @width
+                @height
+                frameborder="0"
+                allow="autoplay; encrypted-media"
+                allowfullscreen=""></iframe>
+    }
+</div>

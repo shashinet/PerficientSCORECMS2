@@ -1,0 +1,119 @@
+# .NET5.0
+# Build and test .NET5.0 projects.
+
+trigger:
+- main
+
+pool: 
+  vmImage: 'windows-latest'
+
+variables:
+- group: CMS12-Perficient.Accelerator.Web.Version
+- name: projects
+  value: '**/*.csproj'
+- name: buildConfiguration
+  value: 'Release'
+- name: coreFramework
+  value: 'net5.0'
+- name: projectJsonFileDir
+  value: 'dev/src/Web'
+
+steps:
+- task: PowerShell@2
+  displayName: Build Number
+  inputs:
+    targetType: inline
+    script: |
+      #Set Build Number
+      Write-Host "Setting Build Number"
+      $dateTime = $(Get-Date).ToUniversalTime().ToString("yyMMddhhmmss")
+      Write-Host "###vso[task.setvariable variable=buildNumber]$(Version.Major).$(Version.Minor).$(Version.Patch)-$dateTime"
+
+- task: DotNetCoreCLI@2
+  displayName: Restore
+  inputs:
+    command: restore
+    projects: '$(projects)'
+    feedsToUse: config
+    nugetConfigPath: 'dev/Nuget.config'
+
+- task: Npm@1
+  displayName: 'npm install'
+  inputs:
+    command: 'install'
+    workingDir: '$(projectJsonFileDir)'
+
+- task: Npm@1
+  displayName: 'Run Webpack Build'
+  inputs:
+    command: 'custom'
+    workingDir: '$(projectJsonFileDir)'
+    customCommand: 'run build:Secondary'
+
+- task: Npm@1
+  displayName: 'Run Webpack Build'
+  inputs:
+    command: 'custom'
+    workingDir: '$(projectJsonFileDir)'
+    customCommand: 'run build:Perficient'
+    
+- task: DotNetCoreCLI@2
+  displayName: Build
+  inputs:
+    projects: '$(projects)'
+    arguments: '--configuration $(BuildConfiguration) --framework $(coreFramework) /p:Version=$(buildNumber)'
+
+- task: CopyFiles@2
+  displayName: 'Copy wwwroot'
+  inputs:
+    SourceFolder: 'dev\src\Web\wwwroot'
+    Contents: '**'
+    TargetFolder: '\home\site\wwwroot\wwwroot'
+    OverWrite: true    
+
+- task: CopyFiles@2
+  displayName: 'Copy Webpack Dist'
+  inputs:
+    SourceFolder: 'dev\src\Web\wwwroot\dist'
+    Contents: '**'
+    TargetFolder: '$(Agent.TempDirectory)\SitePackageContent\wwwroot\dist'
+    OverWrite: true
+
+- task: CopyFiles@2
+  displayName: 'Copy License file'
+  inputs:
+    SourceFolder: 'dev'
+    Contents: 'License.config'
+    #TargetFolder: '$(Agent.TempDirectory)\SitePackageContent\wwwroot'
+    TargetFolder: '\home\site\wwwroot'
+    OverWrite: true
+
+- task: DotNetCoreCLI@2
+  displayName: Publish
+  inputs:
+    command: publish
+    publishWebProjects: True
+    arguments: '--configuration $(BuildConfiguration) --framework $(coreFramework) /p:Version=$(buildNumber) --output $(Agent.TempDirectory)\SitePackageContent\'
+    zipAfterPublish: false
+    modifyOutputPath: false
+
+- task: ArchiveFiles@2
+  displayName: 'Pack Files'
+  inputs:
+    rootFolderOrFile: '$(Agent.TempDirectory)\SitePackageContent\'
+    includeRootFolder: false
+    archiveFile: '$(Build.ArtifactStagingDirectory)/Perficient.cms.app.$(Build.BuildId).nupkg'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish DXP Files'
+  inputs:
+    PathtoPublish: '$(build.artifactstagingdirectory)'
+    ArtifactName: 'DXP Deployment Package'
+    publishLocation: 'Container'
+  condition: succeededOrFailed()
+  
+- task: PublishBuildArtifacts@1
+  inputs:
+   PathtoPublish: 'dev\_SolutionItems\Deployment Scripts'
+   ArtifactName: 'Deployment Files'
+   publishLocation: Container

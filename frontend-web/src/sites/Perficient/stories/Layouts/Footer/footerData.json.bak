@@ -1,0 +1,114 @@
+{
+  "language": "en",
+  "footerStyle": [
+    "default",
+    "dark"
+  ],
+  "globalStyle": [
+    "p-0",
+    "mb-0"
+  ],
+  "logoUrl": "http://localhost:6002",
+  "image": {
+    "imageSrc": "/static/media/wwwroot/src/sites/Perficient/stories/Layouts/Footer/Perficient-Logo_White.png",
+    "altText": "Perficient",
+    "contentType": "Image"
+  },
+  "upperFooter": [],
+  "lowerFooter": {
+    "socialIcons": [
+      {
+        "contentType": "socialIcon",
+        "id": 95,
+        "url": "https://www.facebook.com/",
+        "image": {
+          "contentType": "Image",
+          "imageSrc": "https://int.nhcredentialing.org/globalassets/social-icons/facebook.svg",
+          "altText": "Facebook"
+        },
+        "openInNewWindow": false
+      },
+      {
+        "contentType": "socialIcon",
+        "id": 95,
+        "url": "https://www.facebook.com/",
+        "image": {
+          "contentType": "Image",
+          "imageSrc": "https://int.nhcredentialing.org/globalassets/social-icons/twitter.svg",
+          "altText": "Twitter"
+        },
+        "openInNewWindow": false
+      },
+      {
+        "contentType": "socialIcon",
+        "id": 95,
+        "image": {
+          "contentType": "Image",
+          "imageSrc": "https://int.nhcredentialing.org/globalassets/social-icons/instagram.svg",
+          "altText": "Instagram"
+        },
+        "url": "https://www.facebook.com/",
+        "openInNewWindow": false
+      },
+      {
+        "contentType": "socialIcon",
+        "id": 95,
+        "url": "https://www.facebook.com/",
+        "image": {
+          "contentType": "Image",
+          "imageSrc": "https://int.nhcredentialing.org/globalassets/social-icons/linkedin.svg",
+          "altText": "LinkedIn"
+        },
+        "openInNewWindow": false
+      }
+    ],
+    "lowerFooterContent": [
+      {
+        "contentType": "NavigationPanel",
+        "id": 56,
+        "displayOption": "w-full",
+        "columnContent": [
+          {
+            "contentType": "MenuList",
+            "id": 87,
+            "sectionTitle": "",
+            "sectionUrl": "",
+            "menuListContent": [
+              {
+                "contentType": "RichText",
+                "id": 99,
+                "value": "<p>&copy; Perficient 2022</p>"
+              },
+              {
+                "contentType": "navigationLink",
+                "id": 95,
+                "title": "Privacy Statement",
+                "url": "https://zzzz.com",
+                "openInNewWindow": false
+              },             
+              {
+                "contentType": "navigationLink",
+                "id": 96,
+                "title": "Disclaimer",
+                "url": "https://zzzz.com",
+                "openInNewWindow": false
+              },
+              {
+                "contentType": "navigationLink",
+                "id": 96,
+                "title": "Leagal Information",
+                "url": "https://zzzz.com",
+                "openInNewWindow": false
+              },
+              {
+                "contentType": "RichText",
+                "id": 98,
+                "value": "<p>Thanks for reading the footer.</p>"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+@using EPiServer.Cms.Shell
+@using Perficient.Web.Features.Articles.Models
+@using EPiServer.ServiceLocation
+@using Perficient.Web.Features.Articles.Extensions
+
+@model BaseArticlePage
+
+<div class="w-4col">
+    <div class="score-card default">
+        <div class="image-wrapper">
+            <img src=@UrlResolver.Current.GetUrl(Model.ContentImage.GetCroppingForDevice(ContentImageNames.Card)) class="score-image img-fluid" />
+        </div>
+        <div class="caption">
+            <h2>@Model.Title</h2>
+            <div class="score-card-body">
+                <div class="rich-text">
+                    @Model.ContentSummary
+                </div>
+            </div>
+            <div class="score-call-to-action">
+                @*TODO: Localize this*@
+                <a href="@Url.ContentUrl(Model.ContentLink)" @(Model.NavigationHrefTarget == "_blank" ? "external-link" : "")" target="@Model.NavigationHrefTarget" class="score-button primary" aria-label="Read More">
+                    Read More
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

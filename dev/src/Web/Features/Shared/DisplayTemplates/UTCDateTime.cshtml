@@ -1,0 +1,7 @@
+@model DateTime
+
+@{
+    var format = ViewData["format"]?.ToString();
+}
+
+@Model.ToUniversalTime().ToString(format)

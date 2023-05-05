@@ -1,0 +1,15 @@
+.blog-hero {
+  border: 1px solid $tertiaryLight;
+
+  .image-wrapper {
+    padding-left: 0;
+  }
+
+  .caption {
+    justify-content: center;
+    .rich-text {
+      flex-grow: 0;
+      margin: 1rem 0;
+    }
+  }
+}

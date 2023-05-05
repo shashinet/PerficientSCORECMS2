@@ -1,0 +1,24 @@
+@using Perficient.Web.Features.Blocks.Components.Testimonial
+@model TestimonialBlock
+
+@{
+    var imageClass = Model.Image == null ? "no-image" : "";
+}
+
+<div class="score-testimonial @Model.GetClassList()">
+    <div class="tile testimonial-tile @imageClass">
+        <div class="image-wrapper">
+            @Html.PropertyFor(x => x.Image, new { TemplateTag = "Image" })
+        </div>
+        <div class="caption">
+            <p class="description">
+                @Html.PropertyFor(q => q.Quote)
+            </p>
+            <div class="author">
+                <p class="author-name">
+                    @Html.PropertyFor(q => q.Source)
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

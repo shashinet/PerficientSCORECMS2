@@ -1,0 +1,15 @@
+@using Perficient.Web.Features.Blocks.Fields.SideNavigation.Models
+
+@model SideNavigationViewModel
+
+@if (Model.HasNavigationItems)
+{
+    <div class="side-navigation @Model.CssClasses">
+        <ul>
+            @foreach (var item in @Model.NavigationItems)
+            {
+                @await Html.PartialAsync("SideNavigationLinkItem.cshtml", item)
+            }
+        </ul>
+    </div>
+}

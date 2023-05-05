@@ -1,0 +1,138 @@
+@use '../../../../../global/styles/abstracts/variables';
+
+.mobileTabs {
+  :global {
+
+    .tab-panel + .tab-panel {
+      margin-top: 1rem;
+    }
+
+    .subtitle {
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+
+    .cta-area {
+      margin-top: 1.5rem;
+    }
+
+    .tab-button {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+      min-height: 6.4375rem;
+      padding: .5rem 3rem .5rem 1rem;
+      border-radius: .5rem;
+      color: variables.$primary;
+      font-weight: 600;
+      font-size: 1.5rem;
+      line-height: 120%;
+      text-align: left;
+      text-decoration: none;
+      background-color: variables.$lightGrey;
+
+      &::after {
+        position: absolute;
+        right: 0;
+        display: inline-block;
+        height: 1.5rem;
+        margin-right: 1rem;
+        margin-bottom: .25rem;
+        transform: rotate(0);
+        transition: all ease-in-out 0.3s;
+        content: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTEuNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTE4MCAxMiAxMikiIHN0cm9rZT0iIzUxMkQ2RCIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEyLjUzMzEgNi41MzE1MkMxMi41MzMxIDYuMjM3OSAxMi4yOTUxIDUuOTk5ODggMTIuMDAxNSA1Ljk5OTg4QzExLjcwNzggNS45OTk4OCAxMS40Njk4IDYuMjM3OSAxMS40Njk4IDYuNTMxNTJWMTEuNDY4Mkg2LjUzMzExQzYuMjM5NDkgMTEuNDY4MiA2LjAwMTQ2IDExLjcwNjMgNi4wMDE0NiAxMS45OTk5QzYuMDAxNDYgMTIuMjkzNSA2LjIzOTQ5IDEyLjUzMTUgNi41MzMxMSAxMi41MzE1SDExLjQ2OThWMTcuNDY4MkMxMS40Njk4IDE3Ljc2MTkgMTEuNzA3OCAxNy45OTk5IDEyLjAwMTUgMTcuOTk5OUMxMi4yOTUxIDE3Ljk5OTkgMTIuNTMzMSAxNy43NjE5IDEyLjUzMzEgMTcuNDY4MlYxMi41MzE1SDE3LjQ2OThDMTcuNzYzNCAxMi41MzE1IDE4LjAwMTUgMTIuMjkzNSAxOC4wMDE1IDExLjk5OTlDMTguMDAxNSAxMS43MDYzIDE3Ljc2MzQgMTEuNDY4MiAxNy40Njk4IDExLjQ2ODJIMTIuNTMzMVY2LjUzMTUyWiIgZmlsbD0iIzUxMkQ2RCIvPgo8L3N2Zz4K');
+      }
+
+      &[aria-expanded='true'] {
+        border-radius: .5rem .5rem 0 0;
+
+        &::after {
+          transform: rotate(180deg);
+          content: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTEuNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTE4MCAxMiAxMikiIHN0cm9rZT0iIzUxMkQ2RCIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTYuMDAxNDYgMTEuOTk5OUM2LjAwMTQ2IDExLjcwNjMgNi4yMzk0OSAxMS40NjgyIDYuNTMzMTEgMTEuNDY4MkwxNy40Njk4IDExLjQ2ODJDMTcuNzYzNCAxMS40NjgyIDE4LjAwMTUgMTEuNzA2MyAxOC4wMDE1IDExLjk5OTlDMTguMDAxNSAxMi4yOTM1IDE3Ljc2MzQgMTIuNTMxNSAxNy40Njk4IDEyLjUzMTVMNi41MzMxMSAxMi41MzE1QzYuMjM5NDkgMTIuNTMxNSA2LjAwMTQ2IDEyLjI5MzUgNi4wMDE0NiAxMS45OTk5WiIgZmlsbD0iIzUxMkQ2RCIvPgo8L3N2Zz4K');
+        }
+      }
+    }
+
+    .panel-collapse {
+      max-height: 0;
+      overflow: hidden;
+      transform: scale(1, 0);
+      transform-origin: top;
+      transition: all ease 0.3s;
+
+      .panel-body {
+        padding: 0 1rem 1rem;
+        border-radius: 0 0 .5rem .5rem;
+        background-color: variables.$lightGrey;
+
+        .image-wrapper {
+          position: relative;
+          max-width: 100%;
+          height: 0;
+          // padding-top: 12.9375rem / 19.4375rem * 100%;
+          border-radius: .5rem;
+          border-radius: .5rem;
+          overflow: hidden;
+
+          @supports (aspect-ratio: 311 / 207) {
+            height: auto;
+            aspect-ratio: 311 / 207;
+          }
+
+          img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            inset: 0;
+          }
+        }
+
+        .title {
+          margin-top: 1.5rem;
+          color: variables.$primary;
+          font-weight: 600;
+          font-size: 1.375rem;
+          line-height: 120%;
+
+          + .body {
+            margin-top: 1rem;
+          }
+        }
+
+        .body {
+          font-weight: 400;
+          font-size: 1.125rem;
+          line-height: 115%;
+
+          + .cta-area {
+            margin-top: 1rem;
+          }
+        }
+
+        .cta-area {
+          display: flex;
+          flex-direction: column;
+          align-content: flex-start;
+
+          a.score-button {
+            flex: 0 0 auto;
+            padding: 0;
+
+            + a.score-button {
+              margin-top: 1rem;
+            }
+          }
+        }
+      }
+
+      &.show {
+        max-height: 9999rem;
+        transform: scale(1, 1);
+      }
+    }
+
+  }
+}

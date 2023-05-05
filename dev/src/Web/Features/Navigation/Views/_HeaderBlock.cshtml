@@ -1,0 +1,30 @@
+@using Perficient.Web.Features.Navigation.ViewModels
+@using Newtonsoft.Json
+@using Newtonsoft.Json.Serialization
+
+@model Perficient.Web.Features.Navigation.ViewModels.HeaderContainerViewModel
+
+@*@if (Html.IsInEditMode())
+{
+    <div>
+        <button onclick="toggleHeaderJson()">Toggle JSON View</button>
+        <pre id="json-header" style="display:none;height:500px;overflow-y:scroll;background:#ddd;">
+            @JsonConvert.SerializeObject(Model.Header, new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver(), StringEscapeHandling = StringEscapeHandling.EscapeHtml })
+        </pre>
+    </div>
+
+    <script>
+        (function () {
+            var element = document.getElementById("json-header");
+            var obj = JSON.parse(element.innerText);
+            element.innerHTML = JSON.stringify(obj, undefined, 2);
+        })();
+
+        function toggleHeaderJson() {
+            var element = document.getElementById("json-header");
+            element.style.display = element.style.display === "none" ? "block" : "none";
+        }
+    </script>
+}*@
+
+@Html.ReactComponentFor(nameof(HeaderContainerViewModel), ReactComponents.Header, Model.Header, "header")

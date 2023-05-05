@@ -1,0 +1,9 @@
+@using Perficient.Web.Features.Blocks.Components.ExperimentTracking
+@model ExperimentTrackingBlock
+
+@if (Html.IsInEditMode())
+{
+    <div>
+        @Html.PropertyFor(x => x.ExperimentationKey)
+    </div>
+}

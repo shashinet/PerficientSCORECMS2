@@ -1,0 +1,114 @@
+{
+  "language": "en",
+  "footerStyle": [
+    "default",
+    "dark"
+  ],
+  "globalStyle": [
+    "p-0",
+    "mb-0"
+  ],
+  "logoUrl": "http://localhost:6002",
+  "image": {
+    "imageSrc": "/Perficient-Logo_White.png",
+    "altText": "Perficient",
+    "contentType": "Image"
+  },
+  "upperFooter": [],
+  "lowerFooter": {
+    "socialIcons": [
+      {
+        "contentType": "socialIcon",
+        "id": 95,
+        "url": "https://www.facebook.com/",
+        "image": {
+          "contentType": "Svg",
+          "imageSrc": "<svg x='0px' y='0px' viewBox='0 0 32 32' enable-background='new 0 0 32 32' xml:space='preserve' alt='' aria-hidden='true'><rect fill-opacity='0' width='32' height='32'></rect> <path d='M22.1,11.4c-0.3-0.7-0.8-1.2-1.5-1.5c-1-0.4-3.5-0.3-4.6-0.3s-3.6-0.1-4.6,0.3c-0.7,0.3-1.2,0.8-1.5,1.5  c-0.3,1.5-0.4,3.1-0.3,4.6c0,1.1-0.1,3.6,0.3,4.6c0.3,0.7,0.8,1.2,1.5,1.5c1,0.4,3.5,0.3,4.6,0.3s3.6,0.1,4.6-0.3  c0.7-0.3,1.2-0.8,1.5-1.5c0.3-1.5,0.4-3.1,0.3-4.6C22.5,14.5,22.4,12.9,22.1,11.4z M16,20c-2.2,0-4-1.8-4-4s1.8-4,4-4s4,1.8,4,4  S18.2,20,16,20z M20.2,12.7c-0.5-0.1-0.9-0.5-0.8-1c0-0.4,0.4-0.8,0.8-0.8c0.5-0.1,1,0.3,1,0.8c0.1,0.5-0.3,1-0.8,1  C20.3,12.7,20.2,12.7,20.2,12.7z'></path> <path d='M16,13.4c-1.4,0-2.6,1.2-2.6,2.6s1.2,2.6,2.6,2.6s2.6-1.2,2.6-2.6S17.4,13.4,16,13.4L16,13.4z'></path> <path d='M24.6,4.9H7.4C6,4.9,4.9,6,4.9,7.4v17.1C4.9,25.9,6,27,7.4,27h17.1c1.4,0,2.5-1.1,2.5-2.5V7.4C27.1,6,26,4.9,24.6,4.9z   M23.8,19.2c0,1.2-0.4,2.4-1.3,3.3c-0.9,0.8-2.1,1.3-3.3,1.3c-1.3,0.1-5.2,0.1-6.5,0c-1.2,0-2.4-0.4-3.3-1.3  c-0.8-0.9-1.3-2.1-1.3-3.3C8,17.9,8,14,8.1,12.7c0-1.2,0.4-2.4,1.3-3.3c0.9-0.8,2.1-1.3,3.3-1.3C14,8,17.9,8,19.2,8.1  c1.2,0,2.4,0.4,3.3,1.3c0.8,0.9,1.3,2.1,1.3,3.3C23.9,14.1,23.9,17.9,23.8,19.2z'></path></svg>",
+          "altText": "Facebook"
+        },
+        "openInNewWindow": false
+      },
+      {
+        "contentType": "socialIcon",
+        "id": 95,
+        "url": "https://www.facebook.com/",
+        "image": {
+          "contentType": "Svg",
+          "imageSrc": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' alt='' aria-hidden='true'><path d='M25.5 6h-18A1.506 1.506 0 006 7.514v17.972A1.506 1.506 0 007.5 27h18a1.51 1.51 0 001.5-1.514V7.514A1.51 1.51 0 0025.5 6zM12.347 24H9.234V13.978h3.118V24zm-1.556-11.391a1.805 1.805 0 01-1.8-1.8 1.805 1.805 0 011.8-1.8 1.808 1.808 0 011.8 1.8 1.8 1.8 0 01-1.8 1.8zM24.014 24H20.9v-4.875c0-1.162-.023-2.658-1.617-2.658-1.622 0-1.87 1.266-1.87 2.573V24H14.3V13.978h2.986v1.369h.042a3.278 3.278 0 012.948-1.617c3.15 0 3.736 2.077 3.736 4.777z'></path></svg>",
+          "altText": "Twitter"
+        },
+        "openInNewWindow": false
+      },
+      {
+        "contentType": "socialIcon",
+        "id": 95,
+        "image": {
+          "contentType": "Svg",
+          "imageSrc": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' alt='' aria-hidden='true'><path d='M28.065 9.816A3.217 3.217 0 0025.8 7.538C23.8 7 15.8 7 15.8 7s-8.005 0-10 .538a3.217 3.217 0 00-2.263 2.278A33.744 33.744 0 003 16.018a33.744 33.744 0 00.535 6.2A3.169 3.169 0 005.8 24.462C7.795 25 15.8 25 15.8 25s8.005 0 10-.538a3.169 3.169 0 002.265-2.242 33.744 33.744 0 00.535-6.2 33.744 33.744 0 00-.535-6.204zM13.182 19.825v-7.613l6.691 3.806z'></path></svg>",
+          "altText": "Instagram"
+        },
+        "url": "https://www.facebook.com/",
+        "openInNewWindow": false
+      },
+      {
+        "contentType": "socialIcon",
+        "id": 95,
+        "url": "https://www.facebook.com/",
+        "image": {
+          "contentType": "Svg",
+          "imageSrc": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' alt='' aria-hidden='true'><path d='M25.533 10.858A10.573 10.573 0 0028 8.315a9.861 9.861 0 01-2.832.761 4.906 4.906 0 002.162-2.711 9.684 9.684 0 01-3.122 1.188A4.907 4.907 0 0020.614 6a4.917 4.917 0 00-4.914 4.919 5.553 5.553 0 00.122 1.127A13.981 13.981 0 015.675 6.898a4.881 4.881 0 00-.67 2.482 4.915 4.915 0 002.193 4.1 4.953 4.953 0 01-2.223-.624v.061a4.919 4.919 0 003.944 4.824 5.2 5.2 0 01-1.294.167 6.2 6.2 0 01-.925-.076 4.928 4.928 0 004.594 3.414 9.851 9.851 0 01-6.106 2.1A10.18 10.18 0 014 23.284a13.9 13.9 0 007.553 2.208 13.9 13.9 0 0013.995-13.995c0-.213 0-.426-.015-.639z'></path></svg>",
+          "altText": "LinkedIn"
+        },
+        "openInNewWindow": false
+      }
+    ],
+    "lowerFooterContent": [
+      {
+        "contentType": "NavigationPanel",
+        "id": 56,
+        "displayOption": "w-full",
+        "columnContent": [
+          {
+            "contentType": "MenuList",
+            "id": 87,
+            "sectionTitle": "",
+            "sectionUrl": "",
+            "menuListContent": [
+              {
+                "contentType": "RichText",
+                "id": 99,
+                "value": "<p>&copy; Perficient 2022</p>"
+              },
+              {
+                "contentType": "navigationLink",
+                "id": 95,
+                "title": "Privacy Statement",
+                "url": "https://zzzz.com",
+                "openInNewWindow": false
+              },
+              {
+                "contentType": "navigationLink",
+                "id": 96,
+                "title": "Disclaimer",
+                "url": "https://zzzz.com",
+                "openInNewWindow": false
+              },
+              {
+                "contentType": "navigationLink",
+                "id": 96,
+                "title": "Leagal Information",
+                "url": "https://zzzz.com",
+                "openInNewWindow": false
+              },
+              {
+                "contentType": "RichText",
+                "id": 98,
+                "value": "<p>Thanks for reading the footer.</p>"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

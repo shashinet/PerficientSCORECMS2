@@ -1,0 +1,47 @@
+@using EPiServer.Framework.Web.Mvc.Html
+@using Perficient.Web.Features.Navigation
+@using Perficient.Infrastructure.Interfaces.Content
+
+@model IContentViewModel<IContent>
+
+@{
+    Layout = "~/Features/Shared/Views/_MasterLayout.cshtml";
+    var isBasePage = Model.CurrentContent is BasePage;
+    var basePage = isBasePage ? (BasePage)Model.CurrentContent : null;
+    var siteTheme = _settingsService.GetSiteSettings<Perficient.Infrastructure.Settings.Models.Content.SiteSettings>()?.SiteTheme;
+}
+
+@section AdditionalStyles {
+    @RenderSection("AdditionalStyles", required: false)
+}
+
+@await Html.RenderEPiServerQuickNavigatorAsync()
+
+@Html.RenderAlerts()
+@if (!basePage?.HideSiteHeader ?? false)
+{
+    @Html.RenderHeader()
+}
+@if(Html.IsInEditMode())
+{
+    <div class="show-on-page">
+        @Html.FullRefreshPropertiesAttribute(Model.CurrentContent)
+        @Html.RenderOptionBar(Model.CurrentContent, true)
+    </div>
+}
+
+<main class="page-wrapper">
+    @RenderBody()
+</main>
+
+@if (!basePage?.HideSiteFooter ?? false)
+{
+    @Html.RenderFooter()
+}
+<script src="@CacheBusterHelper.Version($"~/dist/sites/{siteTheme}/vendor.js")"></script>
+<script src="@CacheBusterHelper.Version($"~/dist/sites/{siteTheme}/main.js")"></script>
+
+@RenderSection("AdditionalScripts", required: false)
+@Html.RequiredClientResources("Footer")
+@Html.RenderFooterScripts(Model.CurrentContent)
+@Model.SchemaMarkup

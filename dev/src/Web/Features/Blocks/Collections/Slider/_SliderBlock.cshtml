@@ -1,0 +1,9 @@
+@using Perficient.Web.Features.Blocks.Collections.Slider
+@using Newtonsoft.Json
+@using Newtonsoft.Json.Serialization
+
+@model SliderViewModel
+
+@Html.RenderJsonEditMode(nameof(SliderViewModel),Model)
+
+@Html.ReactComponentFor(nameof(SliderViewModel), ReactComponents.Slider, Model)

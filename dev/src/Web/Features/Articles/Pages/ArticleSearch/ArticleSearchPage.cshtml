@@ -1,0 +1,38 @@
+@*@using Perficient.Web.Features.Articles
+@using Perficient.Web.Features.Articles.ViewModels
+@using Perficient.Web.Features.Articles.Pages.BlogDetails
+@using EPiServer
+
+@model SearchViewModel<ArticleSearchPage>
+@inject IContentLoader _contentLoader
+
+@using (Html.BeginForm("Index", "SearchPage",FormMethod.Post))
+ {           
+    @Html.TextBoxFor(x => x.SearchText, new { id = "SearchText", name = "SearchText" , placeholder = @Model.CurrentContent.SearchPlaceHolderText })
+    @Html.HiddenFor(x=>x.SearchPageID)    
+    <input type="submit" name="submit" value="Search">
+   @foreach(var blogDetail in @Model.SearchResults)
+{
+        <div class="w-4col">
+   <div class="score-card default">
+      <div class="image-wrapper">
+          <img src= @UrlResolver.Current.GetUrl(blogDetail.ArticleImage.OriginalImage) alt="some thing to see here"  class="score-image img-fluid" /></div>
+      <div class="caption">
+         <h2>@blogDetail.Title</h2>
+         <div class="score-card-body">
+             <div class="rich-text">
+          @blogDetail.Summary
+          </div>
+        </div>
+            Posted on <em>@blogDetail.PublishedDate.ToString() </em>  to <em>@blogDetail.ArticleCategoryName</em> by
+                <em>@blogDetail.Author</em>
+         <div class="score-call-to-action">
+             <a href="" class="score-button primary" aria-label="Read More">Read More
+            </a>      
+       </div>
+      </div>
+     </div>
+    </div>
+}
+ }
+*@

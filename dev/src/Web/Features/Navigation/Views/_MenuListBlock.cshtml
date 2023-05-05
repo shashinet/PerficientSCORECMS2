@@ -1,0 +1,24 @@
+@using Perficient.Web.Features.Navigation.Models
+@model MenuListBlock
+
+<div class="menu-list">
+    @if (!string.IsNullOrEmpty(Model.SectionTitle))
+    {
+        <div class="menu-list-title">
+            <a href="@Model.SectionUrl" role="menuitem">
+                <span>@Model.SectionTitle</span>
+            </a>
+        </div>
+    }
+    else
+    {
+        <div class="menu-list-title">
+            <span>@Model.SectionTitle</span>
+        </div>
+    }
+
+    <ul class="menu-list-links">
+        @Html.PropertyFor(x => x.MainContentArea, new { Tag = NavigationConstants.LinkTag, HasContainer = false, HasChildContainers = false })
+    </ul>
+</div>
+

@@ -1,0 +1,35 @@
+# .NET5.0
+# Build and test .NET5.0 projects.
+
+trigger:
+  branches:
+    include:
+    - develop
+pr: none
+name: $(Version.Major).$(Version.Minor).$(Version.Patch).$(Build.BuildId)
+resources:
+  repositories:
+  - repository: self
+    type: git
+    ref: develop
+variables:
+ - group: CMS12-Perficient.Accelerator.Web.Version
+# - group: CMS12-Perficient.Accelerator.Web.DxpApi 
+stages:
+- stage: build
+  jobs:
+   - template: ci-artifact-template.yml
+     parameters:
+       CONFIGURATION: Release
+       VMAJOR: $(Version.Major)
+       VMINOR: $(Version.Minor)
+       VPATCH: $(Version.Patch)
+       VBUILDID: $(Build.BuildId)
+- stage: DeployIntegration
+  dependsOn: build
+  condition: succeeded('build')
+  displayName: 'Deploy Integration'
+  jobs:
+   - template: deploy-template.yml
+     parameters:
+       ENV: Integration

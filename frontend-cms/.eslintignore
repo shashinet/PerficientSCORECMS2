@@ -1,0 +1,5 @@
+stories/
+scripts/
+node_modules/
+dist/
+**/*.stories.jsx

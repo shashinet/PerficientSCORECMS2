@@ -1,0 +1,45 @@
+@using Perficient.Web.Features.Blocks.Components.SectionHeader
+@model SectionHeaderBlock
+
+@{
+    var classes = Model.GetClassList();
+}
+
+@if (Html.IsInEditMode() && ViewContext.HttpContext.GetContentLink() == ((IContent)Model).ContentLink)
+{
+    <div class="score-section-header score-section-header-edit @classes">
+        <div class="score-header-image" @Html.EditAttributes(x => x.Image)>
+            <img src="@Url.ContentUrl(Model.Image)" class="score-image img-fluid" alt="">
+        </div>
+        <h2 @Html.EditAttributes(x => x.Title)>
+            @Html.PropertyFor(x => x.Title)
+        </h2>
+        <h3 @Html.EditAttributes(x => x.Subtitle)>
+            @Html.PropertyFor(x => x.Subtitle)
+        </h3>
+    </div>
+
+}
+else
+{
+    <div class="score-section-header @classes">
+    @if (Model.Image != null)
+    {
+        <div class="score-header-image">
+            @Html.DisplayFor(x => x.Image, new { lazy = false })
+        </div>
+    }
+    @if (!string.IsNullOrEmpty(Model.Title))
+    {
+        <h2>
+            @Html.DisplayFor(x => x.Title)
+        </h2>
+    }
+    @if (!string.IsNullOrEmpty(Model.Subtitle))
+    {
+        <h3>
+            @Html.DisplayFor(x => x.Subtitle)
+        </h3>
+    }
+    </div>
+}

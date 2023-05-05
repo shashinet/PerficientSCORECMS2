@@ -1,0 +1,73 @@
+@using Perficient.Web.Features.Blocks.Components.SectionHero
+@model SectionHeroBlock
+@{
+    var backgroundColor = !string.IsNullOrEmpty(Model.BackgroundColor) ? $"background-color: {Model.BackgroundColor};" : null;
+    var textColor = !string.IsNullOrEmpty(Model.TextColor) ? $"color: {Model.TextColor};" : null;
+    var isNarrowMedia = Model.NarrowMedia ? "narrow" : "";
+    var classes = Model.GetClassList();
+}
+
+
+@if (Html.IsInEditMode() && ViewContext.HttpContext.GetContentLink() == ((IContent)Model).ContentLink)
+{
+    <div class="section-hero-block @isNarrowMedia image @classes" style="@backgroundColor @textColor">
+        <div class="page-layout">
+            @Html.PropertyFor(m => m.Media, new { Tag = "ContentReferencePartial", TemplateTag = "ContentReferencePartial" })
+        </div>
+        <div class="page-layout">
+            <div class="score-section-hero score-section-hero-edit ">
+                <h2 @Html.EditAttributes(x => x.Title)>
+                    @Html.DisplayFor(x => x.Title)
+                </h2>
+                <h3 @Html.EditAttributes(x => x.Subtitle)>
+                    @Html.DisplayFor(x => x.Subtitle)
+                </h3>
+                <div class="score-hero-body rich-text" @Html.EditAttributes(x => x.Body)>
+                    @Html.PropertyFor(x => x.Body)
+                </div>
+                <div class="score-call-to-action" @Html.EditAttributes(x => x.CallToActionContentArea)>
+                    @Html.DisplayFor(x => x.CallToActionContentArea, new { Tag = "call-to-action"})
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="section-hero-block @isNarrowMedia image @classes" style="@backgroundColor @textColor">
+        @if (Model.Media != null)
+        {
+            <div class="page-layout">
+                @Html.PropertyFor(m => m.Media, new { Tag = "ContentReferencePartial", TemplateTag = "ContentReferencePartial" })
+            </div>
+        }
+        <div class="page-layout">
+            <div class="score-section-hero">
+                @if (!string.IsNullOrEmpty(Model.Title))
+                {
+                    <h2>
+                        @Html.DisplayFor(x => x.Title)
+                    </h2>
+                }
+                @if (!string.IsNullOrEmpty(Model.Subtitle))
+                {
+                    <h3>
+                        @Html.DisplayFor(x => x.Subtitle)
+                    </h3>
+                }
+                @if (Model.Body != null)
+                {
+                    <div class="score-hero-body rich-text">
+                        @Html.DisplayFor(x => x.Body)
+                    </div>
+                }
+                @if (Model.CallToActionContentArea != null)
+                {
+                    <div class="score-call-to-action">
+                        @Html.DisplayFor(x => x.CallToActionContentArea, new { Tag = "call-to-action" })
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}

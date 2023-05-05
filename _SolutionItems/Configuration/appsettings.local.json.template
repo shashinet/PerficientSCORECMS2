@@ -1,0 +1,57 @@
+// anything added in here will override previously loaded appsettings. in the root of the web
+// project the appsettings.local.json is ignored from GIT so any private info in here is safe
+{
+  "RunAsDevelopment": true, // this allows running the site with DEV init and flag set even if Env variable is not
+  "ConnectionStrings": {
+    "EPiServerDB": "Data Source=.;Initial Catalog=Perficient.Cms;User Id=optimizelyUser;Password=P@ssw0rd!;Connection Timeout=60;MultipleActiveResultSets=True;"
+  },
+  "EPiServer": {
+    "Find": {
+      "DefaultIndex": "[find index]",
+      "ServiceUrl": "[find URL formatted as https://demo02.find.episerver.net/[index key]"
+    }
+  },
+  "Serilog": {
+    "Using": [],
+    "MinimumLevel": {
+      "Default": "Information",
+      "Override": {
+        "Microsoft": "Warning",
+        "System": "Warning"
+      }
+    },
+    "Enrich": [ "FromLogContext", "WithMachineName", "WithProcessId", "WithThreadId" ],
+    "WriteTo": [
+      {  // output logs to console - highly useful with Kestrel
+        "Name": "Console",
+        "Args": {
+          "outputTemplate": "===> {Timestamp:HH:mm:ss} [{Level}] {Message}{NewLine}{Exception}"
+        }
+      },
+      {  // output logs to json file - multiple uses and can consume externally
+        "Name": "File",
+        "Args": {
+          "path": "App_Data/Logs/log.json",
+          "rollingInterval": "Day",
+          "formatter": "Serilog.Formatting.Json.JsonFormatter, Serilog"
+        }
+      },
+      {  // output to txt file - available to load anywhere 
+        "Name": "File",
+        "Args": {
+          "path": "App_Data/Logs/log.txt",
+          "rollingInterval": "Day"
+        }
+      }
+    ]
+  },
+  /*
+  "Kestrel": {
+    "Endpoints": {     
+      "Perficient": {
+        "Url": "http://perficient.local:5001" // Primary Domain for Kestral
+      }      
+    }
+  },
+  */
+}

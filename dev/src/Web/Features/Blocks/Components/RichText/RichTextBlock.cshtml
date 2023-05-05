@@ -1,0 +1,11 @@
+@using Perficient.Web.Features.Blocks.Components.RichText
+
+@model RichTextBlock
+
+@{
+    var editClass = ViewContext.HttpContext.GetContentLink() == ((IContent)Model).ContentLink ? "plain-text-block" : string.Empty;
+}
+
+<div class="rich-text @editClass">
+    @Html.PropertyFor(x => x.MainBody)
+</div>

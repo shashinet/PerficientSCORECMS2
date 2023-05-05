@@ -1,0 +1,15 @@
+@using Perficient.Web.Features.Blocks.Components.ResponsiveImage
+
+@model ResponsiveImageBlock
+@{
+    var d = DateTime.Now;
+}
+
+@if (Html.IsInEditMode() && ViewContext.HttpContext.GetContentLink() == ((IContent)Model).ContentLink)
+{
+    @Html.PropertyFor(x => x.ResponsiveImage, new { editing = true, FieldName = "Responsive Image", style = "max-width: 450px;" })
+}
+else
+{
+    @Html.PropertyFor(x => x.ResponsiveImage)
+}

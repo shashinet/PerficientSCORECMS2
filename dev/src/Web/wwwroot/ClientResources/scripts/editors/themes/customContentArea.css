@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700&display=swap");
+/* Display the information node when hovering the overlay. */
+.Sleek .epi-overlay-item.dijitHover .epi-overlay-item-info {
+  color: #F7F7F7;
+  background-color: #474747;
+  border: 3px solid #E8E8E8;
+  border-radius: 1px 1px 0 0;
+  display: block;
+  font-size: 0.9em;
+  top: -30px;
+  right: -3px; }
+
+/* Hide the information node when editing. */
+.Sleek .epi-overlay-item.dijitFocused .epi-overlay-item-info {
+  display: none; }
+
+.dojoDndItem.epi-overlay-block {
+  position: relative; }
+
+  .dojoDndItem.epi-overlay-block:hover .epi-editor-menu-edit {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    display: block;
+    background: url("../../../../ClientResources/Images/editMenu.png");
+    background-size: 100%;
+    width: 25px;
+    height: 25px;
+  }
+
+.Sleek > .menu-dropdown-content {
+  position: absolute;
+  top: 30px;
+  left: 4px;
+  display: block;
+  background: #555b61;
+  color: #e3e3e3;
+  width: auto;
+  height: auto;
+  padding: 8px;
+  border-radius: 8px;
+  overflow: hidden;
+  /* Header */
+  /* open submenus */ }
+  .Sleek > .menu-dropdown-content a {
+    color: white;
+    text-decoration: none; }
+    .Sleek > .menu-dropdown-content a:hover, .Sleek > .menu-dropdown-content a:active, .Sleek > .menu-dropdown-content a:focus {
+      color: black;
+      text-decoration: none; }
+  .Sleek > .menu-dropdown-content .epi-editor-element-wrapper {
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.1;
+    letter-spacing: .5px;
+    border-radius: 4px;
+    padding: 8px; }
+    .Sleek > .menu-dropdown-content .epi-editor-element-wrapper:hover {
+      background-color: #6AD5EC; }
+      .Sleek > .menu-dropdown-content .epi-editor-element-wrapper:hover a {
+        color: black; }
+  .Sleek > .menu-dropdown-content .epi-editor-header {
+    background-color: black;
+    padding: 13px 15px 12px 15px;
+    margin: -8px -8px 4px -8px;
+    cursor: move; }
+    .Sleek > .menu-dropdown-content .epi-editor-header h4 {
+      font-family: Montserrat, sans-serif;
+      font-size: 14px;
+      font-weight: normal;
+      line-height: 1.1;
+      letter-spacing: .5px;
+      color: white;
+      margin: 0;
+      padding: 0; }
+    .Sleek > .menu-dropdown-content .epi-editor-header .epi-editor-close {
+      cursor: pointer;
+      display: block;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      width: 40px;
+      height: 40px;
+      background: transparent url("icons/close.svg") no-repeat center center;
+      background-size: 14px; }
+      .Sleek > .menu-dropdown-content .epi-editor-header .epi-editor-close:hover, .Sleek > .menu-dropdown-content .epi-editor-header .epi-editor-close:active, .Sleek > .menu-dropdown-content .epi-editor-header .epi-editor-close:focus {
+        background: transparent url("icons/closeHover.svg") no-repeat center center;
+        background-size: 24px; }
+  .Sleek > .menu-dropdown-content .epi-editor-menu-edit-root {
+    max-height: 40vh;
+    overflow: auto; }
+  .Sleek > .menu-dropdown-content .epi-editor-menu-edit-submenu {
+    display: none; }
+  .Sleek > .menu-dropdown-content .open > .epi-editor-menu-edit-submenu {
+    display: block; }
+
+.epi-editor-menu-edit-root > .epi-editor-element-wrapper > .epi-editor-menu-edit-child-icon,
+.epi-editor-menu-edit-submenu-root > .epi-editor-element-wrapper > .epi-editor-menu-edit-child-icon {
+  position: relative;
+  display: inline-block;
+  margin-right: 4px;
+  width: 15px;
+  height: 16px;
+  vertical-align: bottom;
+  cursor: pointer;
+  border: 1px solid transparent; }
+  .epi-editor-menu-edit-root > .epi-editor-element-wrapper > .epi-editor-menu-edit-child-icon:before,
+  .epi-editor-menu-edit-submenu-root > .epi-editor-element-wrapper > .epi-editor-menu-edit-child-icon:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    background: transparent url("icons/arrowDown.svg") no-repeat 0 0;
+    background-size: 14px;
+    transform: rotate(-90deg); }
+  .epi-editor-menu-edit-root > .epi-editor-element-wrapper > .epi-editor-menu-edit-child-icon:hover,
+  .epi-editor-menu-edit-submenu-root > .epi-editor-element-wrapper > .epi-editor-menu-edit-child-icon:hover {
+    border: 1px solid white; }
+
+.epi-editor-menu-edit-root.open > .epi-editor-element-wrapper > .epi-editor-menu-edit-child-icon:before,
+.epi-editor-menu-edit-submenu-root.open > .epi-editor-element-wrapper > .epi-editor-menu-edit-child-icon:before {
+  transform: rotate(0); }
+
+/* links */
+.Sleek > .menu-dropdown-content {
+  /* indents */ }
+  .Sleek > .menu-dropdown-content a {
+    color: white;
+    text-decoration: none; }
+    .Sleek > .menu-dropdown-content a:hover, .Sleek > .menu-dropdown-content a:active, .Sleek > .menu-dropdown-content a:focus {
+      color: black;
+      background-color: #6AD5EC;
+      text-decoration: none; }
+  .Sleek > .menu-dropdown-content .epi-editor-menu-edit-root > .epi-editor-menu-edit-submenu {
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px; }
+  .Sleek > .menu-dropdown-content .epi-editor-menu-edit-submenu-root > .epi-editor-menu-edit-submenu {
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px; }
+  .Sleek > .menu-dropdown-content .epi-editor-menu-edit-submenu-root {
+    padding-top: 5px; }
+  .Sleek > .menu-dropdown-content .epi-editor-menu-edit-submenu {
+    display: none; }
+  .Sleek > .menu-dropdown-content .open > .epi-editor-menu-edit-submenu {
+    display: block; }
+
+/* there be dragons here */
+/* in some chromium browsers, we're seeing the main iframe be positioned overtop of the 
+   epi editing controls... this fixes that issue
+*/
+iframe[data-dojo-attach-point="iframe"] {
+  position: relative;
+  max-width:100vw;
+  z-index: 0; }
+
+/* Custom Icon Colors */
+.epi-icon--purple {
+  -webkit-filter: invert(0%) sepia(100%) saturate(800%) hue-rotate(225deg) brightness(90%) contrast(80%);
+  filter: invert(0%) sepia(100%) saturate(800%) hue-rotate(225deg) brightness(90%) contrast(80%); }

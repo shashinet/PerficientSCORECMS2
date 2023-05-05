@@ -1,0 +1,27 @@
+@using Perficient.Web.Features.Blocks.Collections.Carousel
+
+@model CarouselBlock
+
+@if (Model.CarouselPanes?.FilteredItems?.Count() == 1)
+{
+    @Html.PropertyFor(m => m.CarouselPanes)
+}
+else if (Html.IsInEditMode())
+{
+    @Html.PropertyFor(m => m.CarouselPanes)
+}
+else
+{
+    <section class="carousel">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                @Html.PropertyFor(m => m.CarouselPanes, new { Tag = "CarouselHeroSwiper" })
+            </div>
+            <div class="controls container">
+                <div class="swiper-button-next GTMBUTTON"></div>
+                <div class="swiper-button-prev GTMBUTTON"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+}

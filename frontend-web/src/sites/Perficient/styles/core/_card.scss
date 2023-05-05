@@ -1,0 +1,68 @@
+@use '../base/theme';
+
+%card-block {
+  padding: 2rem;
+  border-radius: rem-calc(8);
+  background-color: theme.$white;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 20px 30px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  }
+
+  .caption {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-size: 1.5rem;
+    }
+    .sub-heading {
+      display: inline-block;
+      padding: 0.5rem 0;
+    }
+
+    .rich-text,
+    p,
+    a {
+      font-size: 1rem;
+    }
+    .score-call-to-action {
+      margin-top: 2rem;
+      a.score-button {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.score-card {
+  @extend %card-block;
+
+  &.over-dark {
+    background-color: theme.$black;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      color: theme.$tertiary;
+    }
+
+    .rich-text,
+    p,
+    a {
+      color: theme.$white;
+    }
+  }
+
+  &.flush-image {
+    padding: 0;
+    overflow: hidden;
+    .caption {
+      padding: 1.5rem;
+    }
+  }
+}

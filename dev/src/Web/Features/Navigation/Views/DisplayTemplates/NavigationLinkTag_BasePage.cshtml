@@ -1,0 +1,8 @@
+@using EPiServer.Cms.Shell
+@model BasePage
+
+@{
+    var url = Url.ContentUrl(Model.ContentLink);
+    var title = string.IsNullOrWhiteSpace(Model.NavigationTitle) ? Model.Name : Model.NavigationTitle;
+}
+<a href="@url" target="@Model.NavigationHrefTarget" class="nav-item-link @(Model.NavigationHrefTarget == "_blank" ? "external-link" : "")">@title</a>

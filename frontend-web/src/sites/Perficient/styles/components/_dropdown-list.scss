@@ -1,0 +1,111 @@
+@use '../base/theme';
+
+.dropdown-button {
+  position: relative;
+  padding: rem-calc(12 25 11 25);
+  color: theme.$secondaryDark;
+
+  .submenu-list::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color: currentColor;
+    font-weight: 600;
+    font-size: rem-calc(16);
+    line-height: rem-calc(22);
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .submenu-list {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    height: 0;
+    height: auto;
+    margin: 0;
+    padding: rem-calc(10 25 25 25);
+    color: theme.$secondaryDark;
+    background-color: inherit;
+    transform: translateY(-10%);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity ease-in-out 0.3s, transform ease 0.3s;
+    will-change: height, opacity;
+
+    .submenu-list-item {
+      > a {
+        transition: opacity ease-in .2s;
+        pointer-events: none;
+
+        &:hover {
+          text-decoration: none;
+          opacity: .75;
+        }
+      }
+    }
+  }
+
+  .caret {
+    display: inline-flex;
+    align-items: center;
+    padding-left: rem-calc(8);
+    color: currentColor;
+
+    svg {
+      width: rem-calc(20);
+      height: rem-calc(14);
+      transform: rotate(90deg);
+      transition: transform ease 0.3s;
+      fill: currentColor;
+    }
+  }
+
+  &.open {
+    background-color: theme.$white;
+
+    .submenu-list {
+      z-index: 10;
+      height: auto;
+      border-radius: rem-calc(0 0 6 6);
+      transform: translateY(0);
+      visibility: visible;
+      opacity: 1;
+      .submenu-list-item {
+        > a {
+          text-decoration: none;
+          cursor: pointer;
+          pointer-events: all;
+        }
+      }
+    }
+
+    .caret {
+      svg {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+
+  &.over-dark {
+    color: theme.$white;
+  }
+}
+
+.dropdown-button::before,
+.submenu-list-item::before {
+  display: none;
+}

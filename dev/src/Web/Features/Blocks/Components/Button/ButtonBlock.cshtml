@@ -1,0 +1,6 @@
+@using Perficient.Web.Features.Blocks.Components.Button
+@model ButtonBlock
+
+<a class="score-button @Model.ButtonStyle GTMBUTTON" target="@(Model.OpenInNewWindow ? "_blank" : "_self")" rel="@(Model.OpenInNewWindow ? "noreferrer" : "")" title="@Model.ButtonText" href="@Url.ContentUrl(Model.ButtonLink)" @Html.EditAttributes(m => m.ButtonText)>
+    @Model.ButtonText
+</a>

@@ -1,0 +1,8 @@
+@using Perficient.Web.Features.Pages.HttpStatus
+@model ContentViewModel<HttpStatusPage>
+
+<div className="page-wrapper">
+    <div className="start-page 404-page container py-4 md:py-22">    
+        @Html.PropertyFor(x => x.CurrentContent.MainContentArea, new { HasContainer = false })
+    </div>
+</div>

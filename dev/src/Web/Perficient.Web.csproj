@@ -1,0 +1,145 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
+    <Version>1.251.487.902</Version>
+  <AssemblyVersion>1.251.487.902</AssemblyVersion><FileVersion>1.251.487.902</FileVersion><InformationalVersion>1.251.487.902</InformationalVersion></PropertyGroup>
+  <ItemGroup>
+    <_WebToolingArtifacts Remove="Properties\PublishProfiles\LocalPublish.pubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="Boxed.AspNetCore.TagHelpers" Version="6.0.0" />
+    <PackageReference Include="DoubleJay.Epi.EnhancedPropertyList" Version="2.0.0" />
+    <PackageReference Include="EPiServer.CloudPlatform.Cms" Version="1.3.1" />
+    <PackageReference Include="EPiServer.CMS" Version="12.18.0" />
+    <PackageReference Include="EPiServer.CMS.AspNetCore.Routing" Version="12.13.1" />
+    <PackageReference Include="EPiServer.ContentDeliveryApi.Cms" Version="3.6.0" />
+    <PackageReference Include="EPiServer.ContentDeliveryApi.Core" Version="3.6.0" />
+    <PackageReference Include="EPiServer.ContentDeliveryApi.Search" Version="3.6.0" />
+    <PackageReference Include="EPiServer.Find.Cms" Version="15.0.3" />
+    <PackageReference Include="EPiServer.Framework" Version="12.13.1" />
+    <PackageReference Include="EPiServer.Hosting" Version="12.13.1" />
+    <PackageReference Include="EPiServer.Labs.ContentManager" Version="1.1.0" />
+    <PackageReference Include="EPiServer.Labs.ContentManager.Core" Version="1.1.0" />
+    <PackageReference Include="EPiServer.Labs.ContentManager.Core.FindQuery" Version="1.1.0" />
+    <PackageReference Include="EPiServer.Labs.GridView" Version="1.1.0" />
+    <PackageReference Include="EPiServer.Marketing.Testing" Version="3.1.1" />
+    <PackageReference Include="EPiServer.Personalization.Content.UI" Version="1.0.1" />
+    <PackageReference Include="Geta.NotFoundHandler.Optimizely" Version="5.0.6" />
+    <PackageReference Include="Geta.Optimizely.Categories" Version="1.0.0" />
+    <PackageReference Include="Geta.Optimizely.Categories.Find" Version="1.0.0" />
+    <PackageReference Include="Geta.Optimizely.Sitemaps" Version="3.1.0" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.21.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="6.0.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Rewrite" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Win32.Primitives" Version="4.3.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Optimizely.ContentGraph.Cms" Version="2.2.2" />
+    <PackageReference Include="Optimizely.SDK" Version="3.11.1" />
+    <PackageReference Include="Polly.Extensions.Http" Version="3.0.0" />
+    <PackageReference Include="Schema.NET" Version="11.0.1" />
+    <PackageReference Include="Serilog" Version="2.12.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="6.0.1" />
+    <PackageReference Include="Serilog.Formatting.Compact" Version="1.1.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
+    <PackageReference Include="System.Diagnostics.Tracing" Version="4.3.0" />
+    <PackageReference Include="System.Linq.Async" Version="6.0.1" />
+    <PackageReference Include="UNRVLD.ODP.VisitorGroups" Version="1.3.0" />
+    <PackageReference Include="Wangkanai.Detection" Version="6.1.0" />
+    <PackageReference Include="Yarp.ReverseProxy" Version="1.1.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Features\Demo\**" />
+    <Content Remove="Features\Demo\**" />
+    <Content Remove="wwwroot\dist\**" />
+    <EmbeddedResource Remove="Features\Demo\**" />
+    <None Remove="Features\Demo\**" />
+    <Content Remove="appsettings.local.json" />
+    <Content Remove="License.config" />
+    <Content Remove="app_data\temp.gitkeep" />
+    <Content Remove="wwwroot\%2a%2a" />
+    <Content Remove="wwwroot\StyleSettingsImport\Score Training.json" />
+    <Content Remove="wwwroot\StyleSettingsImport\siteStyleSettingsSample.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="appsettings.local.json" />
+    <None Include="Features\Blocks\Collections\Accordion\AccordionBlock.cshtml" />
+    <None Include="Features\Blocks\Collections\Accordion\AccordionPanelBlock.cshtml" />
+    <None Include="Features\Blocks\Collections\Carousel\CarouselBlock.cshtml" />
+    <None Include="Features\Blocks\Collections\Carousel\CarouselPaneBlock.cshtml" />
+    <None Include="Features\Blocks\Collections\Slider\_SliderBlock.cshtml" />
+    <None Include="Features\Blocks\Collections\Tabs\TabPanelBlock.cshtml" />
+    <None Include="Features\Blocks\Collections\Tabs\_VerticalTabsetBlock.cshtml" />
+    <None Include="Features\Blocks\Fields\GoogleMap\GoogleMapBaseBlock.cshtml" />
+    <None Include="Features\Blocks\Fields\Heading\HeadingBlock.cshtml" />
+    <None Include="Features\Blocks\Fields\ResponsivePicture\ScorePictureFieldBaseBlock.cshtml" />
+    <None Include="Features\Blocks\Fields\Vimeo\VimeoBaseBlock.cshtml" />
+    <None Include="Features\Blocks\Fields\YouTube\YouTubeBaseBlock.cshtml" />
+    <None Include="Features\Navigation\Views\DisplayTemplates\LinkTag_RichTextBlock.cshtml" />
+    <None Include="Features\Navigation\Views\DisplayTemplates\NavigationLinkTag_BasePage.cshtml" />
+    <None Include="Features\Navigation\Views\DisplayTemplates\LinkTag_BasePage.cshtml" />
+    <None Include="Features\Navigation\Views\DisplayTemplates\TeaserTag_BasePage.cshtml" />
+    <None Include="Features\_viewImports.cshtml" />
+    <None Include="Features\_viewstart.cshtml" />
+    <None Include="StyleSettingsImport\siteStyleSettingsSample.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="StyleSettingsImport\Score Training.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Infrastructure\Perficient.Infrastructure.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="wwwroot\dist\sites\Perficient\styles.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="wwwroot\ClientResources\Scripts\Tools\AddSaveTemplateCommandProvider.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\ClientResources\Scripts\Tools\SaveTemplate.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="app_data\" />
+    <Folder Include="App_Data\Logs\" />
+    <Folder Include="Features\Articles\Pages\ArticleDetails\" />
+    <Folder Include="Features\Blocks\Collections\PricingTable\" />
+  </ItemGroup>
+
+  <Target Name="CopyDist" AfterTargets="ComputeFilesToPublish">
+    <ItemGroup>
+      <DistFiles Include="wwwroot\dist\**" />
+      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+        <RelativePath>%(DistFiles.Identity)</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio><UserProperties /></VisualStudio>
+  </ProjectExtensions>
+</Project>

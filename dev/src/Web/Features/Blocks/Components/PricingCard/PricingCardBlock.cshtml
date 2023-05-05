@@ -1,0 +1,26 @@
+@using Perficient.Web.Features.Blocks.Components.PricingCard
+@model PricingCardBlock
+
+@{
+    var classes = Model.GetClassList();
+    var editClass = Html.IsInEditMode() ? "highlight-edit-all" : string.Empty;
+}
+
+<div class="score-price-card @classes @editClass">
+    <div class="image-wrapper" @Html.EditAttributes(x => x.Image)>
+        <img src="@Url.ContentUrl(Model.Image)" class="img-fluid" alt="">
+    </div>
+    <div class="caption">
+        <h3>@Html.PropertyFor(x => x.MainTitle)</h3>
+        <h4>@Html.PropertyFor(x => x.SecondTitle)</h4>
+        @Html.PropertyFor(x => x.Price)
+        @Html.PropertyFor(x => x.PriceTerm)
+        <div class="score-card-body rich-text" @Html.EditAttributes(x => x.Details)>
+            @Html.PropertyFor(x => x.Details)
+        </div>
+        <div class="score-call-to-action">
+            @Html.PropertyFor(x => x.CtaButton, new { HasChildContainers = false })
+        </div>
+    </div>
+</div>
+

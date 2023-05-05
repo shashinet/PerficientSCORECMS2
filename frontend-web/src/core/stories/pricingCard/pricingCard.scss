@@ -1,0 +1,43 @@
+.score-pricing-card {
+    display: flex;
+    flex-direction: column;
+  
+    .image-wrapper {
+      & + .caption {
+        margin-top: 1rem;
+      }
+    }
+    .caption {
+        h2, h3 {
+          font-size: 2rem;
+          line-height: 120%;
+        }
+    
+        h4 {
+          margin-top: .5rem;
+          font-weight: bold;
+          font-size: .85rem;
+          letter-spacing: .125rem;
+          text-transform: uppercase;
+        }
+      }
+    
+      h2 + #{&}-body,
+      h3 + #{&}-body,
+      h4 + #{&}-body {
+        margin-top: 1rem;
+      }
+    
+      #{&}-body {
+        font-size: 1.125rem;
+        line-height: 120%;
+    
+        * + * {
+          margin-top: 0.5rem;
+        }
+    
+        & + .score-call-to-action {
+          margin-top: 2rem;
+        }
+      }
+}

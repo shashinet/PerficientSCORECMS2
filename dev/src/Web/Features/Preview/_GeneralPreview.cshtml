@@ -1,0 +1,24 @@
+@{
+  Layout = "~/Features/Preview/_PreviewLayout.cshtml";
+}
+
+
+@model Perficient.Infrastructure.Models.ViewModels.PreviewViewModel
+
+@if (Html.IsInEditMode())
+{
+  <div class="show-on-page">
+    @Html.FullRefreshPropertiesAttribute(Model.PreviewContent)
+    @Html.RenderOptionBar(Model.PreviewContent, true)
+  </div>
+}
+
+<div class="container preview-display">
+  <div class="w-full">
+    <h1 style="margin-bottom: 20px">Preview</h1>
+    @if (Model != null)
+    {
+      Html.RenderContentData(Model.PreviewContent, false);
+    }
+  </div>
+</div>

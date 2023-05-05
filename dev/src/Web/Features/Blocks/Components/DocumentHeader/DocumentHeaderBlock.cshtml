@@ -1,0 +1,44 @@
+@using Perficient.Web.Features.Blocks.Components.DocumentHeader
+@model DocumentHeaderBlock
+
+@{
+    var classes = Model.GetClassList();    
+}
+@if (Html.IsInEditMode() && ViewContext.HttpContext.GetContentLink() == ((IContent)Model).ContentLink)
+{
+    <div class="score-document-header score-document-header-edit @classes">
+
+        <div class="score-image img-fluid" @Html.EditAttributes(x => x.ResponsiveImage)>
+            @Html.PropertyFor(x=> x.ResponsiveImage)
+        </div>
+        <h1 @Html.EditAttributes(x => x.Title)>
+            @Html.PropertyFor(x => x.Title)
+        </h1>
+        <h2 @Html.EditAttributes(x => x.Subtitle)>
+            @Html.PropertyFor(x => x.Subtitle)
+        </h2>
+    </div>
+}
+else
+{
+    <div class="score-document-header @classes">
+        @if (Model.ResponsiveImage?.OriginalImage != null)
+        {
+        <div class="score-image img-fluid">
+            @Html.PropertyFor(x => x.ResponsiveImage)
+        </div>
+        }
+        @if (!string.IsNullOrEmpty(Model.Title))
+        {
+        <h1 data-epi-type="title">
+            @Html.DisplayFor(x => x.Title)
+        </h1>
+        }
+        @if (!string.IsNullOrEmpty(Model.Subtitle))
+        {
+        <h2>
+            @Html.DisplayFor(x => x.Subtitle)
+        </h2>
+        }
+    </div>
+}

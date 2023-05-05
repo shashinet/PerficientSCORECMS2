@@ -1,0 +1,44 @@
+@using Perficient.Web.Features.Blocks.Components.Alert
+@model AlertBlock
+
+@{
+    if (Model != null && !Model.IsAlertDismissed)
+    {
+        var backgroundColor = Model.BackgroundColor != null ? $"background-color: {Model.BackgroundColor};" : null;
+        var textColor = Model.TextColor != null ? $"color: {Model.TextColor};" : null;
+        var Id = ((IContent)Model).ContentGuid.ToString();
+        var sectionClass = "score-alert";
+
+        if (Model.IsClosable)
+        {
+            sectionClass += " score-alert-dismissible";
+        }
+        else
+        {
+            sectionClass += " score-alert-dismissible";
+        }
+
+        <section class="@sectionClass"
+                 style="@backgroundColor @textColor"
+                 data-name=Alert-@Model.Title
+                 data-value="@Id"
+                 data-expires="@Model.DaysExpire">
+            <div class="container">
+                <div class="alert-text">
+                    @Html.PropertyFor(x => x.MainText)
+                </div>
+                <div class="alert-ctas">
+                    @Html.PropertyFor(x => x.CallToActionContentArea, new { HasChildContainers = false })
+                </div>
+                <div class="alert-close">
+                    @if (Model.IsClosable)
+                    {
+                        <button type="button" aria-label="close" class="close GTMBUTTON">
+                            x
+                        </button>
+                    }
+                </div>
+            </div>
+        </section>
+    }
+}

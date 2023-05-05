@@ -1,0 +1,26 @@
+@using EPiServer.Cms.Shell
+@using Perficient.Web.Features.Articles.Models
+@using EPiServer.ServiceLocation
+@using Perficient.Web.Features.Articles.Extensions
+
+@model BaseArticlePage
+@{
+    var category = @Model.ArticleCategory.GetArticleCategory();
+}
+
+<div class="score-blog-post score-blog-post-mini">
+    <div class="w-5col image-wrapper">
+        <a href="/">
+            <img src=@UrlResolver.Current.GetUrl(Model.ContentImage.GetCroppingForDevice(ContentImageNames.Card)) class="score-image img-fluid" />
+        </a>
+    </div>
+    <div class="w-7col caption">
+        <h3>
+            <a href="/" style="color: @category.Color">@category.Name</a>
+        </h3>
+        <h2>
+            <a href="/">@Model.Title</a>
+        </h2>
+    </div>
+</div>
+

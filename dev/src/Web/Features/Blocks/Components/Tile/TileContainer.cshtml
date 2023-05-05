@@ -1,0 +1,13 @@
+@using Perficient.Web.Features.Blocks.Components.Tile
+@model TileContainer
+
+@{
+    var guid = Guid.NewGuid().ToString().Split('-');
+    var id = $"tileContainer{guid[0]}";
+    var classes = Model.GetClassList();
+}
+<div class="tile-container @classes">
+    @Html.PropertyFor(x => x.TileItems)
+</div>
+
+

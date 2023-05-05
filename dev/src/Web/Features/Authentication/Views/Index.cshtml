@@ -1,0 +1,112 @@
+@using System.Configuration;
+@using Perficient.Web.Features.Authentication.ViewModels
+@{
+    Layout = null;
+}
+@model LoginViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head id="Head1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Perficient Login</title>
+    <link rel="icon" type="image/svg+xml" href="~/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow" />
+    <link type="text/css" rel="stylesheet" href="/dist/sites/Perficient/styles.css">
+</head>
+<body>
+
+    <div class="login-page">
+        <div class="login-page-container">
+            <label class="font-bold text-4xl mb-4">Perficient Health</label>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary()
+                @Html.TextBoxFor(x => x.Username, new { placeholder = "Username", @class = "w-full h-12 rounded-lg px-4 text-lg focus:ring-blue-600 mb-4" })
+                @Html.PasswordFor(x => x.Password, new { placeholder = "Password", @class = "w-full h-12 rounded-lg px-4 text-lg focus:ring-blue-600 mb-4" })
+                <input type="submit" value="Log in" class="score-button primary" />
+            }
+
+            <label class="text-gray-800 mb-4">or</label>
+            <button class="score-button secondary">Log in with your Perficient Account</button>
+        </div>
+    </div>
+
+    @*
+
+        <div class="top-bar"><img src="/util/images/episerver-white.svg" alt="logo" class="logo" /></div>
+        <div class="js-login-wrapper login-wrapper" id="login-control">
+        <div class="modal">
+        @using (Html.BeginForm("SsoLogin", "Hisclogin", new { ReturnUrl = Request.QueryString["ReturnUrl"], tenantContext = ConfigurationManager.AppSettings["ida-FranchiseSsoId"] }))
+        {
+        @Html.AntiForgeryToken()
+        <br />
+        <ol class="clearfix">
+        <li><img src="/util/images/login/DXC_long.svg" alt="logo" class="logo" /></li>
+        <li>
+        <input type="submit" value="Log in with Azure AD Tenant 1" id="btnAd1" class="epi-button-child-item" />
+        </li>
+        </ol>
+        }
+
+        @using (Html.BeginForm("SsoLogin", "HiscAdmin", new { ReturnUrl = Request.QueryString["ReturnUrl"] }))
+        {
+        @Html.AntiForgeryToken()
+        @Html.Hidden("tenantContext", ConfigurationManager.AppSettings["ida-CorporateSsoId"])
+        <br />
+        <ol class="clearfix">
+        <li>
+        <input type="submit" value="Log in with Azure AD Tenant 2" id="btnAd2" class="epi-button-child-item" />
+        </li>
+        </ol>
+        }
+
+        @using (Html.BeginForm())
+        {
+        @Html.AntiForgeryToken()
+        <hr />
+        <ol class="clearfix form-epiAccount">
+        <li class="trigger show">
+        <div class="btn-login" onclick="epiAccount_Click()">Log in with local Episerver Account</div>
+        </li>
+        <li class="hide">
+        @Html.ValidationSummary()
+        </li>
+        <li class="hide">
+        @Html.LabelFor(x => x.Username)
+        @Html.TextBoxFor(x => x.Username)
+        </li>
+        <li class="hide">
+        @Html.LabelFor(x => x.Password)
+        @Html.PasswordFor(x => x.Password)
+        </li>
+        <li class="hide">
+        <input type="submit" value="Log in" class="epi-button-child-item" />
+        </li>
+        </ol>
+        }
+        </div>
+        </div>
+
+        <script>
+        var classes = [' img1', ' img2', ' img3', ' img4'];
+        document.getElementById("login-control").className += classes[Math.floor(Math.random() * classes.length)]
+
+        function toggleCookieText() {
+        document.getElementById("cookieInfoPanel").classList.toggle("is-visible");
+        return false;
+        }
+        function epiAccount_Click() {
+        [].forEach.call(document.querySelectorAll('.form-epiAccount li'), function (el) {
+        el.classList.remove("hide");
+        el.classList.add("show");
+        });
+        document.querySelector(".form-epiAccount li.trigger").classList.remove("show");
+        document.querySelector(".form-epiAccount li.trigger").classList.add("hide");
+        }
+        </script>*@
+</body>
+</html>

@@ -1,0 +1,232 @@
+@model Perficient.Web.Features.ContentTypeReport.ViewModels.ContentDetailsReportViewModel
+@using EPiServer.Framework.Web.Resources
+@using EPiServer.Shell.Navigation
+@using EPiServer.Shell.Navigation.Internal
+@using Perficient.Web.Features.ContentTypeReport.Models
+@{
+	Layout = null;
+	int usageID = Model.contentDetailsModel.UsageDetails == null ? 0 : Model.contentDetailsModel.UsageDetails.Id;
+	string UseWhen = Model.contentDetailsModel.UsageDetails == null ? string.Empty : Model.contentDetailsModel.UsageDetails.UseWhen;
+	string DoNotUseWhen = Model.contentDetailsModel.UsageDetails == null ? string.Empty : Model.contentDetailsModel.UsageDetails.DonotUseWhen;
+}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Content Details Report</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+
+	<!-- Shell -->
+	@ClientResources.RenderResources("ShellCore")
+	@ClientResources.RenderResources("epi-cms-react.configuration.common", new[] { ClientResourceType.Style})
+	@ClientResources.RenderResources("admin", new[]{ ClientResourceType.Style})
+
+	<!-- Light Theme -->
+	@ClientResources.RenderResources("ShellCoreLightTheme")
+
+	<link href="~/App_Themes/Default/Styles/system.css" type="text/css" rel="stylesheet">
+	<link href="~/App_Themes/Default/Styles/ToolButton.css" type="text/css" rel="stylesheet">
+	<style>
+		a.ex1:link, a.ex1:visited {
+			color: cornflowerblue;
+			text-decoration: none;
+			display: inline-block;
+		}
+
+		a.ex1:hover, a.ex1:active {
+			color: blue;
+		}
+
+		th, td {
+			padding: 15px;
+		}
+	</style>
+</head>
+
+<body>
+	@Html.CreatePlatformNavigationMenu()
+	<div @Html.ApplyPlatformNavigation()>
+		<div class="content-area-container">
+			<div class="epi-uif-layout-container">
+				<div class="epi-uif-workspace-container">
+					<div class="epi-uif-workspace">
+						<div class="epi-uif-grid mdc-layout-grid">
+							<h1>@Model.contentDetailsModel.Name Details</h1>
+							<a class="ex1" href="/Admin/LegacyContentTypeReport"><< Back</a>
+
+							<div style="align-content:center;color:orangered;padding:15px">
+								@if (!string.IsNullOrEmpty(Model.contentDetailsModel.ErrorMessage))
+								{
+									@Model.contentDetailsModel.ErrorMessage
+								}
+							</div>
+							<table width="100%">
+								<tr>
+									<td>
+										<table width="80%" style="border: 1px solid black;border-collapse: collapse;">
+											<tr><td colspan="4"> <h1>Content Details</h1></td></tr>
+											<tr><td colspan="4">@Html.Raw(Model.contentDetailsModel.IconPath)</td></tr>
+											<tr><td><b>Content Name: </b></td><td>@Model.contentDetailsModel.Name</td><td><b>Group: </b></td><td>@Model.contentDetailsModel.GroupName</td></tr>
+											<tr><td><b>Description: </b></td><td>@Model.contentDetailsModel.Description</td><td><b>Available On: </b></td><td>@Model.contentDetailsModel.IncludeContentTypes</td></tr>
+											<tr><td><b>GUID: </b></td><td>@Model.contentDetailsModel.GUID</td><td><b>Excluded On: </b></td><td>@Model.contentDetailsModel.ExcludeContentTypes</td></tr>
+											<tr>
+												<td colspan="2">
+													<a class="ex1" href="@($"{Url.RouteUrl("lcf_Root")}?Id={Model.contentDetailsModel.ContentID}&ContentName={Model.contentDetailsModel.Name}")">
+														References
+													</a>
+												</td>
+												<td><b>Available In Edit Mode: </b></td>
+												<td>@Model.contentDetailsModel.AvailableInEditMode</td>
+											</tr>
+										</table>
+										<br />
+										<table width="80%" style="border: 1px solid black;border-collapse: collapse;">
+											<tr>
+												<td>
+													<h1>Content Usage</h1>
+													@if (Model.contentDetailsModel.EditMode == true)
+													{
+														using (Html.BeginForm("SaveUsage", null, FormMethod.Post))
+														{
+															<input type="hidden" id="Id" name="Id" value=@usageID>
+															<input type="hidden" id="ContentID" name="ContentID" value=@Model.contentDetailsModel.ContentID>
+															<div>
+																<table style='border: 0px; border-collapse: collapse;'>
+																	<tr>
+																		<td colspan="2">
+																			<b>
+																				Use When
+																			</b>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td colspan="2">
+																			@Html.TextArea("UseWhen", UseWhen, new { cols = 150, @rows = 10 })
+																		</td>
+																	</tr>
+																	<tr>
+																		<td colspan="2">
+																			<b>
+																				Do Not Use For
+																			</b>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>
+																			@Html.TextArea("DoNotUseWhen", DoNotUseWhen, new { cols = 150, @rows = 10 })
+																		</td>
+																		<td>
+																			<input type="submit" value="Save" />
+																		</td>
+																	</tr>
+																</table>
+																<br />
+																<br />
+															</div>
+														}
+													}
+													else
+													{
+														@using (Html.BeginForm("AddEditUsage", null, FormMethod.Post))
+														{
+															<div>
+																@Html.Hidden("Id", Model.contentDetailsModel.ContentID)
+																<table style='border: 0px; border-collapse: collapse;'>
+																	<tr>
+																		<td colspan="2">
+																			<b>
+																				Use When
+																			</b>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td colspan="2">
+																			@Html.DisplayFor(model => model.contentDetailsModel.UsageDetails.UseWhen)
+																		</td>
+																	</tr>
+																	<tr>
+																		<td colspan="2">
+																			<b>
+																				Do Not Use For
+																			</b>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>
+																			@Html.DisplayFor(model => model.contentDetailsModel.UsageDetails.DonotUseWhen)
+																		</td>
+																		<td>
+																			<input type="submit" value="Edit" />
+																		</td>
+																	</tr>
+																</table>
+																<br />
+																<br />
+															</div>
+														}
+													}
+													@using (Html.BeginForm("UploadFile", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+													{
+														@Html.Hidden("ImageCount", Model.contentDetailsModel.UsageImages.Count)
+														@Html.Hidden("Id", Model.contentDetailsModel.ContentID)
+														<input type="file" name="file">
+														<input type="submit" value="Upload Now" />
+													}
+													<br />
+													@foreach (ContentUsageImage img in Model.contentDetailsModel.UsageImages)
+													{
+														<img src="@img.UsageImage" style="width:50%;height:50%" />
+														@Html.ActionLink("Remove", "DeleteUsageImage", new { Id = img.Id, ContentID = Model.contentDetailsModel.ContentID, imageName = img.UsageImage })
+													}
+												</td>
+											</tr>
+										</table>
+										<br />
+										<table width="80%" style="border: 1px solid black;border-collapse: collapse;">
+											<tr>
+												<td>
+													<h1>Content Properties</h1>
+													<div id="propertyDetails">
+														<table id='tblId' style='border: 1px solid black; border-collapse: collapse;width: 100%;'>
+															<thead style='background-color:#040A47;color:white'>
+																<tr>
+																	<th>Content Type Name</th>
+																	<th>Display Name</th>
+																	<th>Description</th>
+																	<th>Group</th>
+																	<th>Type</th>
+																	<th>Order</th>
+																	<th>Attributes</th>
+																</tr>
+															</thead>
+															<tbody>
+																@foreach (var detail in Model.contentDetailsModel.Properties)
+																{
+																	<tr>
+																		<td>@detail.Name</td>
+																		<td>@detail.DisplayName</td>
+																		<td>@detail.Description</td>
+																		<td>@detail.Group</td>
+																		<td>@detail.Type</td>
+																		<td>@detail.Order</td>
+																		<td>@detail.Attributes</td>
+																	</tr>
+																}
+															</tbody>
+														</table>
+														@*@Html.Raw(Model.PropertyDetailsHTMLString)*@
+													</div>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

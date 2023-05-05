@@ -1,0 +1,39 @@
+@using Perficient.Web.Features.Blocks.Fields.ResponsivePicture
+@model ScorePictureFieldBaseBlock
+
+@* Image is in edit mode dictated by parent block *@
+@if (ViewBag.editing != null && ViewBag.editing)
+{
+    if (Model.OriginalImage == null)
+    {
+        <img src="~/icons/score/icon-responsive-image.png" style="@ViewBag.style" alt=""/>
+    }
+    else
+    {
+        <img src="@Url.ContentUrl(Model.OriginalImage)" style="@ViewBag.style" alt=""/>
+    }
+}
+@* Image is in live mode, render as picture tag *@
+else
+{
+    if (Model.OriginalImage != null)
+    {
+        <picture style="@ViewBag.style" class="@ViewData["CssClass"]">
+            @if (Model.Croppings != null)
+            {
+                foreach (var cropping in Model.Croppings)
+                {
+                    if (!string.IsNullOrWhiteSpace(cropping.SrcSet))
+                    {
+                        <source srcset="@Url.ContentUrl(cropping.Image)" media="@cropping.SrcSet" />
+                    }
+                }
+            }
+            @Html.DisplayFor(x => x.OriginalImage, new { lazy = false, Tag = "ContentReferencePartial", CssClass = ViewData["CssClass"] })
+        </picture>
+    }
+    else
+    {
+        <!-- Picture Field has null image selected -->
+    }
+}

@@ -1,0 +1,26 @@
+@using Perficient.Web.Features.Navigation.Models
+@model Perficient.Web.Features.Navigation.Models.FooterBlock
+
+@{
+    var classes = Model.GetClassList();
+}
+
+<footer class="@classes">
+    <div class="container">
+        <div class="brand">
+            <div class="logo">
+                <a class="score-image-button" href="@Url.ContentUrl(Model.ImageLink)">
+                    @Html.DisplayFor(x => x.Image, new { Tag = "ContentReferencePartial" })
+                </a>
+            </div>
+            <div class="social-icons">
+                @if (Model.UnderLogoContent != null)
+                {@Html.PropertyFor(x => x.UnderLogoContent)}
+            </div>
+        </div>
+            <div class="content-section @Model.FooterContentAlignment">
+                @Html.PropertyFor(x => x.MainContentArea, new { Tag = NavigationConstants.LinkTag, HasContainer = false, HasChildContainers = false })
+            </div>
+        </div>
+</footer>
+

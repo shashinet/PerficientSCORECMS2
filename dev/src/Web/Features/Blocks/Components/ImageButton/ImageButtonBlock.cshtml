@@ -1,0 +1,6 @@
+@using Perficient.Web.Features.Blocks.Components.ImageButton
+@model ImageButtonBlock
+
+<a class="score-image-button GTMBUTTON" target="@(Model.OpenInNewWindow ? "_blank" : "_self")" rel="@(Model.OpenInNewWindow ? "noreferrer" : "")" title="@Model.AltText" href="@Url.ContentUrl(Model.CalltoActionUrl)" @Html.EditAttributes(m => m.ButtonImage)>
+    @Html.PropertyFor(m => m.ButtonImage, new { Tag = "ContentReferencePartial", TemplateTag = "ContentReferencePartial" })       
+</a>

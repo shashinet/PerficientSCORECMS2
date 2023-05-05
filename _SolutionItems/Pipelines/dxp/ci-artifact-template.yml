@@ -1,0 +1,60 @@
+parameters:
+- name: CONFIGURATION
+  type: string
+- name: VMAJOR
+  type: string
+- name: VMINOR
+  type: string
+- name: VPATCH
+  type: string
+- name: VBUILDID
+  type: string
+jobs:
+  - job: CI
+    pool:
+      vmImage: 'windows-latest'
+    steps:
+    - task: PowerShell@2
+      inputs:
+        filePath: '_SolutionItems\Powershell Scripts\UpdateBuildVersion.ps1'
+        arguments: '-csproj "$(Build.Repository.LocalPath)\src\Web\Perficient.Web.csproj" -version "${{ parameters.VMAJOR }}.${{ parameters.VMINOR }}.${{ parameters.VPATCH }}.${{ parameters.VBUILDID }}"'
+    - task: DotNetCoreCLI@2
+      displayName: Restore
+      inputs:
+        command: restore
+        projects: '**/*.csproj'
+        feedsToUse: config
+        nugetConfigPath: Nuget.config
+    - task: DotNetCoreCLI@2
+      displayName: Build
+      inputs:
+        command: build
+        arguments: '--configuration ${{ parameters.CONFIGURATION }} --framework net5.0 --version ${{ parameters.VMAJOR }}.${{ parameters.VMINOR }}.${{ parameters.VPATCH }}.${{ parameters.VBUILDID }} -maxcpucount:1'
+    - task: DotNetCoreCLI@2
+      displayName: Publish
+      inputs:
+        command: publish
+        publishWebProjects: True
+        projects: '**/Perficient.Web.csproj'
+        arguments: '--configuration Release --framework net5.0 --output "$(Agent.TempDirectory)/SitePackageContent/" /p:Version=${{ parameters.VMAJOR }}.${{ parameters.VMINOR }}.${{ parameters.VPATCH }}.${{ parameters.VBUILDID }} -maxcpucount:1'
+        zipAfterPublish: false
+        modifyOutputPath: false
+    - task: ArchiveFiles@2
+      displayName: 'Pack Files'
+      inputs:
+        rootFolderOrFile: '$(Agent.TempDirectory)/SitePackageContent/'
+        includeRootFolder: false
+        archiveFile: '$(Build.ArtifactStagingDirectory)/Sightline.cms.app.${{ parameters.VMAJOR }}.${{ parameters.VMINOR }}.${{ parameters.VPATCH }}.${{ parameters.VBUILDID }}.nupkg'
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish DXP Package'
+      inputs:
+        PathtoPublish: '$(build.artifactstagingdirectory)'
+        ArtifactName: 'DXP Deployment Package'
+        publishLocation: 'Container'
+      condition: succeededOrFailed()
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish DXP Scripts'
+      inputs:
+        PathtoPublish: '_SolutionItems\dxp'
+        ArtifactName: 'Deployment Files'
+        publishLocation: 'Container'

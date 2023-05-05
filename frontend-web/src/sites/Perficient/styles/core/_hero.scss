@@ -1,0 +1,68 @@
+@use '../base/theme';
+
+.score-hero {
+  position: relative;
+
+  .score-hero-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    background-size: cover;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    & + * {
+      margin-top: rem-calc(15);
+    }
+  }
+
+  // can add options to align content along all sides and corners
+
+  .caption {
+    position: relative;
+    padding: 2rem;
+    background-color: theme.$white;
+    box-shadow: theme.$boxshadow2;
+
+    @include respond-above(medium) {
+      @include centerContent(false, true);
+      max-width: 50%;
+      margin: 1.5rem;
+      box-shadow: theme.$boxshadow;
+    }
+  }
+
+  .score-hero-body {
+    margin-top: rem-calc(8);
+
+    .rich-text {
+      color: inherit;
+    }
+
+    & + .score-call-to-action {
+      margin-top: rem-calc(20);
+    }
+  }
+
+  .score-call-to-action {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    .score-button {
+      margin: rem-calc(30 30 0 0);
+
+      @include respond-above(small) {
+        margin: rem-calc(0 30 0 0);
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

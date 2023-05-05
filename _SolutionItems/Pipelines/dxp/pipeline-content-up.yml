@@ -1,0 +1,32 @@
+# .NET5.0
+# Build and test .NET5.0 projects.
+# Compilation for releasing to Prep/Prod in Optimizely DXP
+
+trigger: none
+pr: none
+name: $(Version.Major).$(Version.Minor).$(Version.Patch).$(Build.BuildId)
+resources:
+  repositories:
+  - repository: self
+    type: git
+    ref: develop
+variables:
+ - group: CMS12-Perficient.Accelerator.Web.Version
+ - group: CMS12-Perficient.Accelerator.Web.DxpApi 
+stages:
+- stage: IntegrationToPreproduction
+  displayName: 'Integration To Preproduction'
+  jobs:
+   - template: content-template.yml
+     parameters:
+       SOURCE: Integration
+       TARGET: Preproduction
+- stage: PreproductionToProduction
+  dependsOn: IntegrationToPreproduction
+  condition: succeeded('IntegrationToPreproduction')
+  displayName: 'Preproduction To Production'
+  jobs:
+   - template: content-template.yml
+     parameters:
+       SOURCE: Preproduction
+       TARGET: Production

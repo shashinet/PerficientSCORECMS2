@@ -1,0 +1,20 @@
+parameters:
+- name: CONFIGURATION
+  type: string
+jobs:
+  - job: CI
+    pool:
+      vmImage: 'windows-latest'
+    steps:
+    - task: DotNetCoreCLI@2
+      displayName: Restore
+      inputs:
+        command: restore
+        projects: '**/*.csproj'
+        feedsToUse: config
+        nugetConfigPath: Nuget.config
+    - task: DotNetCoreCLI@2
+      displayName: Build
+      inputs:
+        command: build
+        arguments: '--configuration ${{ parameters.CONFIGURATION }} --framework net5.0 -maxcpucount:1'

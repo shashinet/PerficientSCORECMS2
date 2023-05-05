@@ -1,0 +1,15 @@
+{
+  "extends": ["stylelint-config-rational-order"],
+  "plugins": ["stylelint-order"],
+  "customSyntax": "postcss-scss",
+  "rules": {
+    "order/properties-order": [],
+    "plugin/rational-order": [
+      true,
+      {
+        "border-in-box-model": true,
+        "empty-line-between-groups": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "name": "perficient",
+  "private": true,
+  "version": "2.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "build:Perficient": "cross-env SITE=sites/Perficient MODE=production vite build",
+    "build:Perficient:dev": "cross-env SITE=sites/Perficient MODE=development vite build",
+    "build:ExampleSite": "cross-env SITE=sites/ExampleSite MODE=production vite build",
+    "build:ExampleSite:dev": "cross-env SITE=sites/ExampleSite MODE=development vite build",
+    "dev:core": "cross-env MODE=development SITE=core STORYBOOK_SITE=core start-storybook -p 6001",
+    "dev:Perficient": "cross-env SITE=sites/Perficient STORYBOOK_SITE=sites/Perficient start-storybook -p 6001",
+    "dev:ExampleSite": "cross-env SITE=sites/ExampleSite STORYBOOK_SITE=sites/ExampleSite start-storybook -p 6001",
+    "storybookBuild": "cross-env NODE_OPTIONS=--openssl-legacy-provider MODE=development SITE=sites/Perficient STORYBOOK_SITE=sites/Perficient build-storybook",
+    "storybookBuild:Perficient": "cross-env NODE_OPTIONS=--openssl-legacy-provider MODE=development SITE=sites/Perficient STORYBOOK_SITE=sites/Perficient build-storybook",
+    "storybookBuild:ExampleSite": "cross-env NODE_OPTIONS=--openssl-legacy-provider MODE=development SITE=sites/ExampleSite STORYBOOK_SITE=sites/ExampleSite build-storybook",
+    "lint": "eslint ./src/**/*.{js,jsx}",
+    "test": "jest --config=jest.config.json",
+    "stylelint:global": "stylelint ./src/**/*.scss --fix",
+    "stylelint:Perficient": "stylelint ./src/sites/Perficient/**/*.scss --fix",
+    "stylelint:ExampleSite": "stylelint ./src/sites/ExampleSite/**/*.scss --fix",
+    "test:watch": "jest --config=jest.config.json --watch"
+  },
+  "dependencies": {
+    "prettier": "^2.8.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "swiper": "^7.0.8",
+    "video.js": "^7.15.4",
+    "what-input": "^5.2.10"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.3",
+    "@storybook/addon-a11y": "^6.5.16",
+    "@storybook/addon-actions": "^6.5.16",
+    "@storybook/addon-essentials": "^6.5.16",
+    "@storybook/addon-interactions": "^6.5.16",
+    "@storybook/addon-links": "^6.5.16",
+    "@storybook/builder-vite": "^0.4.2",
+    "@storybook/react": "^6.5.16",
+    "@storybook/testing-library": "^0.0.13",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react": "^3.1.0",
+    "@whitespace/storybook-addon-html": "^5.1.4",
+    "autoprefixer": "^10.4.14",
+    "axios": "^1.3.4",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.3.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.26.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-storybook": "^0.6.1",
+    "husky": "^8.0.3",
+    "postcss": "^8.4.21",
+    "prop-types": "^15.8.1",
+    "react-syntax-highlighter": "^15.5.0",
+    "sass": "^1.59.3",
+    "stylelint": "^14.5.3",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-order": "^5.0.0",
+    "vite": "^4.2.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
+  "-vs-binding": {
+    "BeforeBuild": [
+      "build:Perficient:dev"
+    ]
+  },
+  "volta": {
+    "node": "16.19.1"
+  }
+}

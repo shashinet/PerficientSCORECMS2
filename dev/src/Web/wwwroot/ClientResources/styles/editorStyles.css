@@ -1,0 +1,31 @@
+/* The following classes remove the help ? and show the description below the field title in all properties mode */
+.Sleek .dijitTabPaneWrapper .epi-form-container__section__row label[title]:after {
+  content: attr(title);
+  display: block;
+  font-size: 0.8em;
+  font-style: italic;
+  margin: 0.3em 0 0 0;
+  width: 100%;
+  height: auto;
+  text-align: left;
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: 400;
+  border: 0;
+}
+
+.Sleek .dijitTabPaneWrapper .epi-formsRow label[title]:hover:after, .Sleek .dijitTabPaneWrapper .epi-form-container__section__row label[title]:hover:after {
+  background-color: #ffffff;
+  border: 0;
+}
+
+/* The following classes expand the size of the input text boxes in all properties mode */
+.Sleek .dijitTextBox, .Sleek .dijitTextBox .dijitInputContainer {
+  min-width: 45%;
+}
+
+.Sleek {
+  font-family: Inter,sans-serif;
+  color: hsl(241,77%,12%);
+  font-size: 14px;
+}

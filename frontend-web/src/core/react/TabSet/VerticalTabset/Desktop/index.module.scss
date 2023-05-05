@@ -1,0 +1,224 @@
+@use '../../../../../global/styles/abstracts/variables';
+
+.desktopTabs {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  padding-block: 5rem;
+
+  :global {
+    .tab-buttons-wrapper {
+      display: flex;
+      flex: 1 1 40%;
+      flex-direction: column;
+      overflow: hidden;
+
+      .subtitle {
+        margin-bottom: 5rem;
+        color: variables.$textColor;
+        font-weight: 600;
+        font-size: 2rem;
+        line-height: 120%;
+
+        h2, h3, h4, h5 {
+          color: inherit !important;
+        }
+      }
+
+      .tab-button {
+        position: relative;
+        margin-left: 1rem;
+        padding: 2.25rem 1.5rem;
+        border-radius: 0;
+        color: variables.$textColor;
+        font-weight: 400;
+        font-size: 1.5rem;
+        line-height: 120%;
+        text-align: left;
+
+        &::before {
+          position: absolute;
+          top: 0;
+          left: -1rem;
+          width: .25rem;
+          height: 100%;
+          background-color: variables.$lightGrey;
+          content: '';
+        }
+
+        &:first-of-type::before {
+          border-radius: 1rem 1rem 0 0;
+        }
+
+        &:last-of-type::before {
+          border-radius: 0 0 1rem 1rem;
+        }
+
+        &:focus-visible {
+          border: 2px solid variables.$primary;
+          border-right: none;
+          outline: none;
+        }
+
+        &.active {
+          position: relative;
+          color: variables.$primary;
+          font-weight: 600;
+          background-color: variables.$lightGrey;
+          box-shadow: -.55rem .75rem 0 .125rem var(--white), -.55rem -1rem 0 .125rem var(--white), -2rem 0 0 0 var(--tertiary);
+
+          &::after {
+            position: absolute;
+            right: 0;
+            bottom: -3.9375rem;
+            width: 2rem;
+            height: 4rem;
+            border-top-right-radius: 2rem;
+            background-color: transparent;
+            box-shadow: 0 -2rem 0 0 variables.$lightGrey;
+            content: '';
+          }
+
+
+          &::before {
+            position: absolute;
+            top: -3.9375rem;
+            right: 0;
+            bottom: auto;
+            left: auto;
+            width: 2rem;
+            height: 4rem;
+            border-top-left-radius: 5rem;
+            background-color: transparent;
+            box-shadow: 0 -2rem 0 0 variables.$lightGrey;
+            transform: scale(-1, -1);
+            content: '';
+          }
+        }
+
+        & + .cta-area {
+          margin-top: auto;
+        }
+      }
+
+      .cta-area {
+        display: flex;
+        justify-content: flex-start;
+      }
+    }
+
+    .tab-content {
+      flex: 1 1 60%;
+      align-self: flex-start;
+
+      .content {
+        display: none;
+
+        &.fade-out {
+          .panel {
+
+            .image-wrapper {
+              animation: fade-out ease .5s forwards;
+            }
+          }
+        }
+
+        &.active {
+          display: block;
+
+          .panel {
+
+            .image-wrapper {
+              animation: fade_in ease 0.5s forwards;
+            }
+          }
+        }
+      }
+
+      .panel {
+        margin-right: 2.5rem;
+        border-radius: 0;
+        background-color: variables.$lightGrey;
+
+        .image-wrapper {
+          position: relative;
+          top: -2.5rem;
+          right: -2.5rem;
+          height: 0;
+          margin-top: 2.5rem;
+          border: .25rem solid var(--tertiary);
+          // padding-top: 21.875rem / 32.8125rem * 100%;
+          border-radius: 0;
+          overflow: hidden;
+          box-shadow: 0 .125rem .5rem rgba(0, 0, 0, 0.25);
+
+          img, picture {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            -o-object-fit: cover;
+            object-fit: cover;
+          }
+        }
+
+        @supports (aspect-ratio: 3/2) {
+          .image-wrapper {
+            height: auto;
+            padding-top: 0;
+            aspect-ratio: 3/2;
+          }
+        }
+
+        .caption {
+          min-width: 32.8125rem;
+          max-width: 100%;
+          padding: 0 2.25rem 2.25rem;
+
+          * + * {
+            margin-block-start: 1rem;
+          }
+
+          .title {
+            color: variables.$primary;
+            font-weight: 600;
+            font-size: 1.5rem;
+            line-height: 115%;
+
+            + .body {
+              margin-top: 1rem;
+            }
+          }
+
+          .body {
+            font-weight: 400;
+            font-size: 1.125rem;
+            line-height: 115%;
+
+            + .cta-area {
+              margin-top: 1.5rem;
+            }
+          }
+
+          .cta-area {
+            display: flex;
+            flex-direction: column;
+            align-content: flex-start;
+
+            a.score-button {
+              flex: 0 0 auto;
+              padding: 0;
+
+              + a.score-button {
+                margin-top: 1.5rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

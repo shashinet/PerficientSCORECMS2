@@ -1,0 +1,15 @@
+@using Perficient.Web.Features.Blocks.Components.YouTube
+@model YouTubeBlock
+
+@if (Html.IsInEditMode() && ViewContext.HttpContext.GetContentLink() == ((IContent)Model).ContentLink)
+{
+    <div class="container">
+        <div class="row preview clearfix">
+            <h2 @Html.EditAttributes(x => x.AccessibleTitle)>
+                @Html.Raw((Model.AccessibleTitle ?? "<span class='pacehold'>Enter Accessible Title Here</span>"))
+            </h2>
+        </div>
+    </div>
+}
+
+@Html.PropertyFor(x => x.ScoreYouTube, new { @title = @Model.AccessibleTitle, @IdOverride = @Model.YouTubeIdOverride })

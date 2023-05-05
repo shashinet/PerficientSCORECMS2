@@ -1,0 +1,7 @@
+// Add styles to the header wrapper React component mounts to.
+
+[data-react-component="HeaderNavigation"] {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}

@@ -1,0 +1,30 @@
+@using Perficient.Web.Features.Blocks.Fields.GoogleMap
+@model GoogleMapBaseBlock
+
+@{
+    var id = Guid.NewGuid().ToString("N");
+    var apiKey = Model.GoogleApiKey;
+}
+
+<script>
+    var map;
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('@id'),
+            {
+                center: { lat: @Model.Latitude, lng: @Model.Longitude },
+                zoom: 12
+            });
+        var marker = new google.maps.Marker({ position: map.center });
+        marker.setMap(map);
+    };
+</script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=@apiKey&v=quarterly&callback=initMap"></script>
+
+<div class="score-location" data-ux-state="loaded">
+    <div class="google-map-canvas" >
+        <div id="@id" style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);">
+
+        </div>
+    </div>
+</div>

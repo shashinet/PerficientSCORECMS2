@@ -1,0 +1,39 @@
+@*@using EPiServer.Web.Routing
+@model Perficient.Web.Features.Navigation.Models.SectionMenuSpiderBlock
+
+@helper SpiderNav(Perficient.Web.Features.Navigation.Models.SectionMenuSpiderData navItem, int level)
+{
+    <li class="item-level-@level">
+        <a href="@navItem.Url" class="anchor-level-@level">
+            @navItem.Name
+        </a>
+
+        @{
+            bool any = false;
+            foreach (var child in navItem.Children)
+            {
+                any = true;
+                break;
+            }
+        }
+        @if (navItem.Children != null && any)
+        {
+            <ul class="list-level-@level">
+                @foreach (var child in navItem.Children)
+                {
+                    @SpiderNav(child, level++)
+                }
+            </ul>
+        }
+    </li>
+}
+
+<nav class="section-menu-spider @Model.GetClassList()">
+    <ul class="list-level-0">
+        @foreach (var page in Model.SpiderData)
+        {
+            @SpiderNav(page, 0)
+        }
+    </ul>
+</nav>
+*@

@@ -1,0 +1,11 @@
+@using Perficient.Web.Features.Pages.GenericLanding
+
+@model ContentViewModel<GenericLandingPage>
+
+<div class="generic-landing-page">
+    @Html.PropertyFor(m => m.CurrentContent.SideNavigation)
+    <div class="main-content" data-epi-type="content">
+        <h1 data-epi-type="title">@Html.PropertyFor(m => m.CurrentContent.Title, new { HasContainer = false })</h1>
+        @Html.PropertyFor(m => m.CurrentContent.MainContentArea, new { Tag=TagNames.PageContent, HasContainer = false })
+    </div>
+</div>

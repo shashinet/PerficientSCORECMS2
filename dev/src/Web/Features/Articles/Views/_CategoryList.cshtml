@@ -1,0 +1,32 @@
+@using Perficient.Web.Features.Articles.Repositories
+@using Perficient.Web.Features.Articles.Extensions
+@using Perficient.Web.Features.Articles.Models
+
+@model CategoryListingModel
+
+@inject IArticleRepository articleRepository
+
+@{
+    var categories = articleRepository.GetCategoriesForPage(Model.CurrentPage);
+    var selectedCategory = @Model.SelectedCategory.GetArticleCategory();
+
+    if (categories != null && categories.Count > 0)
+    {
+        @:<ul class="categories">
+    }
+
+    foreach (var category in categories)
+    {
+        var classStyle = category.Id == selectedCategory.ContentGuid ? " selected" : "";
+
+        <li style="background-color:@selectedCategory.Color">
+            <a href="@category.Url">@category.Title - @classStyle</a>
+        </li>
+
+    }
+
+    if (categories != null && categories.Count > 0)
+    {
+        @:</ul>
+    }
+}

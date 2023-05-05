@@ -1,0 +1,44 @@
+@use '../../../global/styles/abstracts/theme';
+
+.score-accordion {
+  .score-accordion-panel {
+    margin-bottom: 1rem;
+
+    .panel-heading {
+      color: theme.$white;
+    }
+  }
+
+  button {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color: theme.$white;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    text-align: left;
+    background-color: theme.$black;
+  }
+
+  .panel-collapse {
+    display: none;
+
+    .panel-body {
+      padding: 1rem;
+      h3 {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+      }
+
+      p {
+        margin-top: 0.875rem;
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+      }
+    }
+
+    &.show {
+      display: block;
+    }
+  }
+}

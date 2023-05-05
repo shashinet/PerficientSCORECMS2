@@ -1,0 +1,16 @@
+@using Perficient.Web.Features.Blocks.Components.Tile
+@model TileBlock
+
+@{
+    var classes = Model.GetClassList();
+}
+<div class="score-tile @classes">
+    <div class="img-wrapper">
+        @Html.PropertyFor(x => x.Image, new { TemplateTag = "Image" })
+    </div>
+    <span class="tile-title">
+        @Html.PropertyFor(x => x.Title)
+    </span>
+    <a class="clickable-area" href="@Url.ContentUrl(Model.Link)">
+    </a>
+</div>
