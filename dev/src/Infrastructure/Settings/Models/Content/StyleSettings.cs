@@ -103,5 +103,9 @@ namespace Perficient.Infrastructure.Settings.Models.Content
         [EditorDescriptor(EditorDescriptorType = typeof(PropertyListEditorDescriptor<ScoreButtonSize>))]
         public virtual IList<ScoreButtonSize> ButtonSizes { get; set; }
 
+        [Display(Name = "Solid Colors")]
+        [EditorDescriptor(EditorDescriptorType = typeof(PropertyListEditorDescriptor<ScoreColor>))]
+        public virtual IList<ScoreColor> SolidColors { get; set; }
+
     }
 }
