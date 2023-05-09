@@ -4,13 +4,12 @@
 
 <div class="flip-card">
   <div class="flip-card-inner">
-    <div class="flip-card-front">
+    <div class="flip-card-front" style="background-color:@Model.FrontSolidColor">
 			<h1>@Html.PropertyFor(x => x.Title)</h1>
 			<p>@Html.PropertyFor(x => x.Description)</p>
-            <p>@Html.PropertyFor(x => x.CallToActionLabel)</p>
-            @*<p>@Html.RenderXhtmlString(Model.Image)</p>*@
-		</div>
-    <div class="flip-card-back">
+            <p>@Html.PropertyFor(x => x.CallToActionLabel,new{@class="button"})</p>
+        </div>
+        <div class="flip-card-back" style="background-color:@Model.BackSolidColor">
 
 			<p>@Html.PropertyFor(x => x.Text)</p>
 			<p>@Html.PropertyFor(x => x.CallToActionButton)</p>
