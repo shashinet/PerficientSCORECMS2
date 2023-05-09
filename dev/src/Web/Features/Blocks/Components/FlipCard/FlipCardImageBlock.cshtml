@@ -1,0 +1,6 @@
+@using Perficient.Web.Features.Blocks.Components.FlipCard
+@model FlipCardImageBlock
+
+<div style="background-color:@Model.SolidColor">
+    <img src=@UrlResolver.Current.GetUrl(Model.SmallImage) class="score-image img-fluid" />
+</div>

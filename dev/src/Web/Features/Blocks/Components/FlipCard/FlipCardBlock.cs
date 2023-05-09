@@ -48,10 +48,15 @@ namespace Perficient.Web.Features.Blocks.Components.FlipCard
         public virtual string CallToActionLabel { get; set; }
 
         [CultureSpecific]
+        [Display(GroupName = TabNames.FrontOfCard, Name = "Image", Order = 40)]
+        [AllowedTypes(new[] {typeof(FlipCardImageBlock) })]
+        public virtual ContentArea Image { get; set; }
+
+        [CultureSpecific]
         [Display(GroupName = TabNames.BackOfCard, Name = "Solid Color", Order = 10)]
-        [EditorDescriptor(EditorDescriptorType = typeof(ColorPickerEditorDescriptor))]
-        [UIHint("ColorPickerEditor")]
-        public virtual ContentArea SolidColor { get; set; }       
+        [EditorDescriptor(EditorDescriptorType = typeof(SolidColorsPickerEditorDescriptor))]
+        [UIHint("SolidColorsPickerEditor")]
+        public virtual string SolidColor { get; set; }       
 
         [Display(
           Order = 20,
