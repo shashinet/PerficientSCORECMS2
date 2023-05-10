@@ -107,5 +107,9 @@ namespace Perficient.Infrastructure.Settings.Models.Content
         [EditorDescriptor(EditorDescriptorType = typeof(PropertyListEditorDescriptor<ScoreColor>))]
         public virtual IList<ScoreColor> SolidColors { get; set; }
 
+        [Display(Name = "Filip Card Directions")]
+        [EditorDescriptor(EditorDescriptorType = typeof(PropertyListEditorDescriptor<ScoreClass>))]
+        public virtual IList<ScoreClass> FlipCardDirectionClasses { get; set; }
+
     }
 }
