@@ -1,5 +1,25 @@
 @using Perficient.Web.Features.Blocks.Components.FlipCard
 @model FlipCardBlock
+@{
+    var backBackground = "";
+    var frontBackground = "";
+
+    if (Model.FrontBackgroundImage != null)
+    {
+        frontBackground = "background-image: url('" + @Url.ContentUrl(Model.FrontBackgroundImage) + "')";
+    }
+    else if(Model.FrontSolidColor != null){
+        frontBackground = "background-color:"+@Model.FrontSolidColor+"";
+    }
+    if (Model.BackBackgroundImage != null)
+    {
+        backBackground = "background-image: url('" + @Url.ContentUrl(Model.BackBackgroundImage) + "')";
+    }
+    else if (Model.BackSolidColor != null)
+    {
+        backBackground = "background-color:" + @Model.BackSolidColor + "";
+    }
+}
 @*Option 1*@
 <div class="flip-card">
   <div class="flip-card-inner">
@@ -69,7 +89,7 @@
 	<div class="card">
 		<input type="checkbox" id="card1" class="more" aria-hidden="true">
 		<div class="content">
-			<div class="front" style="background-image: url('https://images.unsplash.com/photo-1529408686214-b48b8532f72c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=986e2dee5c1b488d877ad7ba1afaf2ec&auto=format&fit=crop&w=1350&q=80')">
+            <div class="front" style="@frontBackground">
 				<div class="inner">
 					<h2>@Html.PropertyFor(x => x.Title)</h2>
 					<p>@Html.PropertyFor(x => x.Description)</p>
@@ -78,21 +98,19 @@
 					</label>
 				</div>
 			</div>
-			<div class="back">
+            <div class="back" style="@backBackground">
 				<div class="inner">
-					<div class="info">
-					
-					</div>
-					
-					<div class="description">
-						<p>@Html.PropertyFor(x => x.Description)</p>						
-					</div>
-					
-					<label for="card1" class="button return" aria-hidden="true">
-						@Html.PropertyFor(x => x.CallToActionButton)
-					</label>
+                    <label for="card1" class="backlable" aria-hidden="true">
+                    </label>
+                    <div class="info">
+                        @Html.PropertyFor(x => x.Text)
+                    </div>
 				</div>
+                <div class="btnredirct">
+                    @Html.PropertyFor(x => x.CallToActionButton)
+                </div>
 			</div>
+            
 		</div>
 	</div>	
 </div>
@@ -126,6 +144,7 @@
 			transform: rotateY(180deg);
 		}
 
+    
 	.front,
 	.back {
 		position: absolute;
@@ -138,6 +157,16 @@
 		border-radius: 6px;
 	}
 
+        .backlable{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+        border-radius: 6px;
+        }
 		.front .inner,
 		.back .inner {
 			height: 100%;
@@ -147,7 +176,7 @@
 		}
 
 	.front {
-		background-color: #fff;
+		/*background-color: #fff;*/
 		background-size: cover;
 		background-position: center center;
 	}
@@ -162,7 +191,7 @@
 			display: block;
 			border-radius: 6px;
 			backface-visibility: hidden;
-			background: linear-gradient(40deg, rgba(67, 138, 243, 0.7), rgba(255, 242, 166, 0.7));
+			/*background: linear-gradient(40deg, rgba(67, 138, 243, 0.7), rgba(255, 242, 166, 0.7));*/
 		}
 
 		.front .inner {
@@ -194,10 +223,9 @@
 
 	.back {
 		transform: rotateY(180deg);
-		background-color: #fff;
 		border: 2px solid #f0f0f0;
 	}
-
+           
 		.back .inner {
 			grid-template-rows: 1fr 2fr 1fr 2fr 14fr 1fr 1fr;
 			grid-template-columns: repeat(4, auto);
@@ -219,7 +247,6 @@
 				left: -0.9em;
 				height: 18px;
 				width: 1px;
-				background-color: #ccc;
 			}
 
 			.back .info span {
@@ -232,7 +259,6 @@
 			}
 
 				.back .info i:before {
-					background: linear-gradient(40deg, #355cc9, #438af3);
 					-webkit-text-fill-color: transparent;
 					-webkit-background-clip: text;
 				}

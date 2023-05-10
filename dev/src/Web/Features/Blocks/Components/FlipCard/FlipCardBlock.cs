@@ -56,7 +56,6 @@ namespace Perficient.Web.Features.Blocks.Components.FlipCard
         [Display(GroupName = TabNames.FrontOfCard, Name = "Solid Color", Order = 40)]
         [EditorDescriptor(EditorDescriptorType = typeof(SolidColorsPickerEditorDescriptor))]
         [UIHint("SolidColorsPickerEditor")]
-        [DefaultValue("#fff")]
         public virtual string FrontSolidColor { get; set; }
 
         [CultureSpecific]
@@ -86,14 +85,12 @@ namespace Perficient.Web.Features.Blocks.Components.FlipCard
         [Display(GroupName = TabNames.FrontOfCard, Name = "Flip Direction", Order = 80)]
         [EditorDescriptor(EditorDescriptorType = typeof(FlipCardDirectionEditorDescriptor))]
         [UIHint("FlipCardDirectionEditor")]
-        [DefaultValue("Right")]
         public virtual string FlipDirection { get; set; }
 
         [CultureSpecific]
         [Display(GroupName = TabNames.BackOfCard, Name = "Solid Color", Order = 10)]
         [EditorDescriptor(EditorDescriptorType = typeof(SolidColorsPickerEditorDescriptor))]
         [UIHint("SolidColorsPickerEditor")]
-        [DefaultValue("#fff")]
         public virtual string BackSolidColor { get; set; }
 
         [CultureSpecific]
@@ -132,5 +129,14 @@ namespace Perficient.Web.Features.Blocks.Components.FlipCard
         [DefaultDragAndDropTarget]
         [UIHint(UIHint.Image)]
         public virtual ContentReference BackMaskedImage { get; set; }
+
+        public override void SetDefaultValues(ContentType contentType)
+        {
+            
+            base.SetDefaultValues(contentType);
+            FlipDirection = "flip-right";
+            BackSolidColor = FrontSolidColor = "#fff";
+
+        }
     }
 }
