@@ -135,7 +135,8 @@ namespace Perficient.Web.Features.Blocks.Components.FlipCard
             
             base.SetDefaultValues(contentType);
             FlipDirection = "flip-right";
-            BackSolidColor = FrontSolidColor = "#fff";
+            FrontSolidColor = "#fff";
+            BackSolidColor = "#ccc";
 
         }
     }
