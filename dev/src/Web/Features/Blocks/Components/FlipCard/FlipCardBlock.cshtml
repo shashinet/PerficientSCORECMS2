@@ -24,9 +24,12 @@
 <div class="wrapper">
 	<div class="card">
 		<input type="checkbox" id="card1" class="more @Model.FlipDirection" aria-hidden="true">
+        
 		<div class="content">
             <div class="front" style="@frontBackground">
 				<div class="inner">
+                    <img src="@Url.ContentUrl(Model.FrontSmallImage)" class="front-small-image"/>
+                    <img src="@Url.ContentUrl(Model.FrontMaskedImage)" class="front-mask-image" />
 					<h2>@Html.PropertyFor(x => x.Title)</h2>
 					<p>@Html.PropertyFor(x => x.Description)</p>
 					<label for="card1" class="button" aria-hidden="true">
@@ -36,6 +39,8 @@
 			</div>
             <div class="back @Model.FlipDirection" style="@backBackground">
 				<div class="inner">
+                    <img src="@Url.ContentUrl(Model.BackSmallImage)" class="back-small-image" />
+                    <img src="@Url.ContentUrl(Model.BackMaskedImage)" class="back-mask-image" />
                     <label for="card1" class="backlable" aria-hidden="true">
                     </label>
                     <div class="info">
