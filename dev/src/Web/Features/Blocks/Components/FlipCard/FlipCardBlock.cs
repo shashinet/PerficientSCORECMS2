@@ -44,8 +44,7 @@ namespace Perficient.Web.Features.Blocks.Components.FlipCard
            Name = "Description"
        )]
         [CultureSpecific]
-        [AllowedTypes(new[] { typeof(RichTextBlock) })]
-        public virtual ContentArea Description { get; set; }
+        public virtual XhtmlString Description { get; set; }
 
         [CultureSpecific]
         [Display(GroupName = TabNames.FrontOfCard, Name = "Button Label", Order = 30)]
@@ -60,7 +59,7 @@ namespace Perficient.Web.Features.Blocks.Components.FlipCard
 
         [CultureSpecific]
         [UIHint(UIHint.Image)]
-        [Display(GroupName = TabNames.FrontOfCard, Name = "Background Image", Order = 50)]
+        [Display(GroupName = TabNames.FrontOfCard, Name = "Background Image (1st preference)", Order = 50)]
         [AllowedTypes(new[] { typeof(ImageMediaData), typeof(SvgMedia) })]
         [DefaultDragAndDropTarget]
         public virtual ContentReference FrontBackgroundImage { get; set; }
@@ -95,7 +94,7 @@ namespace Perficient.Web.Features.Blocks.Components.FlipCard
 
         [CultureSpecific]
         [UIHint(UIHint.Image)]
-        [Display(GroupName = TabNames.BackOfCard, Name = "Background Image", Order = 20)]
+        [Display(GroupName = TabNames.BackOfCard, Name = "Background Image (1st preference)", Order = 20)]
         [AllowedTypes(new[] { typeof(ImageMediaData), typeof(SvgMedia) })]
         [DefaultDragAndDropTarget]
         public virtual ContentReference BackBackgroundImage { get; set; }
@@ -106,13 +105,12 @@ namespace Perficient.Web.Features.Blocks.Components.FlipCard
           Name = "Text"
       )]
         [CultureSpecific]
-        [AllowedTypes(new[] { typeof(RichTextBlock) })]
-        public virtual ContentArea Text { get; set; }
+        public virtual XhtmlString Text { get; set; }
 
         [CultureSpecific]
         [Display(GroupName = TabNames.BackOfCard, Name = "CTA Button", Order = 40)]
         [AllowedTypes(typeof(ICallToActionBlock))]
-        public virtual ContentArea CallToActionButton { get; set; }
+        public virtual ContentReference CallToActionButton { get; set; }
 
         [CultureSpecific]
         [Display(GroupName = TabNames.BackOfCard, Name = "Small Image", Order = 50)]
