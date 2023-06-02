@@ -33,39 +33,39 @@ namespace Perficient.Web.Features.Blocks.Components.FlipCard
         [CultureSpecific]
         [Display(
            Order = 10,
-           GroupName = TabNames.FrontOfCard,
+           GroupName = TabNames.Default,
            Name = "Title"
        )]
         public virtual string Title { get; set; }
 
         [Display(
            Order = 20,
-           GroupName = TabNames.FrontOfCard,
+           GroupName = TabNames.Default,
            Name = "Description"
        )]
         [CultureSpecific]
         public virtual XhtmlString Description { get; set; }
 
         [CultureSpecific]
-        [Display(GroupName = TabNames.FrontOfCard, Name = "Button Label", Order = 30)]
+        [Display(GroupName = TabNames.Default, Name = "Button Label", Order = 30)]
       
         public virtual string CallToActionLabel { get; set; }
 
         [CultureSpecific]
-        [Display(GroupName = TabNames.FrontOfCard, Name = "Solid Color", Order = 40)]
-        [EditorDescriptor(EditorDescriptorType = typeof(SolidColorsPickerEditorDescriptor))]
-        [UIHint("SolidColorsPickerEditor")]
+        [Display(GroupName = TabNames.Default, Name = "Front Card Solid Color", Order = 40)]
+        [EditorDescriptor(EditorDescriptorType = typeof(ColorPickerEditorDescriptor))]
+        [UIHint("ColorPickerEditor")]
         public virtual string FrontSolidColor { get; set; }
 
         [CultureSpecific]
         [UIHint(UIHint.Image)]
-        [Display(GroupName = TabNames.FrontOfCard, Name = "Background Image (1st preference)", Order = 50)]
+        [Display(GroupName = TabNames.Default, Name = "Front Card Background Image (1st preference)", Order = 50)]
         [AllowedTypes(new[] { typeof(ImageMediaData), typeof(SvgMedia) })]
         [DefaultDragAndDropTarget]
         public virtual ContentReference FrontBackgroundImage { get; set; }
 
         [CultureSpecific]
-        [Display(GroupName = TabNames.FrontOfCard, Name = "Small Image", Order = 60)]
+        [Display(GroupName = TabNames.Default, Name = "Front Card Small Image", Order = 60)]
         [UIHint(UIHint.Image)]
         [AllowedTypes(new[] { typeof(ImageMediaData), typeof(SvgMedia) })]
         [DefaultDragAndDropTarget]
@@ -74,46 +74,46 @@ namespace Perficient.Web.Features.Blocks.Components.FlipCard
         public virtual ContentReference FrontSmallImage { get; set; }
 
         [CultureSpecific]
-        [Display(GroupName = TabNames.FrontOfCard, Name = "Masked Image", Order = 70)]
+        [Display(GroupName = TabNames.Default, Name = "Front Card Masked Image", Order = 70)]
         [AllowedTypes(new[] { typeof(ImageMediaData) })]
         [DefaultDragAndDropTarget]
         [UIHint(UIHint.Image)]
         public virtual ContentReference FrontMaskedImage { get; set; }
 
         [CultureSpecific]
-        [Display(GroupName = TabNames.FrontOfCard, Name = "Flip Direction", Order = 80)]
+        [Display(GroupName = TabNames.Default, Name = "Flip Direction", Order = 80)]
         [EditorDescriptor(EditorDescriptorType = typeof(FlipCardDirectionEditorDescriptor))]
         [UIHint("FlipCardDirectionEditor")]
         public virtual string FlipDirection { get; set; }
 
         [CultureSpecific]
-        [Display(GroupName = TabNames.BackOfCard, Name = "Solid Color", Order = 10)]
-        [EditorDescriptor(EditorDescriptorType = typeof(SolidColorsPickerEditorDescriptor))]
-        [UIHint("SolidColorsPickerEditor")]
+        [Display(GroupName = TabNames.Default, Name = "Back Card Solid Color", Order = 90)]
+        [EditorDescriptor(EditorDescriptorType = typeof(ColorPickerEditorDescriptor))]
+        [UIHint("ColorPickerEditor")]
         public virtual string BackSolidColor { get; set; }
 
         [CultureSpecific]
         [UIHint(UIHint.Image)]
-        [Display(GroupName = TabNames.BackOfCard, Name = "Background Image (1st preference)", Order = 20)]
+        [Display(GroupName = TabNames.Default, Name = "Back Card Background Image (1st preference)", Order = 100)]
         [AllowedTypes(new[] { typeof(ImageMediaData), typeof(SvgMedia) })]
         [DefaultDragAndDropTarget]
         public virtual ContentReference BackBackgroundImage { get; set; }
 
         [Display(
-          Order = 30,
-          GroupName = TabNames.BackOfCard,
+          Order = 110,
+          GroupName = TabNames.Default,
           Name = "Text"
       )]
         [CultureSpecific]
         public virtual XhtmlString Text { get; set; }
 
         [CultureSpecific]
-        [Display(GroupName = TabNames.BackOfCard, Name = "CTA Button", Order = 40)]
+        [Display(GroupName = TabNames.Default, Name = "CTA Button", Order = 120)]
         [AllowedTypes(typeof(ICallToActionBlock))]
         public virtual ContentReference CallToActionButton { get; set; }
 
         [CultureSpecific]
-        [Display(GroupName = TabNames.BackOfCard, Name = "Small Image", Order = 50)]
+        [Display(GroupName = TabNames.Default, Name = "Back Card Small Image", Order = 130)]
         [UIHint(UIHint.Image)]
         [AllowedTypes(new[] { typeof(ImageMediaData), typeof(SvgMedia) })]
         [DefaultDragAndDropTarget]
@@ -122,7 +122,7 @@ namespace Perficient.Web.Features.Blocks.Components.FlipCard
         public virtual ContentReference BackSmallImage { get; set; }
 
         [CultureSpecific]
-        [Display(GroupName = TabNames.BackOfCard, Name = "Masked Image", Order = 60)]
+        [Display(GroupName = TabNames.Default, Name = "Back Card Masked Image", Order = 140)]
         [AllowedTypes(new[] { typeof(ImageMediaData) })]
         [DefaultDragAndDropTarget]
         [UIHint(UIHint.Image)]

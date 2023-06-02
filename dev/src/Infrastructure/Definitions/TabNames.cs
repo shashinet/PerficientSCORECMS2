@@ -74,11 +74,5 @@ namespace Perficient.Infrastructure.Definitions
 
         [Display(Order = 910)]        
         public const string Search = "Search";
-
-		[Display(Order = 950)]
-		public const string FrontOfCard = "Front Of Card";
-
-		[Display(Order = 960)]
-		public const string BackOfCard = "Back Of Card";
 	}
 }
